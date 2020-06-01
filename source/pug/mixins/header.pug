@@ -1,8 +1,20 @@
-mixin header(data, current)
+mixin header(burger, current)
+  //- input.visually-hidden.language-theme#language-theme(type='checkbox', name='language-theme', checked='', tabindex='1', aria-label='input для смены языка')
+  input.visually-hidden.color-theme#color-theme(type='checkbox', name='color-theme', checked='', tabindex='1', aria-label='input для смены цветовой темы')
   header.page-header
-    img.page-header__logo(src='img/logo.svg', width='', height='', alt='Логотип')
-    nav.page-header__navigation
-      ul.page-header__navigation-list.navigation-list
-        each item, index in data
-          li.navigation-list__item(class=(index === current-1 ? 'navigation-list__item--current' : undefined))
-            a.navigation-list__link(href=(index === current-1 ? undefined : item.href))= item.title
+    a.page-header__logo(href=(current === 'index' ? undefined : 'index.html'), aria-label=(current === 'index' ? undefined : 'переход на главную страницу'))
+      svg.page-header__logo-img(width='', height='', viewBox='', fill='none', xmlns='http://www.w3.org/2000/svg')
+    .page-header__right-group.header-right-group
+      .page-header__togglers
+        label.page-header__vision-button.vision-button(for='color-theme', aria-label='переключатель цветовой темы')
+          span.vision-button__handler
+            //- TODO скрыть svg через aria-[что-то там]
+            svg(width='', height='', viewBox='', fill='none', xmlns='http://www.w3.org/2000/svg')
+        //- label.page-header__vision-button.vision-button(for='language-theme', aria-label='переключатель языка')
+          //- span.vision-button__handler рус
+      if burger == true
+        nav.page-header__navigation.navigation
+          button.navigation__burger.reset-button(type='button')
+            span открыть/закрыть содержание
+          .navigation__wrap
+            +tableOfContent(listOfPages, current)

@@ -1,0 +1,6 @@
+mixin pageTitle(pageName)
+  .page-title
+    h1.page-title__name #{pageName}
+    if pageName !== 'Оглавление'
+      a.page-title__download.button(href='#', aria-label='скачать раздел в PDF')
+        svg(width='', height='', viewBox='', fill='none', xmlns='http://www.w3.org/2000/svg')

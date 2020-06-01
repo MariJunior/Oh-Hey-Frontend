@@ -1,0 +1,12 @@
+extends ../pug/layout.pug
+
+block header
+  +header(false, 'noindex')
+
+block content
+  +pageTitle('Оглавление')
+  +tableOfContent(listOfPages)
+
+block footer
+  footer.page-footer.page-footer--mini
+    a.page-footer__backward-link.link.link--index Главная

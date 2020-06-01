@@ -160,7 +160,7 @@ exports.deploy = deploy;
 // Подключение плагина 'browser-sync' и начало отслеживания изменений файлов в директории 'build/', выполнения соотв. задач и перезагрузки страницы
 function serve() {
   server.init({
-    // browser: 'google chrome',
+    browser: 'firefox',
     server: 'build/',
     startPath: 'index.html',
     notify: false,
