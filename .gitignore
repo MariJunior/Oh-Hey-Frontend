@@ -1,7 +1,8 @@
 design/
 build/
 
-src/js/entry.js
+source/js/entry.js
+source/*.md
 
 __MACOSX
 .Saved/

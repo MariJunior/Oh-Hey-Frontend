@@ -1,0 +1,149 @@
+extends ../pug/layout.pug
+
+block header
+  +header(true, 'noindex')
+
+block content
+  +pageTitle('6. Математика в вебе')
+
+  section.page-section
+    h2.visually-hidden Введение
+    p.page-section__text Когда-то HTML изобрели в стенах ЦЕРНа. Но хотя математика является главным языком общения среди учёных, она до сих пор слабо поддерживается веб-технологиями. Посмотрим, как обстоят дела и какое будущее у математического рендеринга.
+
+    p.page-section__text Дело в том, что в языке HTML, с помощью которого создаются веб-страницы, нет нативных средств для написания формул. Разработчикам сайтов приходилось как-то выкручиваться: использовать таблицы, индексы и другие обходные пути. Список подобных приемов приведен #[a.page-section__link.link(href='http://jkorpela.fi/math/') здесь], и резюмировать его можно так — путь труден, а результат жалок.
+
+  section.page-section
+    h2.page-section__title План раздела
+    ol.page-section__content.table-of-content
+      li.table-of-content__item
+        a.table-of-content__anchor(href='#overview') Немного истории, текущая ситуация и перспективы
+      li.table-of-content__item
+        a.table-of-content__anchor(href='#mathjax') Что нужно для начала работы с MathJax
+      li.table-of-content__item
+        a.table-of-content__anchor(href='#katex') Что нужно для начала работы с KaTeX
+
+  section.page-section
+    h2.page-section__title#overview Немного истрии, текущая ситуация и перспективы
+
+    p.page-section__text Очередной и наиболее приемлемой на долгое-долгое время попыткой решить проблему формул стала вставка изображений. Для получения таких рисунков существует большое количество инструментов, в том числе и онлайновых визуальных редакторов, что максимально упрощает процесс. Этот способ неплох, но имеет серьёзные недостатки:
+
+    ul.page-section__list
+      li.page-section__list-item формулу-рисунок практически невозможно отредактировать, в случае необходимости каких-либо исправлений проще сгенерировать рисунок заново;
+      li.page-section__list-item по формулам в графическом представлении невозможно организовать поиск;
+      li.page-section__list-item рисунок может просто не загрузиться по ряду причин, и тогда формула не отобразиться на сайте вовсе;
+      li.page-section__list-item формула из рисунка не может быть скопирована для дальнейшего использования.
+
+    p.page-section__text При добросовестном подходе верстальщика такие формулы-рисунки сопровождаются атрибутом alt с записью формулы в текстовом виде, что отчасти решает последние две названные проблемы. Однако в целом такой способ никак не назовёшь удобным.
+
+    p.page-section__text
+      i Стандартный HTML оказался не в силах справиться со сложными формулами из-за большого количества специальных символов, двумерности таких записей и их нестандартной компоновки. Формулы-рисунки пасуют в доступности для пользователей, использующих нестандартные средства получения информации с веб-страниц, например, скринридеры. Также ни тот, ни другой способы не позволяют копировать полученные формулы. Все эти проблемы разработчики пытаются решить с помощью специального языка.
+
+    p.page-section__text В начале 2000-х годов начали набирать обороты два таких языка: MathML и LaTeX. Первый представляет собой разновидность языка XML и предназначается для построения математических выражений, описания их структуры. Второй является популярным набором макрорасширений системы компьютерной вёрстки TeX и служит для визуального представления формул.
+
+    pre.line-numbers(data-language='mathml')
+      code.language-mathml
+        | <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        |   <msup>
+        |     <mi>i</mi>
+        |     <mn>2</mn>
+        |   </msup>
+        |   <mo>=</mo>
+        |   <mo>-</mo>
+        |   <mn>1</mn>
+        | </math>
+
+    pre.line-numbers(data-language='latex')
+      code.language-latex
+        | \[
+        |   i^2=-1
+        | \]
+
+    p.page-section__text На данный момент, несмотря на то, что спецификация MathML получила статус рекомендации в w3.org, поддержка браузерами очень ограниченная, синтаксис самого языка крайне громоздкий, неудобный, избыточный и совершенно не приспособлен для ручного редактирования. Возможности MathML сильно ограничены.
+
+    p.page-section__caniuse.ciu_embed(data-feature='mathml', data-periods='future_1,current,past_1,past_2', data-accessible-colours='false')
+      picture
+        source(type='image/webp', srcset='https://caniuse.bitsofco.de/image/mathml.webp')
+        source(type='image/png', srcset='https://caniuse.bitsofco.de/image/mathml.png')
+        img(src='https://caniuse.bitsofco.de/image/mathml.jpg', alt='Данные с caniuse.com о поддержке MathML основными браузерами')
+
+    p.page-section__text
+      | Система TeX изначально предназначалась для книжной вёрстки, в особенности книг, содержащих большое количество математических формул.  Для тех, кто знаком с HTML и CSS, освоение TeX не составит никакого труда, система является интуитивно понятной и имеет несложный синтаксис. LaTeX не расширяет возможности TeX, он лишь упрощает некоторые операции и автоматизирует некоторые задачи по набору текста и подготовки стилей. Таким образом, #[i LaTeX уже много лет используется для подготовки математических текстов, так что вполне логично было в какой-то момент начать использовать его и для сетевой математики].
+
+    p.page-section__text Одной из первых попыток совмещения LaTeX и веба стала программа LaTeXML, написанная на Perl. Работа LaTeXML сводилась к преобразованию LaTeX в XML и последующей конвертации в рисунки, HTML или XHTML, а с некоторых пор — и в MathML. Этот способ представления был хорош, но для полноценной интерактивности программа-обработчик должна выполняться непосредственно в браузере.
+
+    p.page-section__text Первым браузерным решением был #[a.page-section__link.link(href='http://www.math.union.edu/~dpvc/jsMath/') jsMath] (math.js), который преобразовывал пользовательские формулы из LaTeX  в рисунки, выполненные средствами HTML и CSS. Это был прорыв с позиции интерактивности, однако были проблемы с кроссбраузерностью, экспортом в различные форматы, начиная с MathML. О доступности и возможности дальнейшего копирования и использования полученной формулы говорить в случае jsMath не приходится.
+
+    figure.page-section__figure
+      img.page-section__img(src='img/jsmath-inspector.png', alt='Просмотр сгенерированной с помощью jsMath формулы в инспекторе браузера')
+      figcaption.page-section__img-caption Рисунок 1. Стуктура элемента, сгенерированного в jsMath
+
+    p.page-section__text Библиотека #[a.page-section__link.link(href='https://www.mathjax.org/') MathJax], первые версии которой разработаны в 2009 году под руководством Американского математического общества при поддержке Американского института физики и портала Stack Exchange, был призван решить проблемы кроссбраузерности и экспорта в другие форматы. MathJax работает во всех современных браузерах и поддерживает сохранение формул в HTML+CSS, SVG, MathML и TeX. Для работы библиотеки пользователь не должен устанавливать какие-то специальные плагины или шрифты для браузера.
+
+    figure.page-section__figure
+      img.page-section__img(src='img/mathjax-copy-options.png', alt='Для формул, составленных MathJax, можно скопировать MathML-код или TeX-команды')
+      figcaption.page-section__img-caption Рисунок 2. Возможные варинты отображения формул MathJax
+
+    figure.page-section__figure
+      img.page-section__img(src='img/mathjax-write-options.png', alt='MathJax может считывать формулы, написанные на TeX')
+      figcaption.page-section__img-caption Рисунок 3. TeX поддержка MathJax
+
+    p.page-section__text jsMath оживил математику в Интернете, сделав возможным динамическое генерирование формул, адекватно отображаемых браузером. MathJax реализовал возможность написания формул для веба на TeX, реализуя при этом возможность копирования, кроссбраузерность и кроссформатность. MathJax используется на таких крупных сайтах, как Википедия и Хабр, в блогах. На данный момент MathJax — стандарт де-факто для отображения формул на веб-страницах.
+
+    p.page-section__text Однако даже такое мощное средство как MathJax не решает всех проблем сложных формул и выражений в вебе. Широкий функционал, делающий MathJax настоящим "швейцарским ножом", отрицательно сказывается на размере библиотеки и скорости её работы. Говоря о размере библиотеки, отдельно следует отметить набор специальных шрифтов, идущих в комплекте с библиотекой. Эти проблемы в меньшей степени присутствуют в разрабатываемой в Khan Academy библиотеке #[a.page-section__link.link(href='https://katex.org/') KaTeX]. Текущая версия библиотеки 0.11.1, что говорит о её незавершенности и несовершенности, однако проект стремительно развивается. Текущий список поддерживаемых функций доступен в вики проекта. По сравнению с MathJax в KaTeX пока доступно меньше выходных форматов: реализован вывод в HTML, вывод в MathML планируется в будущем. Если говорить о браузерной поддержки, то разработчики KaTeX отказались от версий IE старше 8.0, но это разумное решение, т.к. поддержка таких динозавров очень трудна, а пользователей старых версий всё меньше и меньше. Помимо конвертирования математических формул и уравнений из MathML и LaTeX библиотека поддерживает вёрстку химических формул и уравнений. KaTeX является более лёгкой, быстрой и, в перспективе, более функциональной, чем MathJax js-библиотекой.
+
+    p.page-section__text Несмотря на удобство LaTeX, нельзя забывать о MathML. Он нужен для организации автоматической обработки формул, например, для дальнейшего поиска.
+
+    p.page-section__text Написание формул непосредственно на MathML — дело крайне трудное, поэтому существуют специальные визуальные редакторы типа #[a.page-section__link.link(href='http://www.firemath.info/') Firemath], являющегося расширением для Mozilla Firefox, или конвертёр из TeX в MathML — #[a.page-section__link.link(href='http://fred-wang.github.io/TeXZilla/') TeXZilla]. Ну и, конечно, нужно помнить о MathJax.
+
+  section.page-section
+    h2.page-section__title#mathjax Что нужно для начала работы с MathJax
+
+    p.page-section__text MathJax позволяет использовать версию данной библиотеки из CDN:
+
+    pre.line-numbers(data-language='js')
+      code.language-js
+        | <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        |   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    p.page-section__text Также можно установить библиотеку как npm-пакет:
+
+    pre.line-numbers
+      code.language-none
+        | npm i mathjax@3
+
+    p.page-section__text Также создатели MathJax говорят, что если Вы хотите разместить библиотеку на собственном сервере, то можно установить npm-пакет и переместить каталог es5 в соответсвующее место на сервере:
+
+    pre.line-numbers
+      code.language-none
+        | npm install mathjax@3
+        | mv node_modules/mathjax/es5 <path-to-server-location>/mathjax
+
+    a.page-section__link.link(href='https://github.com/mathjax/MathJax') Официальный репозиторий библиотеки на GitHub
+
+    p.page-section__text Все принципы работы с библиотекой подробно описаны в #[a.page-section__link.link(href='http://docs.mathjax.org/en/latest/') документации]. Разработчиками также собрана #[a.page-section__link.link(href='https://mathjax.github.io/MathJax-demos-web/') страница примеров для работы с веб-страницами] и #[a.page-section__link.link(href='https://github.com/mathjax/MathJax-demos-node') аналогичный репозиторий для приложений на node.js].
+
+    a.page-section__link.link.link--button(href='https://radioprog.ru/post/74') Краткий справочник на русском по использованию LaTeX в работе с MathJax
+
+  section.page-section
+    h2.page-setion__title#katex Что нужно для начала работы с KaTeX
+
+    p.page-section__text Все инструкции по установке приведены в соответствующем #[a.page-section__link.link(href='https://katex.org/docs/node.html') разделе документации].
+
+    p.page-section__text Использование и возможности описаны в основном разделе #[a.page-section__link.link(href='https://katex.org/docs/api.html') документации].
+
+    a.page-section__link.link.link--button(href='https://github.com/KaTeX/KaTeX') Официальный репозиторий библиотеки на GitHub].
+
+  .page-final
+    p.page-final__sign Впервые опубликовано в #[a.link(href='https://www.kv.by/content/334516-matematika-i-internet-kakie-programmy-stoit-ispolzovat') KV.by]. Приводится в авторской редакции.
+
+    .page-final__links
+      a.link.link--index(href='#') Предыдущий раздел
+      a.link.link--index.link--index-main(href='index.html') Главная
+      a.link.link--index.link--index-forward(href='#') Следующий раздел
+
+block footer
+  footer.page-footer
+    p.page-footer__author © Марина Калюжная, 2020
+
+block page-bottom
+  <script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js"></script>
