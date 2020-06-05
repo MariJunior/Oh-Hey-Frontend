@@ -2,7 +2,7 @@ mixin header(burger, current)
   //- input.visually-hidden.language-theme#language-theme(type='checkbox', name='language-theme', checked='', tabindex='1', aria-label='input для смены языка')
   input.visually-hidden.color-theme#color-theme(type='checkbox', name='color-theme', checked='', tabindex='1', aria-label='input для смены цветовой темы')
   header.page-header
-    a.page-header__logo(href=(current === 'index' ? undefined : 'index.html'), aria-label=(current === 'index' ? undefined : 'переход на главную страницу'))
+    a.page-header__logo(href=(current === 'Главная' ? undefined : 'index.html'), aria-label=(current === 'Главная' ? undefined : 'переход на главную страницу'))
       svg.page-header__logo-img(width='', height='', viewBox='', fill='none', xmlns='http://www.w3.org/2000/svg')
     .page-header__right-group.header-right-group
       .page-header__togglers
@@ -17,4 +17,4 @@ mixin header(burger, current)
           button.navigation__burger.reset-button(type='button')
             span открыть/закрыть содержание
           .navigation__wrap
-            +tableOfContent(listOfPages, current)
+            | тут будет содржание

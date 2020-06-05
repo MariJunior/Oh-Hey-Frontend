@@ -63,11 +63,7 @@ function style() {
   return src('source/less/style.less')
     .pipe(plumber())
     .pipe(less())
-    .pipe(postcss([
-      autoprefixer({
-        browsers: ['last 3 versions']
-      })
-    ]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(dest('build/css'))
     .pipe(minify())
     .pipe(rename({ suffix: '.min' }))
@@ -83,7 +79,7 @@ function images() {
   return src(['source/img/**/*.{png,jpg,svg}'/* , '!source/img/sprite.svg' */])
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true}),
+      imagemin.mozjpeg({progressive: true}),
       imagemin.svgo({
         plugins: [
             {removeViewBox: false},
@@ -114,10 +110,7 @@ function buildJs() {
                 [
                   '@babel/preset-env',
                   {
-                    'targets': {
-                      'browsers': ["> 1%", "last 3 versions"]
-                    },
-                    'debug': true,
+                    'debug': false,
                     "corejs": "3.0.0",
                     'useBuiltIns': 'usage'
                   }
@@ -160,11 +153,12 @@ exports.deploy = deploy;
 // Подключение плагина 'browser-sync' и начало отслеживания изменений файлов в директории 'build/', выполнения соотв. задач и перезагрузки страницы
 function serve() {
   server.init({
-    browser: 'firefox',
+    // browser: 'firefox',
+    browser: '/Applications/Firefox Developer Edition.app',
     server: 'build/',
     startPath: 'index.html',
     notify: false,
-    open: false,
+    // open: false,
     cors: true,
     ui: false
   });

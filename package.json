@@ -4,7 +4,7 @@
   "private": true,
   "description": "Проект справочного сайта с материалами по веб-разработке",
   "scripts": {
-    "test": "npm run test:editor && npm run test:pug && npm run test:style",
+    "test": "yarn run test:editor && yarn run test:pug && yarn run test:style",
     "test:editor": "editorconfig-cli",
     "test:pug": "glob-exec \"source/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\"",
     "test:style": "stylelint \"source/less/**/*.less\" --syntax=less",

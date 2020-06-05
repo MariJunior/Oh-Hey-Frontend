@@ -1,6 +1,0 @@
-mixin tableOfContent(pages, current)
-  section.table-of-content
-    ol.table-of-content__list
-      each page, index in pages
-        li.table-of-content__item(class=(index === current-1 ? 'table-of-content____item--current' : undefined))
-          a.table-of-content__link(href=(index === current-1 ? undefined : page.href)) #{page.title}
