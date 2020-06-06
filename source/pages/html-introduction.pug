@@ -3,21 +3,23 @@ extends ../pug/layout.pug
 block header
   +header(true, '1.1 Основы HTML')
     block navigation
-      section.table-of-content
-        ol.table-of-content__list
-          li.table-of-content__item HTML
-            ol.table-of-content__list.table-of-content__list--sub
+      ol.navigation__list.table-of-content
+        li.table-of-content__item HTML
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
               a.table-of-content__item-link.table-of-content__item-link--current основы HTML
-          li.table-of-content__item CSS
-            ol.table-of-content__list.table-of-content__list--sub
+        li.table-of-content__item CSS
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
               a.table-of-content__item-link(href='css-introduction.html') основы CSS
-          li.table-of-content__item JavaScript
-            ol.table-of-content__list.table-of-content__list--sub
+        li.table-of-content__item JavaScript
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
               a.table-of-content__item-link(href='js-introduction.html') основы JavaScript
 
-        ol.table-of-content__list
-          li.table-of-content__item
-            a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
+      ol.table-of-content
+        li.table-of-content__item
+          a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
 
 block content
   +pageTitle('1.1 Основы HTML')
@@ -31,34 +33,34 @@ block content
     h2.page-section__title План раздела
 
     ol.page-section__content.table-of-content
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#html-really') Что такое HTML на самом деле?
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#html-elem-anatomy') Анатомия HTML-элемента
-        ol.table-of-content__sublist
-          li.table-of-content__subitem
+        ol.table-of-content
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#nested-elems') Вложенные элементы
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#empty-elems') Пустые элементы
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#html-doc-anatomy') Анатомия HTML-документа
-        ol.table-of-content__sublist
-          li.table-of-content__subitem
+        ol.table-of-content
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#elem-html') Элемент #[code.language-html= '<html>']
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#elem-head') Элемент #[code.language-html= '<head>']
-            ol.table-of-content__subsublist
-              li.table-of-content__subsubitem
+            ol.table-of-content
+              li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                 a.table-of-content__anchor(href='#elem-title') Элемент #[code.language-html= '<title>']
-              li.table-of-content__subsubitem
+              li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                 a.table-of-content__anchor(href='#elem-meta') Элемент #[code.language-html= '<meta>']
-              li.table-of-content__subsubitem
+              li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                 a.table-of-content__anchor(href='#elem-style') Элемент #[code.language-html= '<style>']
-              li.table-of-content__subsubitem
+              li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                 a.table-of-content__anchor(href='#elem-link') Элемент #[code.language-html= '<link>']
-              li.table-of-content__subsubitem
+              li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                 a.table-of-content__anchor(href='#elem-script') Элемент #[code.language-html= '<script>']
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#elem-body') Элемент #[code.language-html= '<body>']
 
   section.page-section
@@ -107,12 +109,12 @@ block content
     p.page-section__text Атрибуты содержат дополнительную информацию об элементе, которую вы не хотите показывать в фактическом контенте. В данном случае, class это имя атрибута, а editor-note это значение атрибута. Класс позволяет дать элементу идентификационное имя, которое может позже использоваться, чтобы обращаться к элементу с информацией о стиле и прочих вещах.
 
     section.page-section__subsection
-      h3.page-section__subtitle#nested-elems 2.1 Вложенные элементы
+      h3.page-section__title.page-section__title--sub#nested-elems 2.1 Вложенные элементы
 
       p.page-section__text Теги могут вкладываться друг в друга, например, #[code.language-html= '<p><i>Текст</i></p>']. При вложении следует соблюдать порядок их закрытия (принцип «матрёшки»), например, следующая запись будет неверной: #[code.language-html= '<p><i>Текст</p></i>']. Если они перекрываются, веб-браузер будет пытаться сделать наилучшее предположение на основе того, что вы пытались сказать, что может привести к неожиданным результатам. Так что не стоит этого делать!
 
     section.page-section__subsection
-      h3.page-section__subtitle#empty-elems 2.2 Пустые элементы
+      h3.page-section__title.page-section__title--sub#empty-elems 2.2 Пустые элементы
 
       p.page-section__text Некоторые элементы не имеют контента, и называются пустыми элементами. Возьмем элемент #[code.language-html= '<img>'], который уже имеется в нашем HTML:
 
@@ -172,38 +174,40 @@ block content
         dd.determinations__item-data Элемент, имеющий общий родительский элемент с рассматриваемым, так называемые элементы одного уровня.
 
     section.page-section__subsection
-      h3.page-section__subtitle#elem-html 3.1 Элемент #[code.language-html= '<html>']
+      h3.page-section__title.page-section__title--sub#elem-html 3.1 Элемент #[code.language-html= '<html>']
 
       p.page-section__text Этот элемент оборачивает весь контент на всей странице, и иногда известен как корневой элемент. Все остальные элементы содержатся внутри тегов #[code.language-html= '<html>...</html>'], всё за пределами этих тегов не воспринимается браузером как код HTML и никак им не обрабатывается. Для элемента доступны атрибуты manifest и xmlns, а также ‎глобальные атрибуты.
 
-      table
-        caption Таблица 1. Атрибуты тега #[code.language-html= '<html>']
-        tr
-          th Атрибут
-          th Описание, принимаемые значения
-        tr
-          td #[code.language-none manifest]
-          td С помощью значения атрибута указывается путь к документу кэша манифеста, например: #[code.language-html= '<html manifest="about_company.appcache">']
-        tr
-          td #[code.language-none xmlns]
-          td Используется в XHTML для объявления пространства имен — совокупности наименований тегов и атрибутов предназначенных для сохранения уникальности имен. В качестве значения указывается полный адрес документа с описанием пространства имен. Локальный путь и пустая строка недопустима. #[code.language-html = '<html xmlns="http://www.w3.org/1999/xhtml">']
+      table.page-section__table.table
+        caption.table__caption Таблица 1. Атрибуты тега #[code.language-html= '<html>']
+        thead.table__head
+          tr.table__row
+            th.table__data-title Атрибут
+            th.table__data-title Описание, принимаемые значения
+        tbody.table__body
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none manifest]
+            td.table__data(data-label='Описание, принимаемые значения') С помощью значения атрибута указывается путь к документу кэша манифеста, например: #[code.language-html= '<html manifest="about_company.appcache">']
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none xmlns]
+            td.table__data(data-label='Описание, принимаемые значения') Используется в XHTML для объявления пространства имен — совокупности наименований тегов и атрибутов предназначенных для сохранения уникальности имен. В качестве значения указывается полный адрес документа с описанием пространства имен. Локальный путь и пустая строка недопустима. #[code.language-html &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;]
 
     section.page-section__subsection
-      h3.page-section__subtitle#elem-head 3.2 Элемент #[code.language-html= '<head>']
+      h3.page-section__title.page-section__title--sub#elem-head 3.2 Элемент #[code.language-html= '<head>']
 
       p.page-section__text Этот элемент выступает в качестве контейнера для всего, что вы пожелаете включить на HTML страницу, но не являющегося контентом, который вы показываете пользователям вашей страницы. К ним относятся такие вещи, как ключевые слова и описание страницы, которые будут появляться в результатах поиска, CSS стили нашего контента, кодировка и многое другое.
 
       p.page-section__text Для элемента доступны ‎глобальные атрибуты.
 
       section.page-section__subsubsection
-        h4.page-section__subsubtitle#elem-title 3.2.1 Элемент #[code.language-html= '<title>']
+        h4.page-section__title.page-section__title--subsub#elem-title 3.2.1 Элемент #[code.language-html= '<title>']
 
         p.page-section__text Обязательным тегом раздела #[code.language-html= '<head>'] является тег #[code.language-html= '<title>']. Текст внутри этого тега отображается в строке заголовка окна браузера. Длина заголовка должна быть не более 60 символов, чтобы полностью поместиться в заголовке. Текст заголовка должен содержать максимально полное описание содержимого веб-страницы.
 
         p.page-section__text Для элемента доступны глобальные атрибуты.
 
       section.page-section__subsubsection
-        h4.page-section__subsubtitle#elem-meta 3.2.2 Элемент #[code.language-html= '<meta>']
+        h4.page-section__title.page-section__title--subsub#elem-meta 3.2.2 Элемент #[code.language-html= '<meta>']
 
         p.page-section__text Необязательным тегом раздела #[code.language-html= '<head>'] является одинарный тег #[code.language-html= '<meta>']. С его помощью можно задать описание содержимого страницы и ключевые слова для поисковых машин, автора HTML-документа и прочие свойства метаданных. Элемент #[code.language-html= '<head>'] может содержать несколько элементов #[code.language-html= '<meta>'], потому что в зависимости от используемых атрибутов они несут различную информацию. Описание содержимого страницы и ключевые слова одновременно можно указывать на нескольких языках, например, на русском и английском. С помощью тега #[code.language-html= '<meta>'] можно запретить или разрешить индексацию веб-страницы поисковыми машинами.
 
@@ -237,26 +241,28 @@ block content
 
         p.page-section__text Для элемента #[code.language-html= '<meta>'] доступны атрибуты #[code.language-none charset], #[code.language-none content], #[code.language-none http-equiv], #[code.language-none name], а также ‎глобальные атрибуты.
 
-        table
-          caption Таблица 2. Атрибуты тега #[code.language-html= '<meta>']
-          tr
-            th Атрибут
-            th Описание, принимаемые значения
-          tr
-            td #[code.language-none charset]
-            td Указывает кодировку символов для текущего HTML-документа: #[code.language-html= '<meta charset="UTF-8">']
-          tr
-            td #[code.language-none content]
-            td Содержит произвольный текст, который определяет значение, ассоциируемое с атрибутом #[code.language-none= 'http-equiv'] или #[code.language-none= 'name'], в зависимости от их значения.
-          tr
-            td #[code.language-none http-equiv]
-            td Контролирует действия браузера на данной веб-странице (эквивалент HTTP заголовков). При отображении страницы браузер будет следовать инструкциям, заданным в атрибуте: #[code.language-none default-style] указывает предпочтительный стиль для использования на странице. Атрибут #[code.language-none content] должен содержать идентификатор элемента #[code.language-html= '<link>'], который ссылается на таблицу стилей CSS, или идентификатор элемента #[code.language-html= '<style>'], содержащего таблицу стилей. refresh указывает время в секундах до перезагрузки страницы или время до перенаправления на другую страницу, если в атрибуте content после указания времени идет строка "url=адрес_страницы". Если необходимо сразу перебросить посетителя на другую страницу, то можно указать URL-адрес в параметре url (см. примеры выше).
-          tr
-            td #[code.language-html name]
-            td Ассоциируется со значением, содержащемся в атрибуте #[code.language-none content]. Не должен использоваться в случае, если для элемента уже заданы атрибуты #[code.language-none http-equiv], #[code.language-none charset] или #[code.language-none itemprop]. #[code.language-none application-name] указывает название веб-приложения, используемого на странице. #[code.language-none author] указывает имя автора документа в свободном формате. #[code.language-none description] определяет краткое описание к содержимому страницы, например: #[code.language-html= '<meta name="description" content="Описание содержимого страницы">']. #[code.language-none generator] указывает один из пакетов программного обеспечения, используемого для создания документа, например: #[code.language-html= '<meta name="generator" content="WordPress 4.0">']. #[code.language-none keywords] содержит список ключевых слов, разделенных запятыми, соответствующих содержимому страницы, например: #[code.language-html= '<meta name="keywords" content="Ключевые слова через запятую">']. Также атрибут #[code.language-none name] может принимать следующие значения из расширенной спецификации, такие как #[code.language-none creator], #[code.language-none googlebot], #[code.language-none publisher], #[code.language-none robots], #[code.language-none slurp], #[code.language-none viewport].
+        table.page-section__table.table
+          caption.table__caption Таблица 2. Атрибуты тега #[code.language-html= '<meta>']
+          thead.table__head
+            tr.table__row
+              th.table__data-title Атрибут
+              th.table__data-title Описание, принимаемые значения
+          tbody.table__body
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none charset]
+              td.table__data(data-label='Описание, принимаемые значения') Указывает кодировку символов для текущего HTML-документа: #[code.language-html= '<meta charset="UTF-8">']
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none content]
+              td.table__data(data-label='Описание, принимаемые значения') Содержит произвольный текст, который определяет значение, ассоциируемое с атрибутом #[code.language-none= 'http-equiv'] или #[code.language-none= 'name'], в зависимости от их значения.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none http-equiv]
+              td.table__data(data-label='Описание, принимаемые значения') Контролирует действия браузера на данной веб-странице (эквивалент HTTP заголовков). При отображении страницы браузер будет следовать инструкциям, заданным в атрибуте: #[code.language-none default-style] указывает предпочтительный стиль для использования на странице. Атрибут #[code.language-none content] должен содержать идентификатор элемента #[code.language-html= '<link>'], который ссылается на таблицу стилей CSS, или идентификатор элемента #[code.language-html= '<style>'], содержащего таблицу стилей. refresh указывает время в секундах до перезагрузки страницы или время до перенаправления на другую страницу, если в атрибуте content после указания времени идет строка "url=адрес_страницы". Если необходимо сразу перебросить посетителя на другую страницу, то можно указать URL-адрес в параметре url (см. примеры выше).
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-html name]
+              td.table__data(data-label='Описание, принимаемые значения') Ассоциируется со значением, содержащемся в атрибуте #[code.language-none content]. Не должен использоваться в случае, если для элемента уже заданы атрибуты #[code.language-none http-equiv], #[code.language-none charset] или #[code.language-none itemprop]. #[code.language-none application-name] указывает название веб-приложения, используемого на странице. #[code.language-none author] указывает имя автора документа в свободном формате. #[code.language-none description] определяет краткое описание к содержимому страницы, например: #[code.language-html= '<meta name="description" content="Описание содержимого страницы">']. #[code.language-none generator] указывает один из пакетов программного обеспечения, используемого для создания документа, например: #[code.language-html= '<meta name="generator" content="WordPress 4.0">']. #[code.language-none keywords] содержит список ключевых слов, разделенных запятыми, соответствующих содержимому страницы, например: #[code.language-html= '<meta name="keywords" content="Ключевые слова через запятую">']. Также атрибут #[code.language-none name] может принимать следующие значения из расширенной спецификации, такие как #[code.language-none creator], #[code.language-none googlebot], #[code.language-none publisher], #[code.language-none robots], #[code.language-none slurp], #[code.language-none viewport].
 
       section.page-section__subsubsection
-        h4.page-section__subsubtitle#elem-style 3.2.3 Элемент #[code.language-html= '<style>']
+        h4.page-section__title.page-section__title--subsub#elem-style 3.2.3 Элемент #[code.language-html= '<style>']
 
         p.page-section__text Внутри этого элемента задаются стили, которые используются на странице. Для задания стилей в HTML-документе используется язык CSS. Таких элементов на странице может быть несколько. Внутрь этого элемента можно записывать код форматирования как самих элементов веб-страницы, так и веб-страницы целиком.
 
@@ -280,23 +286,25 @@ block content
             |   ...
             | &lt;/div&gt;
 
-        table
-          caption Таблица 3. Атрибуты тега #[code.language-html= '<style>']
-          tr
-            th Атрибут
-            th Описание, принимаемые значения
-          tr
-            td #[code.language-none media]
-            td Определяет, для какого типа устройства предназначены те или иные каскадные таблицы стилей. Внутри таблицы стилей CSS специфичные правила для определенных устройств прописываются с помощью media query.
-          tr
-            td #[code.language-none nonce]
-            td Генерируемая случайным образом на сервере строковая переменная, которая устанавливает правила использования встроенных стилей с целью защиты контента. Значение атрибута — строка текста.
-          tr
-            td #[code.language-none type]
-            td Определяет MIME-тип подключаемого файла со стилями, в данном случае #[code.language-html= '<style type="text/css">'].
+        table.page-section__table.table
+          caption.table__caption Таблица 3. Атрибуты тега #[code.language-html= '<style>']
+          thead.table__head
+            tr.table__row
+              th.table__data-title Атрибут
+              th.table__data-title Описание, принимаемые значения
+          tbody.table__body
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none media]
+              td.table__data(data-label='Описание, принимаемые значения') Определяет, для какого типа устройства предназначены те или иные каскадные таблицы стилей. Внутри таблицы стилей CSS специфичные правила для определенных устройств прописываются с помощью media query.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none nonce]
+              td.table__data(data-label='Описание, принимаемые значения') Генерируемая случайным образом на сервере строковая переменная, которая устанавливает правила использования встроенных стилей с целью защиты контента. Значение атрибута — строка текста.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none type]
+              td.table__data(data-label='Описание, принимаемые значения') Определяет MIME-тип подключаемого файла со стилями, в данном случае #[code.language-html= '<style type="text/css">'].
 
       section.page-section__subsubsection
-        h4.page-section__subsubtitle#elem-link 3.2.4 Элемент #[code.language-html= '<link>']
+        h4.page-section__title.page-section__title--subsub#elem-link 3.2.4 Элемент #[code.language-html= '<link>']
 
         p.page-section__text Задать стили для документа можно также при помощи другого способа — записать их в отдельный файл с расширением .css, например, style.css.
 
@@ -317,123 +325,129 @@ block content
 
         p.page-section__text Для элемента доступны атрибуты #[code.language-none href], #[code.language-none hreflang], #[code.language-none media], #[code.language-none rel], #[code.language-none type], а также ‎глобальные атрибуты.
 
-        table
-          caption Таблица 4. Атрибуты тега #[code.language-html= '<link>']
-          tr
-            th Атрибут
-            th Описание, принимаемые значения
-          tr
-            td #[code.language-none ]crossorigin
-            td Указывает, должен ли использоваться CORS (технология браузеров, которая позволяет предоставить веб-странице доступ к ресурсам другого домена) при извлечении изображения с сайта.
-          tr
-            td #[code.language-none href]
-            td Основной атрибут тега, в качестве значения выступает путь к файлу со стилями.
-          tr
-            td #[code.language-none hreflang]
-            td Определяет язык текста в документе, на который идет ссылка.
-          tr
-            td #[code.language-none media]
-            td Определяет тип устройства, к которым должен быть применен ресурс ссылки.
-          tr
-            td #[code.language-none nonce]
-            td Генерируемая случайным образом на сервере строковая переменная, которая устанавливает правила использования встроенных стилей с целью защиты контента. Значение атрибута — строка текста.
-          tr
-            td #[code.language-none rel]
-            td Атрибут определяет отношения между текущим документом и документом, на который идет ссылка.
-          tr
-            td #[code.language-none sizes]
-            td Указывает размер иконок для визуального отображения. Атрибут #[code.language-none sizes] используется только совместно с #[code.language-none= 'rel="icon"']
-          tr
-            td #[code.language-none title]
-            td Определяет заголовок ссылки или название набора альтернативных таблиц стилей. Значение атрибута — текст.
-          tr
-            td #[code.language-none type]
-            td Определяет MIME-тип документа, на который идет ссылка.
+        table.page-section__table.table
+          caption.table__caption Таблица 4. Атрибуты тега #[code.language-html= '<link>']
+          thead.table__head
+            tr.table__row
+              th.table__data-title Атрибут
+              th.table__data-title Описание, принимаемые значения
+          tbody.table__body
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none ]crossorigin
+              td.table__data(data-label='Описание, принимаемые значения') Указывает, должен ли использоваться CORS (технология браузеров, которая позволяет предоставить веб-странице доступ к ресурсам другого домена) при извлечении изображения с сайта.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none href]
+              td.table__data(data-label='Описание, принимаемые значения') Основной атрибут тега, в качестве значения выступает путь к файлу со стилями.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none hreflang]
+              td.table__data(data-label='Описание, принимаемые значения') Определяет язык текста в документе, на который идет ссылка.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none media]
+              td.table__data(data-label='Описание, принимаемые значения') Определяет тип устройства, к которым должен быть применен ресурс ссылки.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none nonce]
+              td.table__data(data-label='Описание, принимаемые значения') Генерируемая случайным образом на сервере строковая переменная, которая устанавливает правила использования встроенных стилей с целью защиты контента. Значение атрибута — строка текста.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none rel]
+              td.table__data(data-label='Описание, принимаемые значения') Атрибут определяет отношения между текущим документом и документом, на который идет ссылка.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none sizes]
+              td.table__data(data-label='Описание, принимаемые значения') Указывает размер иконок для визуального отображения. Атрибут #[code.language-none sizes] используется только совместно с #[code.language-none= 'rel="icon"']
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none title]
+              td.table__data(data-label='Описание, принимаемые значения') Определяет заголовок ссылки или название набора альтернативных таблиц стилей. Значение атрибута — текст.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none type]
+              td.table__data(data-label='Описание, принимаемые значения') Определяет MIME-тип документа, на который идет ссылка.
 
       section.page-section__subsubsection
-        h4.page-section__subsubtitle#elem-script 3.2.5 Элемент #[code.language-html= '<script>']
+        h4.page-section__title.page-section__title--subsub#elem-script 3.2.5 Элемент #[code.language-html= '<script>']
 
         p.page-section__text Элемент #[code.language-html= '<script>'] позволяет присоединять к документу различные сценарии. Закрывающий тег обязателен, при этом текст сценария может располагаться либо внутри этого элемента, либо во внешнем файле. Если текст сценария расположен во внешнем файле, то он подключается с помощью атрибутов элемента.
 
         p.page-section__text Для элемента доступны атрибуты #[code.language-none async], #[code.language-none charset], #[code.language-none defer], #[code.language-none src], #[code.language-none type], а также ‎глобальные атрибуты.
 
-        table
-          caption Таблица 5. Атрибуты тега #[code.language-html= '<script>']
-          tr
-            th Атрибут
-            th Описание, принимаемые значения
-          tr
-            td #[code.language-none async]
-            td Атрибут указывает на то, что сценарий будет выполняться асинхронно с остальной частью страницы (сценарий начнет выполняться одновременно с загрузкой страницы).
-          tr
-            td #[code.language-none charset]
-            td Определяет кодировку символов
-          tr
-            td #[code.language-none crossorigin]
-            td Определяет, будет ли использоваться CORS при загрузке внешних скриптов (с использованием атрибута #[code.language-none src]).
-          tr
-            td #[code.language-none defer]
-            td Интерпретация сценариев откладывается до окончания отображения документа на устройстве пользователя.
-          tr
-            td #[code.language-none nonce]
-            td Обеспечивает безопасность, защищая от атак с внедрением межсайтового скриптинга (XSS, cross site scripting). Устанавливает правила использования встроенных скриптов с помощью nonce-значений и хэшей. Во время рендеринга страницы браузер для каждого инлайн-скрипта вычисляет хэши и сравнивает с перечисленными в CSP. Загрузка с ресурсов, не входящих в «белый список», блокируется.
-          tr
-            td #[code.language-none src]
-            td Указывает на месторасположение файла со сценарием, значение атрибута — это url файла, содержащего JavaScript-программу.
-          tr
-            td #[code.language-none type]
-            td Используются для объявления языка сценария, использованного при составлении содержимого тега.
+        table.page-section__table.table
+          caption.table__caption Таблица 5. Атрибуты тега #[code.language-html= '<script>']
+          thead.table__head
+            tr.table__row
+              th.table__data-title Атрибут
+              th.table__data-title Описание, принимаемые значения
+          tbody.table__body
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none async]
+              td.table__data(data-label='Описание, принимаемые значения') Атрибут указывает на то, что сценарий будет выполняться асинхронно с остальной частью страницы (сценарий начнет выполняться одновременно с загрузкой страницы).
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none charset]
+              td.table__data(data-label='Описание, принимаемые значения') Определяет кодировку символов
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none crossorigin]
+              td.table__data(data-label='Описание, принимаемые значения') Определяет, будет ли использоваться CORS при загрузке внешних скриптов (с использованием атрибута #[code.language-none src]).
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none defer]
+              td.table__data(data-label='Описание, принимаемые значения') Интерпретация сценариев откладывается до окончания отображения документа на устройстве пользователя.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none nonce]
+              td.table__data(data-label='Описание, принимаемые значения') Обеспечивает безопасность, защищая от атак с внедрением межсайтового скриптинга (XSS, cross site scripting). Устанавливает правила использования встроенных скриптов с помощью nonce-значений и хэшей. Во время рендеринга страницы браузер для каждого инлайн-скрипта вычисляет хэши и сравнивает с перечисленными в CSP. Загрузка с ресурсов, не входящих в «белый список», блокируется.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none src]
+              td.table__data(data-label='Описание, принимаемые значения') Указывает на месторасположение файла со сценарием, значение атрибута — это url файла, содержащего JavaScript-программу.
+            tr.table__row
+              td.table__data(data-label='Атрибут') #[code.language-none type]
+              td.table__data(data-label='Описание, принимаемые значения') Используются для объявления языка сценария, использованного при составлении содержимого тега.
 
-    section__subsection
-      h3.page-section__subtitle#elem-body 3.3 Элемент #[code.language-html= '<body>']
+    section.page-section__subsection
+      h3.page-section__title.page-section__title--sub#elem-body 3.3 Элемент #[code.language-html= '<body>']
 
       p.page-section__text Внутри этого элемента содержится весь контент, который вы хотите показывать пользователям, когда они посещают вашу страницу, будь то текст, изображения, видео, игры, проигрываемые аудиодорожки или что-то еще.
 
       p.page-section__text Для элемента доступны глобальные атрибуты.
 
-      table
-        caption Таблица 6. Атрибуты тега #[code.language-html= '<body>']
-        tr
-          th Атрибут
-          th Описание, принимаемые значения
-        tr
-          td #[code.language-none onafterprint]
-          td Событие, срабатывающее после отправки страницы на печать или после закрытия окна печати.
-        tr
-          td #[code.language-none onbeforeprint]
-          td Событие, срабатывающее перед отправкой страницы на печать.
-        tr
-          td #[code.language-none onbeforeunload]
-          td Событие срабатывает, когда посетитель инициировал переход на другую страницу или нажал «закрыть окно». Позволяет отображать сообщение в диалоговом окне подтверждения, чтобы сообщить пользователю, хочет ли он остаться или покинуть текущую страницу.
-        tr
-          td #[code.language-none onhashchange]
-          td Событие срабатывает, когда меняется hash-часть URL, например, когда пользователь перейдет с адреса example.domain/test.aspx#page1 на example.domain/test.aspx#page2.
-        tr
-          td #[code.language-none onmessage]
-          td Событие происходит, когда сообщение получено через источник события.
-        tr
-          td #[code.language-none onoffline]
-          td Событие вызывается браузером в том случае, когда браузер определит, что соединение с интернет пропало.
-        tr
-          td #[code.language-none ononline]
-          td Событие вызывается браузером в том случае, когда соединение с интернет возобновилось.
-        tr
-          td #[code.language-none onpagehide]
-          td Событие происходит, когда пользователь покидает страницу посредством навигации, например, нажав на ссылку, обновив страницу, заполнив форму и т.д.
-        tr
-          td #[code.language-none onpageshow]
-          td Событие происходит, когда пользователь переходит на веб-страницу, после события onload.
-        tr
-          td #[code.language-none onunload]
-          td Событие срабатывает если страница не загрузилась по каким-либо причинам, либо при закрытии окна браузера.
+      table.page-section__table.table
+        caption.table__caption Таблица 6. Атрибуты тега #[code.language-html= '<body>']
+        thead.table__head
+          tr.table__row
+            th.table__data-title Атрибут
+            th.table__data-title Описание, принимаемые значения
+        tbody.table__body
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onafterprint]
+            td.table__data(data-label='Описание, принимаемые значения') Событие, срабатывающее после отправки страницы на печать или после закрытия окна печати.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onbeforeprint]
+            td.table__data(data-label='Описание, принимаемые значения') Событие, срабатывающее перед отправкой страницы на печать.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onbeforeunload]
+            td.table__data(data-label='Описание, принимаемые значения') Событие срабатывает, когда посетитель инициировал переход на другую страницу или нажал «закрыть окно». Позволяет отображать сообщение в диалоговом окне подтверждения, чтобы сообщить пользователю, хочет ли он остаться или покинуть текущую страницу.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onhashchange]
+            td.table__data(data-label='Описание, принимаемые значения') Событие срабатывает, когда меняется hash-часть URL, например, когда пользователь перейдет с адреса example.domain/test.aspx#page1 на example.domain/test.aspx#page2.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onmessage]
+            td.table__data(data-label='Описание, принимаемые значения') Событие происходит, когда сообщение получено через источник события.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onoffline]
+            td.table__data(data-label='Описание, принимаемые значения') Событие вызывается браузером в том случае, когда браузер определит, что соединение с интернет пропало.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none ononline]
+            td.table__data(data-label='Описание, принимаемые значения') Событие вызывается браузером в том случае, когда соединение с интернет возобновилось.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onpagehide]
+            td.table__data(data-label='Описание, принимаемые значения') Событие происходит, когда пользователь покидает страницу посредством навигации, например, нажав на ссылку, обновив страницу, заполнив форму и т.д.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onpageshow]
+            td.table__data(data-label='Описание, принимаемые значения') Событие происходит, когда пользователь переходит на веб-страницу, после события onload.
+          tr.table__row
+            td.table__data(data-label='Атрибут') #[code.language-none onunload]
+            td.table__data(data-label='Описание, принимаемые значения') Событие срабатывает если страница не загрузилась по каким-либо причинам, либо при закрытии окна браузера.
 
   .page-final
-    p.page-final__sign Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-html/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics') MDN]. Приводится в авторской редакции.
+    p.page-final__sign
+      i Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-html/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics') MDN]. Приводится в авторской редакции.
 
     .page-final__links
-      a.link.link--index(href='#') Предыдущий раздел
       a.link.link--index.link--index-main(href='index.html') Главная
-      a.link.link--index.link--index-forward(href='#') Следующий раздел
+      a.link.link--index.link--index-forward(href='css-introduction.html') Следующий раздел
 
 block footer
   footer.page-footer

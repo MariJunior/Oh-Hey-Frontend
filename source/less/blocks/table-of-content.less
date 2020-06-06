@@ -1,22 +1,33 @@
 .table-of-content {
-  &__list {
-    list-style: none;
-    counter-reset: li;
-  }
+  list-style: none;
+  counter-reset: li;
 
   &__item {
     font-size: 28px;
     font-weight: 500;
     border-bottom: 2px solid #202020;
 
-    &--sub {
-      font-size: 26px;
+    &--small {
+      font-size: 20px;
+    }
+
+    &--bg {
       border-bottom: none;
+      background-color: #cbded5;
     }
 
     &::before {
       counter-increment: li;
       content: counters(li, ".") ". ";
     }
+
+    &--sub {
+      border-bottom: none;
+    }
+  }
+
+  &__item-link,
+  &__anchor {
+    color: inherit;
   }
 }

@@ -3,19 +3,21 @@ extends ../pug/layout.pug
 block header
   +header(true, '6. Математика в вебе')
     block navigation
-      section.table-of-content
-        ol.table-of-content__list
+        ol.table-of-content
           li.table-of-content__item HTML
-            ol.table-of-content__list.table-of-content__list--sub
-              a.table-of-content__item-link(href='html-introduction.html') основы HTML
+            ol.table-of-content
+              li.table-of-content__item.table-of-content__item--sub
+                a.table-of-content__item-link(href='html-introduction.html') Основы HTML
           li.table-of-content__item CSS
-            ol.table-of-content__list.table-of-content__list--sub
-              a.table-of-content__item-link(href='css-introduction.html') основы CSS
+            ol.table-of-content
+              li.table-of-content__item.table-of-content__item--sub
+                a.table-of-content__item-link(href='css-introduction.html') Основы CSS
           li.table-of-content__item JavaScript
-            ol.table-of-content__list.table-of-content__list--sub
-              a.table-of-content__item-link(href='js-introduction.html') основы JavaScript
+            ol.table-of-content
+              li.table-of-content__item.table-of-content__item--sub
+                a.table-of-content__item-link(href='js-introduction.html') Основы JavaScript
 
-        ol.table-of-content__list
+        ol.table-of-content
           li.table-of-content__item
             a.table-of-content__item-link.table-of-content__item-link--current Математика в вебе
 
@@ -32,23 +34,23 @@ block content
     h2.page-section__title План раздела
 
     ol.page-section__content.table-of-content
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#overview') Немного истории, текущая ситуация и перспективы
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#mathjax') Что нужно для начала работы с MathJax
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#katex') Что нужно для начала работы с KaTeX
 
   section.page-section
-    h2.page-section__title#overview Немного истрии, текущая ситуация и перспективы
+    h2.page-section__title#overview 1. Немного истрии, текущая ситуация и перспективы
 
     p.page-section__text Очередной и наиболее приемлемой на долгое-долгое время попыткой решить проблему формул стала вставка изображений. Для получения таких рисунков существует большое количество инструментов, в том числе и онлайновых визуальных редакторов, что максимально упрощает процесс. Этот способ неплох, но имеет серьёзные недостатки:
 
-    ul.page-section__list
-      li.page-section__list-item формулу-рисунок практически невозможно отредактировать, в случае необходимости каких-либо исправлений проще сгенерировать рисунок заново;
-      li.page-section__list-item по формулам в графическом представлении невозможно организовать поиск;
-      li.page-section__list-item рисунок может просто не загрузиться по ряду причин, и тогда формула не отобразиться на сайте вовсе;
-      li.page-section__list-item формула из рисунка не может быть скопирована для дальнейшего использования.
+    ul.page-section__list.list
+      li.list__item формулу-рисунок практически невозможно отредактировать, в случае необходимости каких-либо исправлений проще сгенерировать рисунок заново;
+      li.list__item по формулам в графическом представлении невозможно организовать поиск;
+      li.list__item рисунок может просто не загрузиться по ряду причин, и тогда формула не отобразиться на сайте вовсе;
+      li.list__item формула из рисунка не может быть скопирована для дальнейшего использования.
 
     p.page-section__text При добросовестном подходе верстальщика такие формулы-рисунки сопровождаются атрибутом alt с записью формулы в текстовом виде, что отчасти решает последние две названные проблемы. Однако в целом такой способ никак не назовёшь удобным.
 
@@ -59,15 +61,15 @@ block content
 
     pre.line-numbers(data-language='mathml')
       code.language-mathml
-        | <math xmlns='http://www.w3.org/1998/Math/MathML'>
-        |   <msup>
-        |     <mi>i</mi>
-        |     <mn>2</mn>
-        |   </msup>
-        |   <mo>=</mo>
-        |   <mo>-</mo>
-        |   <mn>1</mn>
-        | </math>
+        | &lt;math xmlns='http://www.w3.org/1998/Math/MathML'&gt;
+        |   &lt;msup&gt;
+        |     &lt;mi&gt;i&lt;/mi&gt;
+        |     &lt;mn&gt;2&lt;/mn&gt;
+        |   &lt;/msup&gt;
+        |   &lt;mo&gt;=&lt;/mo&gt;
+        |   &lt;mo&gt;-&lt;/mo&gt;
+        |   &lt;mn&gt;1&lt;/mn&gt;
+        | &lt;/math&gt;
 
     pre.line-numbers(data-language='latex')
       code.language-latex
@@ -113,14 +115,14 @@ block content
     p.page-section__text Написание формул непосредственно на MathML — дело крайне трудное, поэтому существуют специальные визуальные редакторы типа #[a.page-section__link.link(href='http://www.firemath.info/') Firemath], являющегося расширением для Mozilla Firefox, или конвертёр из TeX в MathML — #[a.page-section__link.link(href='http://fred-wang.github.io/TeXZilla/') TeXZilla]. Ну и, конечно, нужно помнить о MathJax.
 
   section.page-section
-    h2.page-section__title#mathjax Что нужно для начала работы с MathJax
+    h2.page-section__title#mathjax 2. Что нужно для начала работы с MathJax
 
     p.page-section__text MathJax позволяет использовать версию данной библиотеки из CDN:
 
     pre.line-numbers(data-language='js')
       code.language-js
-        | <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        |   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        | &lt;script src="https://polyfill.io/v3/polyfill.min.js?features=es6"&gt;&lt;/script&gt;
+        | &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;
 
     p.page-section__text Также можно установить библиотеку как npm-пакет:
 
@@ -151,16 +153,16 @@ block content
     a.page-section__link.link.link--button(href='https://github.com/KaTeX/KaTeX') Официальный репозиторий библиотеки на GitHub].
 
   .page-final
-    p.page-final__sign Впервые опубликовано в #[a.link(href='https://www.kv.by/content/334516-matematika-i-internet-kakie-programmy-stoit-ispolzovat') KV.by]. Приводится в авторской редакции.
+    p.page-final__sign
+      i Впервые опубликовано в #[a.link(href='https://www.kv.by/content/334516-matematika-i-internet-kakie-programmy-stoit-ispolzovat') KV.by]. Приводится в авторской редакции.
 
     .page-final__links
-      a.link.link--index(href='#') Предыдущий раздел
+      a.link.link--index.link--index-backward(href='js-introduction.html') Предыдущий раздел
       a.link.link--index.link--index-main(href='index.html') Главная
-      a.link.link--index.link--index-forward(href='#') Следующий раздел
 
 block footer
   footer.page-footer
     p.page-footer__author © Марина Калюжная, 2020
 
 block page-bottom
-  <script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js"></script>
+  script(src='https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js')

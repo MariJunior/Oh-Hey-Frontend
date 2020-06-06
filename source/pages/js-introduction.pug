@@ -3,21 +3,23 @@ extends ../pug/layout.pug
 block header
   +header(true, '3.1 Основы JavaScript')
     block navigation
-      section.table-of-content
-        ol.table-of-content__list
-          li.table-of-content__item HTML
-            ol.table-of-content__list.table-of-content__list--sub
+      ol.table-of-content
+        li.table-of-content__item HTML
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
               a.table-of-content__item-link(href='html-introduction.html') основы HTML
-          li.table-of-content__item CSS
-            ol.table-of-content__list.table-of-content__list--sub
+        li.table-of-content__item CSS
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
               a.table-of-content__item-link(href='css-introduction.html') основы CSS
-          li.table-of-content__item JavaScript
-            ol.table-of-content__list.table-of-content__list--sub
+        li.table-of-content__item JavaScript
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
               a.table-of-content__item-link.table-of-content__item-link--current основы JavaScript
 
-        ol.table-of-content__list
-          li.table-of-content__item
-            a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
+      ol.table-of-content
+        li.table-of-content__item
+          a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
 
 block content
   +pageTitle('3.1 Основы JavaScript')
@@ -31,18 +33,18 @@ block content
     h2.page-section__title План раздела
 
     ol.page-section__content.table-of-content
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#js-really') Что такое JavaScript на самом деле?
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#js-connection') Способы подключения скриптов к сайту
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#js-vars-n-types') Типы данных и переменные в JavaScript
-        ol.table-of-content__sublist
-          li.table-of-content__subitem
+        ol.table-of-content
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#js-vars') Переменные
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#js-types') Типы данных
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#js-scope') Глобальные и локальные переменные
 
   section.page-section
@@ -121,7 +123,7 @@ block content
     p.page-section__text Компьютеры обрабатывают информацию — данные. Данные могут быть представлены в различных формах или типах. Большая часть функциональности JavaScript реализуется за счет простого набора объектов и типов данных. Функциональные возможности, связанные со строками, числами и логикой, базируются на строковых, числовых и логических типах данных. Другая функциональная возможность, включающая регулярные выражения, даты и математические операции, осуществляется с помощью объектов RegExp, Date и Math.
 
     section.page-section__subsection
-      h3.page-section__subsubtitle#js-vars 3.1 Переменные
+      h3.page-section__title.page-section__title--sub#js-vars 3.1 Переменные
 
       p.page-section__text Переменные представляют собой именованные контейнеры, хранящие данные (значения) в памяти компьютера, которые могут изменяться в процессе выполнения программы. Переменные имеют имя, тип и значение.
 
@@ -138,7 +140,7 @@ block content
       p.page-section__text Так для чего нам нужны переменные? Что ж, переменные должны были сделать что-нибудь интересное в программировании. Если значения не могли бы изменяться, то вы не могли бы ничего сделать динамическим, например, персонализировать приветственное сообщение или сменить изображение, отображаемое в галерее изображений.
 
     section.page-section__subsection
-      h3.page-section__subsubtitle#js-types 3.2 Типы данных
+      h3.page-section__title.page-section__title--sub#js-types 3.2 Типы данных
 
       p.page-section__text JavaScript является нетипизированным языком, тип данных для конкретной переменной при ее объявлении указывать не нужно. Тип данных переменной зависит от значений, которые она принимает. Тип переменной может изменяться в процессе совершения операций с данными (динамическое приведение типов). Преобразование типов выполняется автоматически в зависимости от того, в каком контексте они используются. Например, в выражениях, включающих числовые и строковые значения с оператором +, JavaScript преобразует числовые значения в строковые.
 
@@ -152,34 +154,36 @@ block content
 
       table.page-section__table.table
         caption.table__caption Таблица 1. Типы данных в JavaScript
-        tr.table__row
-          th.table__data-title Тип данных
-          th.table__data-title Пояснение
-          th.table__data-title Пример
-        tr.table__row
-          td.table__data String
-          td.table__data Последовательность текста, называемая строкой. Чтобы указать, что это значение является строкой, вы должны заключить его в кавычки.
-          td.table__data #[code.language-js= 'var myVariable = "Bob";']
-        tr.table__row
-          td.table__data Number
-          td.table__data Числа. Числа не имеют кавычек вокруг них.
-          td.table__data #[code.language-js= 'var myVariable = 10;']
-        tr.table__row
-          td.table__data Boolean
-          td.table__data Значение True(Правда)/False(Ложь). Слова true и false специальные ключевые слова в JS, и не нуждаются в кавычках.
-          td.table__data #[code.language-js= 'var myVariable = true;']
-        tr.table__row
-          td.table__data Array
-          td.table__data Массив, который позволяет хранить несколько значений в одной ссылке.
-          td.table__data #[code.language-js= 'var myVariable = [1, "Bob", "Steve", 10];'] Обратиться к каждому элементу массива можно так: myVariable[0], myVariable[1], и т.д.
-        tr.table__row
-          td.table__data Object
-          td.table__data В принципе, что угодно. Все в JavaScript является объектом, и может храниться в переменной. Имейте это в виду, пока вы учитесь.
-          td.table__data #[code.language-js= 'var myVariable = document.querySelector("h1");'] Все это из вышеприведённых примеров.
+        thead.table__head
+          tr.table__row
+            th.table__data-title Тип данных
+            th.table__data-title Пояснение
+            th.table__data-title Пример
+        tbody.table__body
+          tr.table__row
+            td.table__data(data-label='Тип данных') String
+            td.table__data(data-label='Пояснение') Последовательность текста, называемая строкой. Чтобы указать, что это значение является строкой, вы должны заключить его в кавычки.
+            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = "Bob";']
+          tr.table__row
+            td.table__data(data-label='Тип данных') Number
+            td.table__data(data-label='Пояснение') Числа. Числа не имеют кавычек вокруг них.
+            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = 10;']
+          tr.table__row
+            td.table__data(data-label='Тип данных') Boolean
+            td.table__data(data-label='Пояснение') Значение True(Правда)/False(Ложь). Слова true и false специальные ключевые слова в JS, и не нуждаются в кавычках.
+            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = true;']
+          tr.table__row
+            td.table__data(data-label='Тип данных') Array
+            td.table__data(data-label='Пояснение') Массив, который позволяет хранить несколько значений в одной ссылке.
+            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = [1, "Bob", "Steve", 10];'] Обратиться к каждому элементу массива можно так: myVariable[0], myVariable[1], и т.д.
+          tr.table__row
+            td.table__data(data-label='Тип данных') Object
+            td.table__data(data-label='Пояснение') В принципе, что угодно. Все в JavaScript является объектом, и может храниться в переменной. Имейте это в виду, пока вы учитесь.
+            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = document.querySelector("h1");'] Все это из вышеприведённых примеров.
 
 
     section.page-section__subsection
-      h3.page-section__subsubtitle#js-scope 3.3 Глобальные и локальные переменные
+      h3.page-section__title.page-section__title--sub#js-scope 3.3 Глобальные и локальные переменные
 
       p.page-section__text Переменные по области видимости делятся на #[b глобальные] и #[b локальные]. #[b Область видимости] представляет собой часть сценария, в пределах которой имя переменной связано с этой переменной и возвращает ее значение. Переменные, объявленные внутри тела функции, называются #[b локальными], их можно использовать только в этой функции. Локальные переменные создаются и уничтожаются вместе с соответствующей функцией.
 
@@ -194,12 +198,13 @@ block content
       p.page-section__text Локальные переменные, объявленные внутри функции в разных блоках кода, имеют одинаковые области видимости. Тем не менее, рекомендуется помещать объявления всех переменных в начале функции.
 
   .page-final
-    p.page-final__sign Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-javascript/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/JavaScript_basics') MDN]. Приводится в авторской редакции.
+    p.page-final__sign
+      i Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-javascript/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/JavaScript_basics') MDN]. Приводится в авторской редакции.
 
     .page-final__links
-      a.link.link--index(href='#') Предыдущий раздел
+      a.link.link--index.link--index-backward(href='css-introduction.html') Предыдущий раздел
       a.link.link--index.link--index-main(href='index.html') Главная
-      a.link.link--index.link--index-forward(href='#') Следующий раздел
+      a.link.link--index.link--index-forward(href='math-in-web.html') Следующий раздел
 
 block footer
   footer.page-footer

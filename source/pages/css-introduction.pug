@@ -3,24 +3,23 @@ extends ../pug/layout.pug
 block header
   +header(true, '2.1 Основы CSS')
     block navigation
-      section.table-of-content
-        ol.table-of-content__list
-          li.table-of-content__item HTML
-            ol.table-of-content__list
-              li.table-of-content__item.table-of-content__item--sub
-                a.table-of-content__item-link(href='html-introduction.html') Основы HTML
-          li.table-of-content__item CSS
-            ol.table-of-content__list
-              li.table-of-content__item.table-of-content__item--sub
-                a.table-of-content__item-link.table-of-content__item-link--current Основы CSS
-          li.table-of-content__item JavaScript
-            ol.table-of-content__list
-              li.table-of-content__item.table-of-content__item--sub
-                a.table-of-content__item-link(href='js-introduction.html') Основы JavaScript
+      ol.navigation__list.table-of-content
+        li.table-of-content__item HTML
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
+              a.table-of-content__item-link(href='html-introduction.html') Основы HTML
+        li.table-of-content__item CSS
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
+              a.table-of-content__item-link.table-of-content__item-link--current Основы CSS
+        li.table-of-content__item JavaScript
+          ol.table-of-content
+            li.table-of-content__item.table-of-content__item--sub
+              a.table-of-content__item-link(href='js-introduction.html') Основы JavaScript
 
-        ol.table-of-content__list
-          li.table-of-content__item
-            a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
+      ol.table-of-content
+        li.table-of-content__item
+          a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
 
 block content
   +pageTitle('2.1 Основы CSS')
@@ -34,43 +33,43 @@ block content
     h2.page-section__title План раздела
 
     ol.page-section__content.table-of-content
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#css-really') Что же представляет из себя CSS?
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#css-rules') Анатомия CSS-правил
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#types-of-css') Виды таблиц стилей и их особенности
-        ol.table-of-content__sublist
-          li.table-of-content__subitem
+        ol.table-of-content
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#external-css') Внешняя таблица стилей
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#internal-css') Внутренние стили
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#inline-css') Инлайновые стили
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#import-css') Правило #[code.language-css @import]
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#css-selectors') Виды селекторов
-        ol.table-of-content__sublist
-          li.table-of-content__subitem
+        ol.table-of-content
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#base-selectors') Базовые селекторы
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#pseudoselectors') Псевдоселекторы
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#combinators') Комбинаторы
-      li.table-of-content__item
+      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
         a.table-of-content__anchor(href='#inheritence-n-cascade') Наследование и каскад
-        ol.table-of-content__sublist
-          li.table-of-content__subitem
+        ol.table-of-content
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#inheritance') Наследование
-          li.table-of-content__subitem
+          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
             a.table-of-content__anchor(href='#cascade') Каскад
-            ol.table-of-content__subsublist
-              li.table-of-content__subsubitem
+            ol.table-of-content
+              li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                 a.table-of-content__anchor(href='#important') Правило #[code.language-css !important]
-              li.table-of-content__subsubitem
+              li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                 a.table-of-content__anchor(href='#specificity') Специфичность
-              li.table-of-content__subsubitem
+              li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                 a.table-of-content__anchor(href='#css-order') Порядок подключённых таблиц
 
   section.page-section
@@ -123,7 +122,7 @@ block content
     p.page-section__text Все описанные ниже методы использования CSS могут применяться как самостоятельно, так и в сочетании друг с другом. В этом случае необходимо помнить об их иерархии — механизме каскада, и правилах наследования, речь об этих важнейших принципах пойдёт ниже.
 
     section.page-section__subsection
-      h3.page-section__subtitle#external-css 3.1 Внешняя таблица стилей
+      h3.page-section__title.page-section__title--sub#external-css 3.1 Внешняя таблица стилей
 
       p.page-section__text Внешняя таблица стилей, или таблицы связанных стилей, представляет собой текстовый файл с расширением .css, в котором находится набор CSS-стилей элементов. Файл создаётся в редакторе кода, так же как и HTML-страница. Внутри файла могут содержатся только стили, без HTML-разметки. Внешняя таблица стилей подключается к веб-странице с помощью тега #[code.language-html= '<link>'] с атрибутом #[code.language-none= 'rel="stylesheet"'], расположенного внутри раздела #[code.language-html= '<head></head>']. Такие стили работают для всех страниц сайта, на которых они подключены.
 
@@ -148,7 +147,7 @@ block content
         li.list__item ускорить загрузку страниц сайта, т.к. при первой загрузке файл будет помещён в кэш и при загрузке других страниц с данными стилями будет уже "на месте".
 
     section.page-section__subsection
-      h3.page-section__subtitle#internal-css 3.2 Внутренние стили
+      h3.page-section__title.page-section__title--sub#internal-css 3.2 Внутренние стили
 
       p.page-section__text Внутренние, или встроенные, стили встраиваются в раздел #[code.language-html= '<head></head>'] HTML-документа и определяются внутри тега #[code.language-html= '<style></style>']. Внутренние стили имеют приоритет над внешними, но уступают инлайновым стилям.
 
@@ -171,7 +170,7 @@ block content
       p.page-section__text Внутренние стили по гибкости уступают внешним файлам, однако могут быть неплохим решением, если нужно написать небольшое количество правил, специфичных для одной конкретной страницы.
 
     section.page-section__subsection
-      h3.page-section__subtitle#inline-css 3.3 Инлайновые стили
+      h3.page-section__title.page-section__title--sub#inline-css 3.3 Инлайновые стили
 
       p.page-section__text Встроенные, или внутренние, стили записываются непосредственно внутри целевого элемента, с помощью атрибута #[code.language-none style]. Такие стили ещё называют инлайновыми.
 
@@ -180,7 +179,7 @@ block content
       p.page-section__text Рекомендуется использовать внутренний стиль для одиночных тегов или отказаться от его использования вообще, поскольку изменение ряда элементов становится проблематичным. Внутренние стили не соответствуют идеологии структурного документа, когда содержимое и его оформление разделены.
 
     section.page-section__subsection
-      h3.page-section__subtitle#import-css 3.4 Правило #[code.language-css @import]
+      h3.page-section__title.page-section__title--sub#import-css 3.4 Правило #[code.language-css @import]
 
       p.page-section__text Правило #[code.language-css @import] позволяет встраивать внешние таблицы стилей в пользовательские. Чтобы директива `@import` работала, она должна располагаться в таблице стилей (внешней или внутренней, но никак не в инлайновых стилях) перед всеми остальными правилами.
 
@@ -204,7 +203,7 @@ block content
     p.page-section__text Селекторы представляют структуру веб-страницы. С их помощью создаются правила для форматирования элементов веб-страницы. Селекторами могут быть элементы, их классы и идентификаторы, а также псевдоклассы и псевдоэлементы.
 
     section.page-section__subsection
-      h3.page-section__subtitle#base-selectors 4.1 Базовые селекторы
+      h3.page-section__title.page-section__title--sub#base-selectors 4.1 Базовые селекторы
 
       dl.page-section__determinations.determinations
         .determinations__item
@@ -248,7 +247,7 @@ block content
               li.list__item #[code.language-css= '[attr *= value]'] — выберет все элементы, значение атрибута которых содержит в любом месте указанное слово;
 
     section.page-section__subsection
-      h3.page-section__subtitle#pseudoselectors 4.2 Псевдоселекторы
+      h3.page-section__title.page-section__title--sub#pseudoselectors 4.2 Псевдоселекторы
 
       dl.page-section__determinations.determinations
         .determinations__item
@@ -311,7 +310,7 @@ block content
               li #[code.language-css ::placeholder] — представляет собой текст placeholder в #[code.language-html= '<input>'] или #[code.language-html= '<textarea>'] элементах.
 
     section.page-section__subsection
-      h3.page-section__subtitle#combinators 4.3 Комбинаторы
+      h3.page-section__title.page-section__title--sub#combinators 4.3 Комбинаторы
 
       dl.page-section__determinations.determinations
         .determinations__item
@@ -351,7 +350,7 @@ block content
     p.page-section__text Наследование и каскад — два фундаментальных понятия в CSS, которые тесно связаны между собой. Наследование заключается в том, что элементы наследуют свойства от своего родителя (элемента, их содержащего). Каскад проявляется в том, как разные виды таблиц стилей применяются к документу, и как конфликтующие правила переопределяют друг друга.
 
     section.pagese-section__subsection
-      h3.page-section__subtitle#inheritance 5.1 Наследование
+      h3.page-section__title.page-section__title--sub#inheritance 5.1 Наследование
 
       dl.page-section__determinations.determinations
         .determinations__item
@@ -372,7 +371,7 @@ block content
         figcaption.page-section__img-caption Рисунок 2. С помощью инструментов разработчика в браузерах несложно посмотреть, какие стили наследуются элементом
 
     section.page-section__subsection
-      h3.page-section__subtitle#cascade 5.2 Каскад
+      h3.page-section__title.page-section__title--sub#cascade 5.2 Каскад
 
       dl.page-section__determinations.determinations
         .determinations__item
@@ -380,12 +379,12 @@ block content
           dd.determinations__item-data Механизм, который управляет конечным результатом в ситуации, когда к одному элементу применяются разные CSS-правила. Существует три критерия, которые определяют порядок применения свойств — правило !important, специфичность и порядок, в котором подключены таблицы стилей.
 
       section.page-section__subsubsection
-        h4.page-section__subsubtitle#important 5.2.1 Правило #[code.language-css !important]
+        h4.page-section__title.page-section__title--subsub#important 5.2.1 Правило #[code.language-css !important]
 
         p.page-section__text Вес правила можно задать с помощью ключевого слова #[code.language-css !important], которое добавляется сразу после значения свойства, например, #[code.language-css= 'span {font-weight: bold!important;}']. Правило необходимо размещать в конец объявления перед закрывающей скобкой, без пробела. Такое объявление будет иметь приоритет над всеми остальными правилами. Это правило позволяет отменить значение свойства и установить новое для элемента из группы элементов в случае, когда нет прямого доступа к файлу со стилями.
 
       section.page-section__subsubsection
-        h4.page-section__subsubtitle#specificity 5.2.2 Специфичность
+        h4.page-section__title.page-section__title--subsub#specificity 5.2.2 Специфичность
 
         p.page-section__text Для каждого правила браузер вычисляет специфичность селектора, и если у элемента имеются конфликтующие объявления свойств, во внимание принимается правило, имеющее наибольшую специфичность. Значение специфичности состоит из четырех частей: 0, 0, 0, 0.
 
@@ -412,17 +411,18 @@ block content
         p.page-section__text В результате к элементу применятся те правила, специфичность которых больше. Например, если на элемент действуют две специфичности со значениями 0, 0, 0, 2 и 0, 1, 0, 1, то выиграет второе правило.
 
       section.page-section__subsubsection
-        h4.page-section__subsubtitle#css-order  5.2.3 Порядок подключённых таблиц
+        h4.page-section__title.page-section__title--subsub#css-order  5.2.3 Порядок подключённых таблиц
 
         p.page-section__text Вы можете создать несколько внешних таблиц стилей и подключить их к одной веб-странице. Если в разных таблицах будут встречаться разные значения свойств одного элемента, то в результате к элементу применится правило, находящееся в таблице стилей, идущей в списке ниже.
 
   .page-final
-    p.page-final__sign Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-css/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics') MDN]. Приводится в авторской редакции.
+    p.page-final__sign
+      i Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-css/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics') MDN]. Приводится в авторской редакции.
 
     .page-final__links
-      a.link.link--index(href='#') Предыдущий раздел
+      a.link.link--index.link--index-backward(href='html-introduction.html') Предыдущий раздел
       a.link.link--index.link--index-main(href='index.html') Главная
-      a.link.link--index.link--index-forward(href='#') Следующий раздел
+      a.link.link--index.link--index-forward(href='js-introduction.html') Следующий раздел
 
 block footer
   footer.page-footer

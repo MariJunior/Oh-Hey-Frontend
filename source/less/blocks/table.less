@@ -1,0 +1,38 @@
+.table {
+  border-collapse: collapse;
+
+  &__caption {
+    font-family: "Alegreya Sans", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-variant: small-caps;
+    text-align: right;
+  }
+
+  &__head {
+    background-color: #7aac9b;
+  }
+
+  &__body {
+    background-color: #cbded5;
+  }
+
+  &__row {
+    &:not(:last-child) {
+      border-bottom: 1px solid #605c5c;
+    }
+  }
+
+  &__data-title,
+  &__data {
+    font-size: 14px;
+
+    &:not(:last-child) {
+      border-right: 1px solid #605c5c;
+    }
+  }
+
+  &__data-title {
+    font-weight: 500;
+    font-variant: small-caps;
+  }
+}
