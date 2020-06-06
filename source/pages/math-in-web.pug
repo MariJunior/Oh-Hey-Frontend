@@ -2,6 +2,22 @@ extends ../pug/layout.pug
 
 block header
   +header(true, '6. Математика в вебе')
+    block navigation
+      section.table-of-content
+        ol.table-of-content__list
+          li.table-of-content__item HTML
+            ol.table-of-content__list.table-of-content__list--sub
+              a.table-of-content__item-link(href='html-introduction.html') основы HTML
+          li.table-of-content__item CSS
+            ol.table-of-content__list.table-of-content__list--sub
+              a.table-of-content__item-link(href='css-introduction.html') основы CSS
+          li.table-of-content__item JavaScript
+            ol.table-of-content__list.table-of-content__list--sub
+              a.table-of-content__item-link(href='js-introduction.html') основы JavaScript
+
+        ol.table-of-content__list
+          li.table-of-content__item
+            a.table-of-content__item-link.table-of-content__item-link--current Математика в вебе
 
 block content
   +pageTitle('6. Математика в вебе')

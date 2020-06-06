@@ -5,8 +5,21 @@ block header
 
 block content
   +pageTitle('Оглавление')
-  | Здесь будет содержание
+
+  section.table-of-content
+    ol.table-of-content__list
+      li.table-of-content__item
+        a.table-of-content__item-link(href='table-of-content-html.html') HTML
+      li.table-of-content__item
+        a.table-of-content__item-link(href='table-of-content-css.html') CSS
+      li.table-of-content__item
+        a.table-of-content__item-link(href='table-of-content-js.html') JavaScript
+
+    ol.table-of-content__list
+      li.table-of-content__item
+        a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
+
 
 block footer
   footer.page-footer.page-footer--mini
-    a.page-footer__backward-link.link.link--index Главная
+    a.page-footer__backward-link.link.link--index(href='index.html') Главная
