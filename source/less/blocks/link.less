@@ -1,0 +1,22 @@
+.link {
+  display: inline-block;
+
+  &--index {
+    text-transform: lowercase;
+
+    &-backward::before,
+    &-forward::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 11px;
+      background-image: url("../img/icon-arrow.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    &-forward::after {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.table-of-content {
+  &__list {
+    list-style: none;
+    counter-reset: li;
+  }
+
+  &__item {
+    font-size: 28px;
+    font-weight: 500;
+    border-bottom: 2px solid #202020;
+
+    &--sub {
+      font-size: 26px;
+      border-bottom: none;
+    }
+
+    &::before {
+      counter-increment: li;
+      content: counters(li, ".") ". ";
+    }
+  }
+}

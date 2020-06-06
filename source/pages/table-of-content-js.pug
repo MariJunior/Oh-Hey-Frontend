@@ -6,12 +6,12 @@ block header
 block content
   +pageTitle('3. JavaScript')
 
-  section.table-of-content
+  section.table-of-content(data-level='3')
     //- TODO начать нумерацию этого списка сразу со второго уровня
-    ol.table-of-content__sublist
-      li.table-of-content__subitem
+    ol.table-of-content__list
+      li.table-of-content_bitem.table-of-content__item--sub
         a.table-of-content__item-link(href='js-introduction.html') основы JavaScript
 
 block footer
   footer.page-footer.page-footer--mini
-    a.page-footer__backward-link.link.link--index(href='table-of-content.html') Содержание
+    a.page-footer__backward-link.link.link--index.link--index-backward(href='table-of-content.html') Содержание

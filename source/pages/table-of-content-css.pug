@@ -8,10 +8,10 @@ block content
 
   section.table-of-content
     //- TODO начать нумерацию этого списка сразу со второго уровня
-    ol.table-of-content__sublist
-      li.table-of-content__subitem
-        a.table-of-content__item-link(href='css-introduction.html') основы CSS
+    ol.table-of-content__list
+      li.table-of-content__item.table-of-content__item--sub
+        a.table-of-content__item-link(href='css-introduction.html', data-level='2') Основы CSS
 
 block footer
   footer.page-footer.page-footer--mini
-    a.page-footer__backward-link.link.link--index(href='table-of-content.html') Содержание
+    a.page-footer__backward-link.link.link--index.link--index-backward(href='table-of-content.html') Содержание
