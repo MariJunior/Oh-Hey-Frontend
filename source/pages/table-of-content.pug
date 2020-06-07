@@ -4,19 +4,21 @@ block header
   +header(false, 'Оглавление')
 
 block content
-  +pageTitle('Оглавление')
+  .container
+    +pageTitle('Оглавление')
 
-  ol.table-of-content
-    li.table-of-content__item
-      a.table-of-content__item-link(href='table-of-content-html.html') HTML
-    li.table-of-content__item
-      a.table-of-content__item-link(href='table-of-content-css.html') CSS
-    li.table-of-content__item
-      a.table-of-content__item-link(href='table-of-content-js.html') JavaScript
+    .table-of-content-wrap
+      ol.table-of-content-wrap__list.table-of-content
+        li.table-of-content__item
+          a.table-of-content__item-link(href='table-of-content-html.html') HTML
+        li.table-of-content__item
+          a.table-of-content__item-link(href='table-of-content-css.html') CSS
+        li.table-of-content__item
+          a.table-of-content__item-link(href='table-of-content-js.html') JavaScript
 
-  ol.table-of-content
-    li.table-of-content__item
-      a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
+      ol.table-of-content-wrap__list.table-of-content
+        li.table-of-content__item
+          a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
 
 
 block footer

@@ -4,12 +4,14 @@ block header
   +header(false, '1. HTML')
 
 block content
-  +pageTitle('1. HTML')
+  .container
+    +pageTitle('1. HTML')
 
-  //- TODO начать нумерацию этого списка сразу со второго уровня
-  ol.table-of-content
-    li.table-of-content__item
-      a.table-of-content__item-link(href='html-introduction.html') основы HTML
+    .table-of-content-wrap
+      //- TODO начать нумерацию этого списка сразу со второго уровня
+      ol.table-of-content-wrap__list.table-of-content
+        li.table-of-content__item
+          a.table-of-content__item-link(href='html-introduction.html') основы HTML
 
 block footer
   footer.page-footer.page-footer--mini
