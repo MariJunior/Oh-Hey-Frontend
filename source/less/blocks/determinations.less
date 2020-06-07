@@ -1,5 +1,34 @@
 .determinations {
+  &__item {
+    padding: 5px;
+    background-color: #e3ede8;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
   &__item-name {
     font-weight: 700;
+    border-bottom: 1px solid #605c5c;
+  }
+
+  &__item-data:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__item-data-paragraph {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 660px) {
+  .determinations {
+    font-size: 18px;
   }
 }

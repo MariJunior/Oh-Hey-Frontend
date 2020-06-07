@@ -3,6 +3,10 @@
   list-style: none;
   counter-reset: li;
 
+  &--sub {
+    padding-left: 20px;
+  }
+
   &__item {
     font-size: 28px;
     font-weight: 500;
@@ -13,8 +17,13 @@
     }
 
     &--bg {
+      padding: 10px;
       border-bottom: none;
       background-color: #cbded5;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
     }
 
     &::before {
@@ -37,6 +46,10 @@
   .table-of-content {
     &__item {
       font-size: 36px;
+
+      &--small {
+        font-size: 24px;
+      }
     }
   }
 }

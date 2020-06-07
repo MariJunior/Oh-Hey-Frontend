@@ -1,9 +1,11 @@
 .link {
   display: inline-block;
   color: inherit;
+  border-bottom: 1px solid #202020;
 
   &--index {
     text-transform: lowercase;
+    border-bottom: none;
 
     &-backward::before,
     &-forward::after {
@@ -25,9 +27,11 @@
 
 @media (min-width: 660px) {
   .link {
-    font-size: 24px;
+    font-size: 20px;
 
     &--index {
+      font-size: 24px;
+
       &-backward::before,
       &-forward::after {
         width: 34px;
