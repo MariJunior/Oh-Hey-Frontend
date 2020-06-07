@@ -1,11 +1,22 @@
 .page-footer {
+  flex-shrink: 0;
+  padding: 20px;
   border-top: 1px solid #202020;
 
-  &--mini {
-    border-top: none;
+  &__wrap {
+    margin: 0 auto;
+    max-width: 1000px;
+
+    &--multi {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
   }
 
   &__author {
-    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 28px;
   }
 }

@@ -1,7 +1,7 @@
 mixin header(burger, current)
   //- input.visually-hidden.language-theme#language-theme(type='checkbox', name='language-theme', checked='', tabindex='1', aria-label='input для смены языка')
   input.visually-hidden.color-theme#color-theme(type='checkbox', name='color-theme', checked='', tabindex='1', aria-label='input для смены цветовой темы')
-  header.page-header
+  header.page-header(class=(burger == true ? 'page-header--burger' : undefined))
     a.page-header__logo(href=(current === 'Главная' ? undefined : 'index.html'), aria-label=(current === 'Главная' ? undefined : 'переход на главную страницу'))
       svg.page-header__logo-img(width='128', height='38', viewBox='0 0 128 38', xmlns='http://www.w3.org/2000/svg', fill='#202020', role='presentation')
         path(d='M5.41802 4.244C6.78602 4.244 7.84202 4.694 8.58602 5.594C9.33002 6.482 9.70202 7.694 9.70202 9.23C9.70202 10.766 9.32402 11.984 8.56802 12.884C7.81202 13.784 6.75602 14.234 5.40002 14.234C4.03202 14.234 2.97002 13.796 2.21402 12.92C1.47002 12.032 1.09802 10.808 1.09802 9.248C1.09802 7.736 1.47602 6.524 2.23202 5.612C3.00002 4.7 4.06202 4.244 5.41802 4.244ZM5.41802 5.81C4.68602 5.81 4.13402 6.092 3.76202 6.656C3.40202 7.22 3.22202 8.084 3.22202 9.248C3.22202 10.424 3.40202 11.294 3.76202 11.858C4.12202 12.41 4.66802 12.686 5.40002 12.686C6.13202 12.686 6.67802 12.404 7.03802 11.84C7.39802 11.276 7.57802 10.406 7.57802 9.23C7.57802 8.066 7.39802 7.208 7.03802 6.656C6.67802 6.092 6.13802 5.81 5.41802 5.81Z')
@@ -23,16 +23,15 @@ mixin header(burger, current)
         path(d='M127.322 27.76V29.7L119.642 34.48L118.542 32.88L125.382 28.74L118.542 24.64L119.582 22.98L127.322 27.76Z')
 
     .page-header__right-group.header-right-group
-      .page-header__togglers
-        label.page-header__vision-button.vision-button(for='color-theme', role='switch', aria-label='переключатель тёмной темы')
-          span.vision-button__handler
-            svg(width='16', height='16', viewBox='0 0 16 16', xmlns='http://www.w3.org/2000/svg', role='presentation', aria-label='выкл')
+      //- label.page-header__vision-button.vision-button(for='language-theme', aria-label='переключатель языка')
+        //- span.vision-button__handler рус
+      label.page-header__vision-button.vision-button(for='color-theme', role='switch', aria-label='переключатель тёмной темы')
+        span.vision-button__handler
+          svg(width='16', height='16', viewBox='0 0 16 16', xmlns='http://www.w3.org/2000/svg', role='presentation', aria-label='выкл')
               path(d='M8 1V1.77778V1ZM8 14.2222V15V14.2222ZM15 8H14.2222H15ZM1.77778 8H1H1.77778ZM12.9498 12.9498L12.3999 12.3999L12.9498 12.9498ZM3.60011 3.60011L3.05022 3.05022L3.60011 3.60011ZM12.9498 3.05022L12.3999 3.60011L12.9498 3.05022ZM3.60011 12.3999L3.05022 12.9498L3.60011 12.3999ZM11.1111 8C11.1111 8.82512 10.7833 9.61644 10.1999 10.1999C9.61644 10.7833 8.82512 11.1111 8 11.1111C7.17488 11.1111 6.38356 10.7833 5.80011 10.1999C5.21667 9.61644 4.88889 8.82512 4.88889 8C4.88889 7.17488 5.21667 6.38356 5.80011 5.80011C6.38356 5.21667 7.17488 4.88889 8 4.88889C8.82512 4.88889 9.61644 5.21667 10.1999 5.80011C10.7833 6.38356 11.1111 7.17488 11.1111 8V8Z', stroke='#202020', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
-        //- label.page-header__vision-button.vision-button(for='language-theme', aria-label='переключатель языка')
-          //- span.vision-button__handler рус
-      if burger == true
-        nav.page-header__navigation.navigation
-          button.navigation__burger.reset-button(type='button')
-            span открыть/закрыть содержание
-          .navigation__wrap
-            block navigation
+    if burger == true
+      nav.page-header__navigation.navigation
+        button.navigation__burger.reset-button(type='button')
+          span открыть/закрыть содержание
+        .navigation__wrap
+          block navigation

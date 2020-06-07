@@ -1,4 +1,36 @@
 .page-section {
+  flex-grow: 1;
+  display: flex;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+
+  &__hello-wrap {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__hello-title {
+    flex-grow: 1;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 320px;
+    background-image: url("../img/bg-web-development.svg");
+    background-position: left bottom;
+    background-size: auto 320px;
+    background-repeat: no-repeat;
+
+    font-size: 48px;
+    font-weight: 500;
+  }
+
+  &__hello-name {
+    display: block;
+    font-size: 36px;
+  }
+
   &__title {
     font-family: "Alegreya Sans", Helvetica, Arial, sans-serif;
     font-weight: 500;
@@ -22,5 +54,64 @@
     font-family: "Alegreya Sans", Helvetica, Arial, sans-serif;
     font-weight: 500;
     font-variant: small-caps;
+  }
+}
+
+@media (min-width: 660px) {
+  .page-section {
+    padding-right: 30px;
+    padding-left: 30px;
+
+    &__hello-wrap {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 410px;
+      background-image: url("../img/bg-web-development.svg");
+      background-position: right bottom;
+      background-size: auto 410px;
+      background-repeat: no-repeat;
+    }
+
+    &__hello-title {
+      flex-grow: 0;
+      font-size: 56px;
+      padding-bottom: 0;
+      background: none;
+    }
+
+    &__hello-name {
+      margin-bottom: 20px;
+      font-size: 44px;
+    }
+
+    &__contacts {
+      margin-top: 220px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .page-section {
+    margin: 0 auto;
+    max-width: 1000px;
+
+    &__hello-wrap {
+      padding-bottom: 40px;
+      // background-size: 462px 370px;
+      background-size: 50% 77%;
+    }
+
+    &__hello-title {
+      max-width: 710px;
+      font-size: 62px;
+    }
+
+    &__hello-name {
+      font-size: 50px;
+    }
+
+    &__contacts {
+      margin-top: 40px;
+    }
   }
 }

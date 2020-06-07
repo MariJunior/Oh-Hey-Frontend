@@ -1,5 +1,29 @@
 .page-header {
+  display: grid;
+  grid-template-columns: 130px minmax(60px, 1fr);
+  grid-column-gap: 15px;
   padding: 15px 20px;
   background-color: #396b5b;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  &--burger {
+    grid-template-columns: 130px minmax(60px, 1fr) 40px;
+  }
+
+  &__logo {
+    display: flex;
+  }
+
+  &__right-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    // justify-self: end;
+    // align-self: flex-end;
+  }
+
+  &__navigation {
+    justify-self: end;
+    align-self: flex-end;
+  }
 }
