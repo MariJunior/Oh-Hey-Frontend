@@ -70,8 +70,10 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@barba/prefetch": "^2.1.10",
     "core-js": "^3.6.5",
     "deep-extend": "^0.6.0",
+    "gsap": "./gsap-bonus.tgz",
     "jquery": "^3.5.1",
     "mathjax": "3",
     "merge": "^1.2.1",

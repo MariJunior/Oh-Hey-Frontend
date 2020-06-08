@@ -1,9 +1,9 @@
 //- Стандартный шаблон страницы
+
 include mixins.pug
 
 doctype html
-html(class='page no-js', lang='ru')
-
+html(class='page no-js', lang='ru', data-barba='wrapper')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -27,7 +27,10 @@ html(class='page no-js', lang='ru')
       script
         include ../js/head-script.js
 
-  body#top
+  block variables
+    - var pageName = 'главная';
+
+  body#top(data-barba='container', data-barba-namespace=pageName)
     noscript У вас отключен JavaScript. Это пугает.
 
     block header

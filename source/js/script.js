@@ -7,3 +7,5 @@ require('./modules/navigation.js');
 require('./modules/code-highlight.js');
 require('./modules/position-sticky.js');
 require('./modules/smooth-scroll.js');
+
+require('./modules/pages-transitions.js');
