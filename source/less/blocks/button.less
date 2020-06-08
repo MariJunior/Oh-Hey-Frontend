@@ -1,5 +1,21 @@
 .button {
+  &--top {
+    display: none;
+
+    &-show {
+      display: block;
+    }
+  }
+
   &__icon {
     fill: #126047;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button--top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
   }
 }

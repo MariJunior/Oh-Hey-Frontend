@@ -5,9 +5,26 @@
   }
 
   &__links {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: grid;
+    grid-template-areas: "left central right";
+    grid-template-columns: repeat(3, 33.33%);
+    grid-column-gap: 10px;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__central-link {
+    grid-area: central;
+    margin: 0 auto;
+  }
+
+  &__left-link {
+    grid-area: left;
+  }
+
+  &__right-link {
+    grid-area: right;
+    text-align: right;
   }
 }
 

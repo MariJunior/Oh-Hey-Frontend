@@ -4,210 +4,218 @@ block header
   +header(true, '3.1 Основы JavaScript')
     block navigation
       ol.table-of-content
-        li.table-of-content__item HTML
-          ol.table-of-content
-            li.table-of-content__item.table-of-content__item--sub
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small HTML
+          ol.table-of-content.table-of-content--sub
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link(href='html-introduction.html') основы HTML
-        li.table-of-content__item CSS
-          ol.table-of-content
-            li.table-of-content__item.table-of-content__item--sub
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small CSS
+          ol.table-of-content.table-of-content--sub
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link(href='css-introduction.html') основы CSS
-        li.table-of-content__item JavaScript
-          ol.table-of-content
-            li.table-of-content__item.table-of-content__item--sub
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small JavaScript
+          ol.table-of-content.table-of-content--sub
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link.table-of-content__item-link--current основы JavaScript
 
       ol.table-of-content
-        li.table-of-content__item
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
           a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
 
 block content
-  +pageTitle('3.1 Основы JavaScript')
+  p.page-index 3.1 основы javascript
 
-  section.page-section
-    h2.visually-hidden Введение
+  a.button.button--top(href='#top', aria-label='кнопка перехода к началу страницы')
+    svg.button__icon(width='30', height='32', xmlns='http://www.w3.org/2000/svg', role='presentation')
+      path(d='M16.4142 0.585785C15.6332 -0.195263 14.3668 -0.195263 13.5858 0.585785L0.857865 13.3137C0.0768164 14.0948 0.0768163 15.3611 0.857865 16.1421C1.63891 16.9232 2.90524 16.9232 3.68629 16.1421L15 4.82842L26.3137 16.1421C27.0948 16.9232 28.3611 16.9232 29.1421 16.1421C29.9232 15.3611 29.9232 14.0948 29.1421 13.3137L16.4142 0.585785ZM17 32L17 2L13 2L13 32L17 32Z')
 
-    p.page-section__text JavaScript – это язык программирования, который добавляет интерактивность на ваш веб-сайт (например: игры, отклик при нажатии кнопок или при вводе данных в формы, динамические стили, анимация). Эта статья поможет вам начать работать с этим захватывающим языком и даст вам представление о том, на что он способен.
+  .container
+    +pageTitle('3.1 Основы JavaScript')
 
-  section.page-section
-    h2.page-section__title План раздела
+    section.page-section
+      h2.visually-hidden Введение
 
-    ol.page-section__content.table-of-content
-      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
-        a.table-of-content__anchor(href='#js-really') Что такое JavaScript на самом деле?
-      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
-        a.table-of-content__anchor(href='#js-connection') Способы подключения скриптов к сайту
-      li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
-        a.table-of-content__anchor(href='#js-vars-n-types') Типы данных и переменные в JavaScript
-        ol.table-of-content
-          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-            a.table-of-content__anchor(href='#js-vars') Переменные
-          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-            a.table-of-content__anchor(href='#js-types') Типы данных
-          li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-            a.table-of-content__anchor(href='#js-scope') Глобальные и локальные переменные
+      p.page-section__text JavaScript – это язык программирования, который добавляет интерактивность на ваш веб-сайт (например: игры, отклик при нажатии кнопок или при вводе данных в формы, динамические стили, анимация). Эта статья поможет вам начать работать с этим захватывающим языком и даст вам представление о том, на что он способен.
 
-  section.page-section
-    h2.page-section__title#js-really 1. Что такое JavaScript на самом деле?
+    section.page-section
+      h2.page-section__title План раздела
 
-    dl.page-section__determinations.determinations
-      .determinations__item
-        dt.determinations__item-name JavaScript ("JS" для краткости)
-        dd.determinations__item-data это полноценный динамический язык программирования, который применяется к HTML-документу, и может обеспечить динамическую интерактивность на веб-сайтах. Его разработал Brendan Eich, сооснователь проекта Mozilla, Mozilla Foundation и Mozilla Corporation.
+      ol.page-section__content.table-of-content
+        li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
+          a.table-of-content__anchor(href='#js-really') Что такое JavaScript на самом деле?
+        li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
+          a.table-of-content__anchor(href='#js-connection') Способы подключения скриптов к сайту
+        li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
+          a.table-of-content__anchor(href='#js-vars-n-types') Типы данных и переменные в JavaScript
+          ol.table-of-content.table-of-content--sub
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
+              a.table-of-content__anchor(href='#js-vars') Переменные
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
+              a.table-of-content__anchor(href='#js-types') Типы данных
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
+              a.table-of-content__anchor(href='#js-scope') Глобальные и локальные переменные
 
-    p.page-section__text JavaScript невероятно универсален и дружелюбен к новичкам. Обладая большим опытом, вы сможете создавать игры, анимированную 2D и 3D графику, полномасштабные приложения с базами данных и многое другое!
+    section.page-section
+      h2.page-section__title#js-really 1. Что такое JavaScript на самом деле?
 
-    p.page-section__text JavaScript сам по себе довольно компактный, но очень гибкий. Разработчиками написано большое количество инструментов поверх основного языка JavaScript, которые разблокируют огромное количество дополнительных функций с очень небольшим усилием. К ним относятся:
+      dl.page-section__determinations.determinations
+        .determinations__item
+          dt.determinations__item-name JavaScript ("JS" для краткости)
+          dd.determinations__item-data это полноценный динамический язык программирования, который применяется к HTML-документу, и может обеспечить динамическую интерактивность на веб-сайтах. Его разработал Brendan Eich, сооснователь проекта Mozilla, Mozilla Foundation и Mozilla Corporation.
 
-    ul.page-section__list.list
-      li.list__item Программные интерфейсы приложения (API), встроенные в браузеры, обеспечивающие различные функциональные возможности, такие как динамическое создание HTML и установку CSS стилей, захват и манипуляция видеопотоком, работа с веб-камерой пользователя или генерация 3D графики и аудио сэмплов;
-      li.list__item Сторонние API позволяют разработчикам внедрять функциональность в свои сайты от других разработчиков, таких как Twitter или Facebook;
-      li.list__item Также вы можете применить к вашему HTML сторонние фреймворки и библиотеки, что позволит вам ускорить создание сайтов и приложений.
+      p.page-section__text JavaScript невероятно универсален и дружелюбен к новичкам. Обладая большим опытом, вы сможете создавать игры, анимированную 2D и 3D графику, полномасштабные приложения с базами данных и многое другое!
 
-  section.page-section
-    h2.page-section__title#js-connection 2. Способы подключения скриптов к сайту
+      p.page-section__text JavaScript сам по себе довольно компактный, но очень гибкий. Разработчиками написано большое количество инструментов поверх основного языка JavaScript, которые разблокируют огромное количество дополнительных функций с очень небольшим усилием. К ним относятся:
 
-    p.page-section__text Сценарии JavaScript бывают #[b встроенные], т.е. их содержимое является частью документа, и #[b внешние], хранящиеся в отдельном файле с расширением .js. Сценарии можно внедрить в html-документ следующими способами:
+      ul.page-section__list.list
+        li.list__item Программные интерфейсы приложения (API), встроенные в браузеры, обеспечивающие различные функциональные возможности, такие как динамическое создание HTML и установку CSS стилей, захват и манипуляция видеопотоком, работа с веб-камерой пользователя или генерация 3D графики и аудио сэмплов;
+        li.list__item Сторонние API позволяют разработчикам внедрять функциональность в свои сайты от других разработчиков, таких как Twitter или Facebook;
+        li.list__item Также вы можете применить к вашему HTML сторонние фреймворки и библиотеки, что позволит вам ускорить создание сайтов и приложений.
 
-    p.page-section__text #[b В виде гиперссылки.] Для этого нужно разместить код в отдельном файле и включить ссылку на файл в заголовок или тело страницы. Этот способ обычно применяется для сценариев большого размера или сценариев, многократно используемых на разных веб-страницах.
+    section.page-section
+      h2.page-section__title#js-connection 2. Способы подключения скриптов к сайту
 
-    pre.line-numbers(data-language='html')
-      code.language-html
-        | &lt;head&gt;
-        |   ...
-        |   &lt;script src="head-script.js"&gt;&lt;/script&gt;
-        | &lt;/head&gt;
-        | &lt;body&gt;
-        |   ...
-        |   &lt;script src="main-script.js"&gt;&lt;/script&gt;
-        | &lt;/body&gt;
+      p.page-section__text Сценарии JavaScript бывают #[b встроенные], т.е. их содержимое является частью документа, и #[b внешние], хранящиеся в отдельном файле с расширением .js. Сценарии можно внедрить в html-документ следующими способами:
 
-    p.page-section__text #[b В виде обработчика события.] Каждый html-элемент имеет JavaScript-события, которые срабатывают в определенный момент. Нужно добавить необходимое событие в html-элемент как атрибут, а в качестве значения этого атрибута указать требуемую функцию. Функция, вызываемая в ответ на срабатывание события, является обработчиком события. В результате срабатывания события исполнится связанный с ним код. Этот способ применяется в основном для коротких сценариев, например, можно установить смену цвета фона при нажатии на кнопку.
+      p.page-section__text #[b В виде гиперссылки.] Для этого нужно разместить код в отдельном файле и включить ссылку на файл в заголовок или тело страницы. Этот способ обычно применяется для сценариев большого размера или сценариев, многократно используемых на разных веб-страницах.
 
-    pre.line-numbers(data-language='html')
-      code.language-html
-        | &lt;script&gt;
-        |   var colorArray = ["#5A9C6E", "#A8BF5A", "#FAC46E", "#FAD5BB", "#F2FEFF"]; // создаем массив с цветами фона
-        |   var i = 0;
-        |
-        |   function changeColor(){
-        |       document.body.style.background = colorArray[i];
-        |       i++;
-        |       if( i &gt; colorArray.length - 1){
-        |           i = 0;
-        |       }
-        |   }
-        | &lt;/script&gt;
-        |
-        | &lt;button onclick="changeColor();"&gt;Change background&lt;/button&gt;
+      pre.line-numbers(data-language='html')
+        code.language-html
+          | &lt;head&gt;
+          |   ...
+          |   &lt;script src="head-script.js"&gt;&lt;/script&gt;
+          | &lt;/head&gt;
+          | &lt;body&gt;
+          |   ...
+          |   &lt;script src="main-script.js"&gt;&lt;/script&gt;
+          | &lt;/body&gt;
 
+      p.page-section__text #[b В виде обработчика события.] Каждый html-элемент имеет JavaScript-события, которые срабатывают в определенный момент. Нужно добавить необходимое событие в html-элемент как атрибут, а в качестве значения этого атрибута указать требуемую функцию. Функция, вызываемая в ответ на срабатывание события, является обработчиком события. В результате срабатывания события исполнится связанный с ним код. Этот способ применяется в основном для коротких сценариев, например, можно установить смену цвета фона при нажатии на кнопку.
 
-    p.page-section__text #[b Внутрь элемента #[code.language-html= '<script>']]. Элемент #[code.language-html= '<script>'] может вставляться в любое место документа. Внутри тега располагается код, который выполняется сразу после прочтения браузером, или содержит описание функции, которая выполняется в момент ее вызова. Описание функции можно располагать в любом месте, главное, чтобы к моменту ее вызова код функции уже был загружен.
-
-    p.page-section__text Обычно код JavaScript размещается в заголовке документа (элемент #[code.language-html= '<head>']) или после открывающего тега #[code.language-html= '<body>']. Если скрипт используется после загрузки страницы, например, код счетчика, то его лучше разместить в конце документа.
-
-    pre.line-numbers(data-language='html')
-      code.language-html
-        |   &lt;footer&gt;
-        |     ...
-        |   &lt;/footer&gt;
-        |
-        |   &lt;script&gt;
-        |     document.write("Введите свое имя");
-        |   &lt;/script&gt;
-        | &lt;/body&gt;
-
-  section.page-section
-    h2.page-section__title#js-vars-n-types 3. Типы данных и переменные в JavaScript
-
-    p.page-section__text Компьютеры обрабатывают информацию — данные. Данные могут быть представлены в различных формах или типах. Большая часть функциональности JavaScript реализуется за счет простого набора объектов и типов данных. Функциональные возможности, связанные со строками, числами и логикой, базируются на строковых, числовых и логических типах данных. Другая функциональная возможность, включающая регулярные выражения, даты и математические операции, осуществляется с помощью объектов RegExp, Date и Math.
-
-    section.page-section__subsection
-      h3.page-section__title.page-section__title--sub#js-vars 3.1 Переменные
-
-      p.page-section__text Переменные представляют собой именованные контейнеры, хранящие данные (значения) в памяти компьютера, которые могут изменяться в процессе выполнения программы. Переменные имеют имя, тип и значение.
-
-      p.page-section__text Вы можете назвать переменную практически как угодно, но есть некоторые ограничения для её имени. Имя переменной, или идентификатор, может включать только буквы a-z, A-Z, цифры 0-9 (цифра не может быть первой в имени переменной), символ $ (может быть только первым символом в имени переменной или функции) и символ подчеркивания _, наличие пробелов не допускается. Длина имени переменной не ограничена. Можно, но не рекомендуется записывать имена переменных буквами русского алфавита, для этого они должны быть записаны в Unicode. В качестве имени переменной нельзя использовать ключевые слова JavaScript. Если вы не уверены, вы можете #[a(href='https://mothereff.in/js-variables') проверить имя вашей переменной], чтобы увидеть корректно ли оно.
-
-      p.page-section__text Имена переменных в JavaScript чувствительные к регистру, что означает, что переменная #[code.language-js var message;] и #[code.language-js var Message;] — разные переменные.
-
-      p.page-section__text Переменная создается (объявляется) с помощью ключевых слов #[code.language-js var], #[code.language-js let] или #[code.language-js const] (о разнице между ними позже), за которыми следует имя переменной, например, #[code.language-js var message;]. Объявлять переменную необходимо перед ее использованием. Переменная инициализируется значением с помощью операции присваивания =, например, #[code.language-js var message="Hellow";], т.е. создается переменная message и в ней сохраняется ее первоначальное значение "Hellow". Переменную можно объявлять без значения, в этом случае ей присваивается значение по умолчанию undefined. Значение переменной может изменяться во время исполнения скрипта. Разные переменные можно объявлять в одной строке, разделив их запятой.
-
-      pre.line-numbers(data-language='js')
-        code.language-js
-          | var message="Hellow", number_msg = 6, time_msg = 50;
-
-      p.page-section__text Так для чего нам нужны переменные? Что ж, переменные должны были сделать что-нибудь интересное в программировании. Если значения не могли бы изменяться, то вы не могли бы ничего сделать динамическим, например, персонализировать приветственное сообщение или сменить изображение, отображаемое в галерее изображений.
-
-    section.page-section__subsection
-      h3.page-section__title.page-section__title--sub#js-types 3.2 Типы данных
-
-      p.page-section__text JavaScript является нетипизированным языком, тип данных для конкретной переменной при ее объявлении указывать не нужно. Тип данных переменной зависит от значений, которые она принимает. Тип переменной может изменяться в процессе совершения операций с данными (динамическое приведение типов). Преобразование типов выполняется автоматически в зависимости от того, в каком контексте они используются. Например, в выражениях, включающих числовые и строковые значения с оператором +, JavaScript преобразует числовые значения в строковые.
-
-      p.page-section__text Получить тип данных, который имеет переменная, можно с помощью оператора typeof. Этот оператор возвращает строку, которая идентифицирует соответствующий тип.
-
-      p.page-section__text Литералы в JavaScript представляют собой особый класс типа данных, фиксированные значения одного из трех типов данных — строкового, числового или логического. Примитивный тип данных является экземпляром определенного типа данных, таких как строковый, числовой, логический, null и undefined.
-
-      p.page-section__text Все типы данных в JavaScript принято делить на две группы — #[b простые] типы данных #[i (primitive data types)] и #[b составные] типы данных #[i (composite data types)].
-
-      p.page-section__text К простым типам данных относят строковый, числовой, логический, null и underfined.  Составные типы данных состоят из более чем одного значения. К ним относятся объекты и особые типы объектов — массивы и функции. Объекты содержат свойства и методы, массивы представляют собой индексированный набор элементов, а функции состоят из коллекции инструкций.
-
-      table.page-section__table.table
-        caption.table__caption Таблица 1. Типы данных в JavaScript
-        thead.table__head
-          tr.table__row
-            th.table__data-title Тип данных
-            th.table__data-title Пояснение
-            th.table__data-title Пример
-        tbody.table__body
-          tr.table__row
-            td.table__data(data-label='Тип данных') String
-            td.table__data(data-label='Пояснение') Последовательность текста, называемая строкой. Чтобы указать, что это значение является строкой, вы должны заключить его в кавычки.
-            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = "Bob";']
-          tr.table__row
-            td.table__data(data-label='Тип данных') Number
-            td.table__data(data-label='Пояснение') Числа. Числа не имеют кавычек вокруг них.
-            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = 10;']
-          tr.table__row
-            td.table__data(data-label='Тип данных') Boolean
-            td.table__data(data-label='Пояснение') Значение True(Правда)/False(Ложь). Слова true и false специальные ключевые слова в JS, и не нуждаются в кавычках.
-            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = true;']
-          tr.table__row
-            td.table__data(data-label='Тип данных') Array
-            td.table__data(data-label='Пояснение') Массив, который позволяет хранить несколько значений в одной ссылке.
-            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = [1, "Bob", "Steve", 10];'] Обратиться к каждому элементу массива можно так: myVariable[0], myVariable[1], и т.д.
-          tr.table__row
-            td.table__data(data-label='Тип данных') Object
-            td.table__data(data-label='Пояснение') В принципе, что угодно. Все в JavaScript является объектом, и может храниться в переменной. Имейте это в виду, пока вы учитесь.
-            td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = document.querySelector("h1");'] Все это из вышеприведённых примеров.
+      pre.line-numbers(data-language='html')
+        code.language-html
+          | &lt;script&gt;
+          |   var colorArray = ["#5A9C6E", "#A8BF5A", "#FAC46E", "#FAD5BB", "#F2FEFF"]; // создаем массив с цветами фона
+          |   var i = 0;
+          |
+          |   function changeColor(){
+          |       document.body.style.background = colorArray[i];
+          |       i++;
+          |       if( i &gt; colorArray.length - 1){
+          |           i = 0;
+          |       }
+          |   }
+          | &lt;/script&gt;
+          |
+          | &lt;button onclick="changeColor();"&gt;Change background&lt;/button&gt;
 
 
-    section.page-section__subsection
-      h3.page-section__title.page-section__title--sub#js-scope 3.3 Глобальные и локальные переменные
+      p.page-section__text #[b Внутрь элемента #[code.language-html= '<script>']]. Элемент #[code.language-html= '<script>'] может вставляться в любое место документа. Внутри тега располагается код, который выполняется сразу после прочтения браузером, или содержит описание функции, которая выполняется в момент ее вызова. Описание функции можно располагать в любом месте, главное, чтобы к моменту ее вызова код функции уже был загружен.
 
-      p.page-section__text Переменные по области видимости делятся на #[b глобальные] и #[b локальные]. #[b Область видимости] представляет собой часть сценария, в пределах которой имя переменной связано с этой переменной и возвращает ее значение. Переменные, объявленные внутри тела функции, называются #[b локальными], их можно использовать только в этой функции. Локальные переменные создаются и уничтожаются вместе с соответствующей функцией.
+      p.page-section__text Обычно код JavaScript размещается в заголовке документа (элемент #[code.language-html= '<head>']) или после открывающего тега #[code.language-html= '<body>']. Если скрипт используется после загрузки страницы, например, код счетчика, то его лучше разместить в конце документа.
 
-      p.page-section__text Переменные, объявленные внутри элемента #[code.language-js= '<script>'], или внутри функции, но без использования ключевого слова #[code.language-js var], называются #[b глобальными]. Доступ к ним может осуществляться на протяжении всего времени, пока страница загружена в браузере. Такие переменные могут использоваться всеми функциями, позволяя им обмениваться данными.
+      pre.line-numbers(data-language='html')
+        code.language-html
+          |   &lt;footer&gt;
+          |     ...
+          |   &lt;/footer&gt;
+          |
+          |   &lt;script&gt;
+          |     document.write("Введите свое имя");
+          |   &lt;/script&gt;
+          | &lt;/body&gt;
 
-      p.page-section__text Глобальные переменные попадают в #[b глобальное пространство имен], которое является местом взаимодействия отдельных компонентов программы. Не рекомендуется объявлять переменные таким способом, так как аналогичные имена переменных уже могут использоваться любым другим кодом, вызывая сбой в работе скрипта.
+    section.page-section
+      h2.page-section__title#js-vars-n-types 3. Типы данных и переменные в JavaScript
 
-      p.page-section__text Глобальное пространство в JavaScript представляется глобальным объектом window. Добавление или изменение глобальных переменных автоматически обновляет глобальный объект. В свою очередь, обновление глобального объекта автоматически приводит к обновлению глобального пространства имен.
+      p.page-section__text Компьютеры обрабатывают информацию — данные. Данные могут быть представлены в различных формах или типах. Большая часть функциональности JavaScript реализуется за счет простого набора объектов и типов данных. Функциональные возможности, связанные со строками, числами и логикой, базируются на строковых, числовых и логических типах данных. Другая функциональная возможность, включающая регулярные выражения, даты и математические операции, осуществляется с помощью объектов RegExp, Date и Math.
 
-      p.page-section__text Если глобальная и локальная переменная имеют одинаковые имена, то локальная переменная будет иметь преимущество перед глобальной.
+      section.page-section__subsection
+        h3.page-section__title.page-section__title--sub#js-vars 3.1 Переменные
 
-      p.page-section__text Локальные переменные, объявленные внутри функции в разных блоках кода, имеют одинаковые области видимости. Тем не менее, рекомендуется помещать объявления всех переменных в начале функции.
+        p.page-section__text Переменные представляют собой именованные контейнеры, хранящие данные (значения) в памяти компьютера, которые могут изменяться в процессе выполнения программы. Переменные имеют имя, тип и значение.
 
-  .page-final
-    p.page-final__sign
-      i Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-javascript/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/JavaScript_basics') MDN]. Приводится в авторской редакции.
+        p.page-section__text Вы можете назвать переменную практически как угодно, но есть некоторые ограничения для её имени. Имя переменной, или идентификатор, может включать только буквы a-z, A-Z, цифры 0-9 (цифра не может быть первой в имени переменной), символ $ (может быть только первым символом в имени переменной или функции) и символ подчеркивания _, наличие пробелов не допускается. Длина имени переменной не ограничена. Можно, но не рекомендуется записывать имена переменных буквами русского алфавита, для этого они должны быть записаны в Unicode. В качестве имени переменной нельзя использовать ключевые слова JavaScript. Если вы не уверены, вы можете #[a.page-section__link.link(href='https://mothereff.in/js-variables') проверить имя вашей переменной], чтобы увидеть корректно ли оно.
 
-    .page-final__links
-      a.link.link--index.link--index-backward(href='css-introduction.html') Предыдущий раздел
-      a.link.link--index.link--index-main(href='index.html') Главная
-      a.link.link--index.link--index-forward(href='math-in-web.html') Следующий раздел
+        p.page-section__text Имена переменных в JavaScript чувствительные к регистру, что означает, что переменная #[code.language-js var message;] и #[code.language-js var Message;] — разные переменные.
+
+        p.page-section__text Переменная создается (объявляется) с помощью ключевых слов #[code.language-js var], #[code.language-js let] или #[code.language-js const] (о разнице между ними позже), за которыми следует имя переменной, например, #[code.language-js var message;]. Объявлять переменную необходимо перед ее использованием. Переменная инициализируется значением с помощью операции присваивания =, например, #[code.language-js var message="Hellow";], т.е. создается переменная message и в ней сохраняется ее первоначальное значение "Hellow". Переменную можно объявлять без значения, в этом случае ей присваивается значение по умолчанию undefined. Значение переменной может изменяться во время исполнения скрипта. Разные переменные можно объявлять в одной строке, разделив их запятой.
+
+        pre.line-numbers(data-language='js')
+          code.language-js
+            | var message="Hellow", number_msg = 6, time_msg = 50;
+
+        p.page-section__text Так для чего нам нужны переменные? Что ж, переменные должны были сделать что-нибудь интересное в программировании. Если значения не могли бы изменяться, то вы не могли бы ничего сделать динамическим, например, персонализировать приветственное сообщение или сменить изображение, отображаемое в галерее изображений.
+
+      section.page-section__subsection
+        h3.page-section__title.page-section__title--sub#js-types 3.2 Типы данных
+
+        p.page-section__text JavaScript является нетипизированным языком, тип данных для конкретной переменной при ее объявлении указывать не нужно. Тип данных переменной зависит от значений, которые она принимает. Тип переменной может изменяться в процессе совершения операций с данными (динамическое приведение типов). Преобразование типов выполняется автоматически в зависимости от того, в каком контексте они используются. Например, в выражениях, включающих числовые и строковые значения с оператором +, JavaScript преобразует числовые значения в строковые.
+
+        p.page-section__text Получить тип данных, который имеет переменная, можно с помощью оператора typeof. Этот оператор возвращает строку, которая идентифицирует соответствующий тип.
+
+        p.page-section__text Литералы в JavaScript представляют собой особый класс типа данных, фиксированные значения одного из трех типов данных — строкового, числового или логического. Примитивный тип данных является экземпляром определенного типа данных, таких как строковый, числовой, логический, null и undefined.
+
+        p.page-section__text Все типы данных в JavaScript принято делить на две группы — #[b простые] типы данных #[i (primitive data types)] и #[b составные] типы данных #[i (composite data types)].
+
+        p.page-section__text К простым типам данных относят строковый, числовой, логический, null и underfined.  Составные типы данных состоят из более чем одного значения. К ним относятся объекты и особые типы объектов — массивы и функции. Объекты содержат свойства и методы, массивы представляют собой индексированный набор элементов, а функции состоят из коллекции инструкций.
+
+        table.page-section__table.table
+          caption.table__caption Таблица 1. Типы данных в JavaScript
+          thead.table__head
+            tr.table__row
+              th.table__data-title Тип данных
+              th.table__data-title Пояснение
+              th.table__data-title Пример
+          tbody.table__body
+            tr.table__row
+              td.table__data(data-label='Тип данных') String
+              td.table__data(data-label='Пояснение') Последовательность текста, называемая строкой. Чтобы указать, что это значение является строкой, вы должны заключить его в кавычки.
+              td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = "Bob";']
+            tr.table__row
+              td.table__data(data-label='Тип данных') Number
+              td.table__data(data-label='Пояснение') Числа. Числа не имеют кавычек вокруг них.
+              td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = 10;']
+            tr.table__row
+              td.table__data(data-label='Тип данных') Boolean
+              td.table__data(data-label='Пояснение') Значение True(Правда)/False(Ложь). Слова true и false специальные ключевые слова в JS, и не нуждаются в кавычках.
+              td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = true;']
+            tr.table__row
+              td.table__data(data-label='Тип данных') Array
+              td.table__data(data-label='Пояснение') Массив, который позволяет хранить несколько значений в одной ссылке.
+              td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = [1, "Bob", "Steve", 10];'] Обратиться к каждому элементу массива можно так: myVariable[0], myVariable[1], и т.д.
+            tr.table__row
+              td.table__data(data-label='Тип данных') Object
+              td.table__data(data-label='Пояснение') В принципе, что угодно. Все в JavaScript является объектом, и может храниться в переменной. Имейте это в виду, пока вы учитесь.
+              td.table__data(data-label='Пример') #[code.language-js= 'var myVariable = document.querySelector("h1");'] Все это из вышеприведённых примеров.
+
+
+      section.page-section__subsection
+        h3.page-section__title.page-section__title--sub#js-scope 3.3 Глобальные и локальные переменные
+
+        p.page-section__text Переменные по области видимости делятся на #[b глобальные] и #[b локальные]. #[b Область видимости] представляет собой часть сценария, в пределах которой имя переменной связано с этой переменной и возвращает ее значение. Переменные, объявленные внутри тела функции, называются #[b локальными], их можно использовать только в этой функции. Локальные переменные создаются и уничтожаются вместе с соответствующей функцией.
+
+        p.page-section__text Переменные, объявленные внутри элемента #[code.language-js= '<script>'], или внутри функции, но без использования ключевого слова #[code.language-js var], называются #[b глобальными]. Доступ к ним может осуществляться на протяжении всего времени, пока страница загружена в браузере. Такие переменные могут использоваться всеми функциями, позволяя им обмениваться данными.
+
+        p.page-section__text Глобальные переменные попадают в #[b глобальное пространство имен], которое является местом взаимодействия отдельных компонентов программы. Не рекомендуется объявлять переменные таким способом, так как аналогичные имена переменных уже могут использоваться любым другим кодом, вызывая сбой в работе скрипта.
+
+        p.page-section__text Глобальное пространство в JavaScript представляется глобальным объектом window. Добавление или изменение глобальных переменных автоматически обновляет глобальный объект. В свою очередь, обновление глобального объекта автоматически приводит к обновлению глобального пространства имен.
+
+        p.page-section__text Если глобальная и локальная переменная имеют одинаковые имена, то локальная переменная будет иметь преимущество перед глобальной.
+
+        p.page-section__text Локальные переменные, объявленные внутри функции в разных блоках кода, имеют одинаковые области видимости. Тем не менее, рекомендуется помещать объявления всех переменных в начале функции.
+
+    .page-final
+      p.page-final__sign
+        i Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-javascript/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/JavaScript_basics') MDN]. Приводится в авторской редакции.
+
+      .page-final__links
+        a.page-final__left-link.link.link--index.link--index-backward(href='css-introduction.html') Предыдущий раздел
+        a.page-final__central-link.link.link--index.link--index-main(href='index.html') Главная
+        a.page-final__right-link.link.link--index.link--index-forward(href='math-in-web.html') Следующий раздел
 
 block footer
   footer.page-footer
     p.page-footer__author © Марина Калюжная, 2020
 
 block page-bottom
+  script(src='js/script.min.js')

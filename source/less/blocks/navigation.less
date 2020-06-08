@@ -1,6 +1,16 @@
 .navigation {
   &__wrap {
-    display: none;
-    background-color: #f8f8f4;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    padding: 30px 20px;
+    background-color: darken(#f8f8f4, 10%);
+    border-bottom: 2px solid #202020;
+
+    &--closed {
+      display: none;
+    }
   }
 }

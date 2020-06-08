@@ -10,7 +10,14 @@
   &__item {
     font-size: 28px;
     font-weight: 500;
-    border-bottom: 2px solid #202020;
+    color: #126047;
+    border-bottom: 2px solid #126047;
+
+    &--nav {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
 
     &--small {
       font-size: 20px;
@@ -39,6 +46,10 @@
   &__item-link,
   &__anchor {
     color: inherit;
+  }
+
+  &__anchor {
+    border-bottom: 1px solid #126047;
   }
 }
 

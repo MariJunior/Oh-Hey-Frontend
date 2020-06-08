@@ -4,25 +4,29 @@ block header
   +header(true, '1.1 Основы HTML')
     block navigation
       ol.navigation__list.table-of-content
-        li.table-of-content__item HTML
-          ol.table-of-content
-            li.table-of-content__item.table-of-content__item--sub
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small HTML
+          ol.table-of-content.table-of-content--sub
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link.table-of-content__item-link--current основы HTML
-        li.table-of-content__item CSS
-          ol.table-of-content
-            li.table-of-content__item.table-of-content__item--sub
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small CSS
+          ol.table-of-content.table-of-content--sub
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link(href='css-introduction.html') основы CSS
-        li.table-of-content__item JavaScript
-          ol.table-of-content
-            li.table-of-content__item.table-of-content__item--sub
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small JavaScript
+          ol.table-of-content.table-of-content--sub
+            li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link(href='js-introduction.html') основы JavaScript
 
       ol.table-of-content
-        li.table-of-content__item
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
           a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
 
 block content
   p.page-index 1.1 основы html
+
+  a.button.button--top(href='#top', aria-label='кнопка перехода к началу страницы')
+    svg.button__icon(width='30', height='32', xmlns='http://www.w3.org/2000/svg', role='presentation')
+      path(d='M16.4142 0.585785C15.6332 -0.195263 14.3668 -0.195263 13.5858 0.585785L0.857865 13.3137C0.0768164 14.0948 0.0768163 15.3611 0.857865 16.1421C1.63891 16.9232 2.90524 16.9232 3.68629 16.1421L15 4.82842L26.3137 16.1421C27.0948 16.9232 28.3611 16.9232 29.1421 16.1421C29.9232 15.3611 29.9232 14.0948 29.1421 13.3137L16.4142 0.585785ZM17 32L17 2L13 2L13 32L17 32Z')
 
   .container
     +pageTitle('1.1 Основы HTML')
@@ -446,11 +450,11 @@ block content
 
     .page-final
       p.page-final__sign
-        i Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-html/') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics') MDN]. Приводится в авторской редакции.
+        i Источники инофмации: #[a.link(href='https://html5book.ru/osnovy-html/', target='_blank') html5book] и #[a.link(href='https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics', target='_blank') MDN]. Приводится в авторской редакции.
 
       .page-final__links
-        a.link.link--index.link--index-main(href='index.html') Главная
-        a.link.link--index.link--index-forward(href='css-introduction.html') Следующий раздел
+        a.page-final__central-link.link.link--index.link--index-main(href='index.html') Главная
+        a.page-final__right-link.link.link--index.link--index-forward(href='css-introduction.html') Следующий раздел
 
 block footer
   footer.page-footer

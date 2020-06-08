@@ -4,8 +4,7 @@
 const $ = require('jquery');
 const Prism = require('prismjs');
 require('prismjs/plugins/line-numbers/prism-line-numbers.js');
-const loadLanguages = require('prismjs/components/');
-loadLanguages(['latex']);
+require('prismjs/components/prism-latex.js');
 
 $(document).ready(function () {
   Prism.highlightAll();
