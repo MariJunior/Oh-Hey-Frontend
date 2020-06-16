@@ -4,18 +4,21 @@ block variables
   - var pageName = 'введение в css';
 
 block header
-  +header(true, '2.1 Основы CSS')
+  +header(true, 'Основы CSS')
     block navigation
       ol.navigation__list.table-of-content
-        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small HTML
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
+          a.table-of-content__item-link(href='table-of-content-html.html') HTML
           ol.table-of-content.table-of-content--sub
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link(href='html-introduction.html') Основы HTML
-        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small CSS
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
+          a.table-of-content__item-link(href='table-of-content-css.html') CSS
           ol.table-of-content.table-of-content--sub
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link.table-of-content__item-link--current Основы CSS
-        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small JavaScript
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
+          a.table-of-content__item-link(href='table-of-content-js.html') JavaScript
           ol.table-of-content.table-of-content--sub
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__item-link(href='js-introduction.html') Основы JavaScript
@@ -25,7 +28,7 @@ block header
           a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
 
 block content
-  p.page-index 2.1 основы css
+  p.page-index основы css
 
   a.button.button--top(href='#top', aria-label='кнопка перехода к началу страницы')
     svg.button__icon(width='30', height='32', xmlns='http://www.w3.org/2000/svg', role='presentation')
@@ -40,7 +43,7 @@ block content
       p.page-section__text CSS (Cascading Style Sheets) — это код, который используется для стилизации вашей веб-страницы. Основы CSS помогут понять, что нужно для начала работы. Ниже будут даны ответы на такие вопросы как: "Как сделать мой текст черным или красным?" "Как сделать так, чтобы контент появлялся в определенном месте на экране?" "Как украсить мою веб-страницу с помощью фоновых изображений и цветов?" и другие.
 
     section.page-section
-      h2.page-section__title План раздела
+      h2.visually-hidden План раздела
 
       ol.page-section__content.table-of-content
         li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
@@ -57,7 +60,7 @@ block content
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
               a.table-of-content__anchor(href='#inline-css') Инлайновые стили
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-              a.table-of-content__anchor(href='#import-css') Правило #[code.language-css @import]
+              a.table-of-content__anchor(href='#import-css') Правило @import
         li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
           a.table-of-content__anchor(href='#css-selectors') Виды селекторов
           ol.table-of-content.table-of-content--sub
@@ -76,7 +79,7 @@ block content
               a.table-of-content__anchor(href='#cascade') Каскад
               ol.table-of-content.table-of-content--sub
                 li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-                  a.table-of-content__anchor(href='#important') Правило #[code.language-css !important]
+                  a.table-of-content__anchor(href='#important') Правило !important
                 li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
                   a.table-of-content__anchor(href='#specificity') Специфичность
                 li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
@@ -101,7 +104,7 @@ block content
 
       figure.page-section__figure
         img.page-section__img(src='img/css-rule.png', alt='Пример css-правила')
-        figcaption.page-section__img-caption Рисунок 1. Структура объявления
+        figcaption.page-section__img-caption рисунок 1. структура объявления
 
       p.page-section__text Вся структура называется набором правил (но зачастую для краткости "правило" ) и состоит из двух основных частей: селектора и объявления.
 
@@ -152,7 +155,7 @@ block content
         p.page-section__text Вынесение стилевых правил в отдельных файл позволяет:
 
         ul.page-section__list.list
-          li.list__item реиспользовать их без необходимости дублирования;
+          li.list__item использовать их повторно без необходимости дублирования кода;
           li.list__item вносить изменения в одном файле, меняя таким образом сразу все страницы, к которым подключена таблица стилей;
           li.list__item ускорить загрузку страниц сайта, т.к. при первой загрузке файл будет помещён в кэш и при загрузке других страниц с данными стилями будет уже "на месте".
 
@@ -189,9 +192,9 @@ block content
         p.page-section__text Рекомендуется использовать внутренний стиль для одиночных тегов или отказаться от его использования вообще, поскольку изменение ряда элементов становится проблематичным. Внутренние стили не соответствуют идеологии структурного документа, когда содержимое и его оформление разделены.
 
       section.page-section__subsection
-        h3.page-section__title.page-section__title--sub#import-css 3.4 Правило #[code.language-css @import]
+        h3.page-section__title.page-section__title--sub#import-css 3.4 Правило @import
 
-        p.page-section__text Правило #[code.language-css @import] позволяет встраивать внешние таблицы стилей в пользовательские. Чтобы директива `@import` работала, она должна располагаться в таблице стилей (внешней или внутренней, но никак не в инлайновых стилях) перед всеми остальными правилами.
+        p.page-section__text Правило #[code.language-css @import] позволяет встраивать внешние таблицы стилей в пользовательские. Чтобы директива #[code.language-css @import] работала, она должна располагаться в таблице стилей (внешней или внутренней, но никак не в инлайновых стилях) перед всеми остальными правилами.
 
         p.page-section__text Правило #[code.language-css @import] может использоваться, например, для подключения веб-шрифтов.
 
@@ -378,7 +381,7 @@ block content
 
         figure.page-section__figure
           img.page-section__img(src='img/firefox-inspector-inheritance.png', alt='Инспектирование элемента в режиме разработчика в браузере Firefox Developer Edition')
-          figcaption.page-section__img-caption Рисунок 2. С помощью инструментов разработчика в браузерах несложно посмотреть, какие стили наследуются элементом
+          figcaption.page-section__img-caption рисунок 2. с помощью инструментов разработчика в браузерах несложно посмотреть, какие стили наследуются элементом
 
       section.page-section__subsection
         h3.page-section__title.page-section__title--sub#cascade 5.2 Каскад
@@ -389,7 +392,7 @@ block content
             dd.determinations__item-data Механизм, который управляет конечным результатом в ситуации, когда к одному элементу применяются разные CSS-правила. Существует три критерия, которые определяют порядок применения свойств — правило !important, специфичность и порядок, в котором подключены таблицы стилей.
 
         section.page-section__subsubsection
-          h4.page-section__title.page-section__title--subsub#important 5.2.1 Правило #[code.language-css !important]
+          h4.page-section__title.page-section__title--subsub#important 5.2.1 Правило !important
 
           p.page-section__text Вес правила можно задать с помощью ключевого слова #[code.language-css !important], которое добавляется сразу после значения свойства, например, #[code.language-css= 'span {font-weight: bold!important;}']. Правило необходимо размещать в конец объявления перед закрывающей скобкой, без пробела. Такое объявление будет иметь приоритет над всеми остальными правилами. Это правило позволяет отменить значение свойства и установить новое для элемента из группы элементов в случае, когда нет прямого доступа к файлу со стилями.
 

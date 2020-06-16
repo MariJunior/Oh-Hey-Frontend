@@ -4,28 +4,31 @@ block variables
   - var pageName = 'введение в html';
 
 block header
-  +header(true, '1.1 Основы HTML')
+  +header(true, 'Основы HTML')
     block navigation
       ol.navigation__list.table-of-content
-        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small HTML
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
+          a.table-of-content__item-link(href='table-of-content-html.html') HTML
           ol.table-of-content.table-of-content--sub
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-              a.table-of-content__item-link.table-of-content__item-link--current основы HTML
-        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small CSS
+              a.table-of-content__item-link.table-of-content__item-link--current Основы HTML
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
+          a.table-of-content__item-link(href='table-of-content-css.html') CSS
           ol.table-of-content.table-of-content--sub
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-              a.table-of-content__item-link(href='css-introduction.html') основы CSS
-        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small JavaScript
+              a.table-of-content__item-link(href='css-introduction.html') Основы CSS
+        li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
+          a.table-of-content__item-link(href='table-of-content-js.html') JavaScript
           ol.table-of-content.table-of-content--sub
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-              a.table-of-content__item-link(href='js-introduction.html') основы JavaScript
+              a.table-of-content__item-link(href='js-introduction.html') Основы JavaScript
 
       ol.table-of-content
         li.table-of-content__item.table-of-content__item--nav.table-of-content__item--small
           a.table-of-content__item-link(href='math-in-web.html') Математика в вебе
 
 block content
-  p.page-index 1.1 основы html
+  p.page-index основы html
 
   a.button.button--top(href='#top', aria-label='кнопка перехода к началу страницы')
     svg.button__icon(width='30', height='32', xmlns='http://www.w3.org/2000/svg', role='presentation')
@@ -40,7 +43,7 @@ block content
       p.page-section__text По сути, HTML довольно простой язык, состоящий из элементов, которые могут быть применены к частям текста, чтобы придавать им различные значения (Это абзац? Это маркированный список? Это часть таблицы?), разделять документ на логические секции (есть ли у документа шапка? три столбца с контентом? меню навигации?) и добавлять контент на Вашу страницу, такой как фото и видео. Этот модуль расскажет Вам о первых двух возможностях HTML и научит фундаментальным концепциям и синтаксису, которые вам нужно знать, чтобы понять HTML.
 
     section.page-section
-      h2.page-section__title План раздела
+      h2.visually-hidden План раздела
 
       ol.page-section__content.table-of-content
         li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
@@ -56,22 +59,22 @@ block content
           a.table-of-content__anchor(href='#html-doc-anatomy') Анатомия HTML-документа
           ol.table-of-content.table-of-content--sub
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-              a.table-of-content__anchor(href='#elem-html') Элемент #[code.page-section__code.language-html= '<html>']
+              a.table-of-content__anchor(href='#elem-html') Элемент #{'<html>'}
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-              a.table-of-content__anchor(href='#elem-head') Элемент #[code.page-section__code.language-html= '<head>']
+              a.table-of-content__anchor(href='#elem-head') Элемент #{'<head>'}
               ol.table-of-content.table-of-content--sub
                 li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-                  a.table-of-content__anchor(href='#elem-title') Элемент #[code.page-section__code.language-html= '<title>']
+                  a.table-of-content__anchor(href='#elem-title') Элемент #{'<title>'}
                 li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-                  a.table-of-content__anchor(href='#elem-meta') Элемент #[code.page-section__code.language-html= '<meta>']
+                  a.table-of-content__anchor(href='#elem-meta') Элемент #{'<meta>'}
                 li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-                  a.table-of-content__anchor(href='#elem-style') Элемент #[code.page-section__code.language-html= '<style>']
+                  a.table-of-content__anchor(href='#elem-style') Элемент #{'<style>'}
                 li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-                  a.table-of-content__anchor(href='#elem-link') Элемент #[code.page-section__code.language-html= '<link>']
+                  a.table-of-content__anchor(href='#elem-link') Элемент #{'<link>'}
                 li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-                  a.table-of-content__anchor(href='#elem-script') Элемент #[code.page-section__code.language-html= '<script>']
+                  a.table-of-content__anchor(href='#elem-script') Элемент #{'<script>'}
             li.table-of-content__item.table-of-content__item--sub.table-of-content__item--small
-              a.table-of-content__anchor(href='#elem-body') Элемент #[code.page-section__code.language-html= '<body>']
+              a.table-of-content__anchor(href='#elem-body') Элемент #{'<body>'}
 
     section.page-section
       h2.page-section__title#html-really 1. Что такое HTML на самом деле?
@@ -92,7 +95,7 @@ block content
 
       figure.page-section__figure
         img.page-section__img(src='img/html-elem-anatomy.png', alt='Пример html-элемента')
-        figcaption.page-section__img-caption Рисунок 1. Общая структура HTML-элмента
+        figcaption.page-section__img-caption рисунок 1. общая структура html-элмента
 
       p.page-section__text Давайте рассмотрим элемент абзаца более подробно. Главными частями элемента являются:
 
@@ -114,7 +117,7 @@ block content
 
       figure.page-section__figure
         img.page-section__img(src='img/html-elem-attr.png', alt='Пример html-элмента с атрибутом')
-        figcaption.page-section__img-caption Рисунок 2. HTML-элмент с атрибутом
+        figcaption.page-section__img-caption рисунок 2. html-элемент с атрибутом
 
       p.page-section__text Атрибуты содержат дополнительную информацию об элементе, которую вы не хотите показывать в фактическом контенте. В данном случае, class это имя атрибута, а editor-note это значение атрибута. Класс позволяет дать элементу идентификационное имя, которое может позже использоваться, чтобы обращаться к элементу с информацией о стиле и прочих вещах.
 
@@ -142,7 +145,6 @@ block content
 
       p.page-section__text #[code.page-section__code.language-html DOCTYPE] отвечает за корректное отображение веб-страницы браузером. #[code.page-section__code.language-html DOCTYPE] определяет не только версию HTML (например, html), но и соответствующий DTD-файл в Интернете. Однако в наши дни, никто не заботится об этом, и они на самом деле просто исторический артефакт, который должен быть включен для того, что бы все работало правильно.
 
-      //- FIXME если не будет работать нормально, попробовать code.page-section__code= '[одной строкой код с \n для перехода на след строку и \t для табуляции]'
       pre.page-section__pre.line-numbers(data-language='html')
         code.page-section__code.language-html
           | &lt;!DOCTYPE html&gt; &lt;!-- Объявление формата документа --&gt;
@@ -162,7 +164,7 @@ block content
 
       figure.page-section__figure
         img.page-section__img(src='img/dom-tree.png', alt='DOM')
-        figcaption.page-section__img-caption Рисунок 3. Простой пример DOM-дерева
+        figcaption.page-section__img-caption рисунок 3. простой пример dom-дерева
 
       p.page-section__text Чтобы разобраться во взаимодействии элементов веб-страницы, необходимо рассмотреть так называемые «родственные отношения» между элементами. Отношения между множественными вложенными элементами подразделяются на родительские, дочерние и сестринские. Ниже дадим самые важные понятия в контексте отношений.
 
@@ -184,12 +186,12 @@ block content
           dd.determinations__item-data Элемент, имеющий общий родительский элемент с рассматриваемым, так называемые элементы одного уровня.
 
       section.page-section__subsection
-        h3.page-section__title.page-section__title--sub#elem-html 3.1 Элемент #[code.page-section__code.language-html= '<html>']
+        h3.page-section__title.page-section__title--sub#elem-html 3.1 Элемент #{'<html>'}
 
         p.page-section__text Этот элемент оборачивает весь контент на всей странице, и иногда известен как корневой элемент. Все остальные элементы содержатся внутри тегов #[code.page-section__code.language-html= '<html>...</html>'], всё за пределами этих тегов не воспринимается браузером как код HTML и никак им не обрабатывается. Для элемента доступны атрибуты manifest и xmlns, а также ‎глобальные атрибуты.
 
         table.page-section__table.table
-          caption.table__caption Таблица 1. Атрибуты тега #[code.page-section__code.language-html= '<html>']
+          caption.table__caption таблица 1. атрибуты тега #[code.page-section__code.language-html= '<html>']
           thead.table__head
             tr.table__row
               th.table__data-title Атрибут
@@ -203,21 +205,21 @@ block content
               td.table__data(data-label='Описание, принимаемые значения') Используется в XHTML для объявления пространства имен — совокупности наименований тегов и атрибутов предназначенных для сохранения уникальности имен. В качестве значения указывается полный адрес документа с описанием пространства имен. Локальный путь и пустая строка недопустима. #[code.page-section__code.language-html &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;]
 
       section.page-section__subsection
-        h3.page-section__title.page-section__title--sub#elem-head 3.2 Элемент #[code.page-section__code.language-html= '<head>']
+        h3.page-section__title.page-section__title--sub#elem-head 3.2 Элемент #{'<head>'}
 
         p.page-section__text Этот элемент выступает в качестве контейнера для всего, что вы пожелаете включить на HTML страницу, но не являющегося контентом, который вы показываете пользователям вашей страницы. К ним относятся такие вещи, как ключевые слова и описание страницы, которые будут появляться в результатах поиска, CSS стили нашего контента, кодировка и многое другое.
 
         p.page-section__text Для элемента доступны ‎глобальные атрибуты.
 
         section.page-section__subsubsection
-          h4.page-section__title.page-section__title--subsub#elem-title 3.2.1 Элемент #[code.page-section__code.language-html= '<title>']
+          h4.page-section__title.page-section__title--subsub#elem-title 3.2.1 Элемент #{'<title>'}
 
           p.page-section__text Обязательным тегом раздела #[code.page-section__code.language-html= '<head>'] является тег #[code.page-section__code.language-html= '<title>']. Текст внутри этого тега отображается в строке заголовка окна браузера. Длина заголовка должна быть не более 60 символов, чтобы полностью поместиться в заголовке. Текст заголовка должен содержать максимально полное описание содержимого веб-страницы.
 
           p.page-section__text Для элемента доступны глобальные атрибуты.
 
         section.page-section__subsubsection
-          h4.page-section__title.page-section__title--subsub#elem-meta 3.2.2 Элемент #[code.page-section__code.language-html= '<meta>']
+          h4.page-section__title.page-section__title--subsub#elem-meta 3.2.2 Элемент #{'<meta>'}
 
           p.page-section__text Необязательным тегом раздела #[code.page-section__code.language-html= '<head>'] является одинарный тег #[code.page-section__code.language-html= '<meta>']. С его помощью можно задать описание содержимого страницы и ключевые слова для поисковых машин, автора HTML-документа и прочие свойства метаданных. Элемент #[code.page-section__code.language-html= '<head>'] может содержать несколько элементов #[code.page-section__code.language-html= '<meta>'], потому что в зависимости от используемых атрибутов они несут различную информацию. Описание содержимого страницы и ключевые слова одновременно можно указывать на нескольких языках, например, на русском и английском. С помощью тега #[code.page-section__code.language-html= '<meta>'] можно запретить или разрешить индексацию веб-страницы поисковыми машинами.
 
@@ -252,7 +254,7 @@ block content
           p.page-section__text Для элемента #[code.page-section__code.language-html= '<meta>'] доступны атрибуты #[code.page-section__code.language-none charset], #[code.page-section__code.language-none content], #[code.page-section__code.language-none http-equiv], #[code.page-section__code.language-none name], а также ‎глобальные атрибуты.
 
           table.page-section__table.table
-            caption.table__caption Таблица 2. Атрибуты тега #[code.page-section__code.language-html= '<meta>']
+            caption.table__caption таблица 2. атрибуты тега #[code.page-section__code.language-html= '<meta>']
             thead.table__head
               tr.table__row
                 th.table__data-title Атрибут
@@ -272,7 +274,7 @@ block content
                 td.table__data(data-label='Описание, принимаемые значения') Ассоциируется со значением, содержащемся в атрибуте #[code.page-section__code.language-none content]. Не должен использоваться в случае, если для элемента уже заданы атрибуты #[code.page-section__code.language-none http-equiv], #[code.page-section__code.language-none charset] или #[code.page-section__code.language-none itemprop]. #[code.page-section__code.language-none application-name] указывает название веб-приложения, используемого на странице. #[code.page-section__code.language-none author] указывает имя автора документа в свободном формате. #[code.page-section__code.language-none description] определяет краткое описание к содержимому страницы, например: #[code.page-section__code.language-html= '<meta name="description" content="Описание содержимого страницы">']. #[code.page-section__code.language-none generator] указывает один из пакетов программного обеспечения, используемого для создания документа, например: #[code.page-section__code.language-html= '<meta name="generator" content="Wordpre.page-section__press 4.0">']. #[code.page-section__code.language-none keywords] содержит список ключевых слов, разделенных запятыми, соответствующих содержимому страницы, например: #[code.page-section__code.language-html= '<meta name="keywords" content="Ключевые слова через запятую">']. Также атрибут #[code.page-section__code.language-none name] может принимать следующие значения из расширенной спецификации, такие как #[code.page-section__code.language-none creator], #[code.page-section__code.language-none googlebot], #[code.page-section__code.language-none publisher], #[code.page-section__code.language-none robots], #[code.page-section__code.language-none slurp], #[code.page-section__code.language-none viewport].
 
         section.page-section__subsubsection
-          h4.page-section__title.page-section__title--subsub#elem-style 3.2.3 Элемент #[code.page-section__code.language-html= '<style>']
+          h4.page-section__title.page-section__title--subsub#elem-style 3.2.3 Элемент #{'<style>'}
 
           p.page-section__text Внутри этого элемента задаются стили, которые используются на странице. Для задания стилей в HTML-документе используется язык CSS. Таких элементов на странице может быть несколько. Внутрь этого элемента можно записывать код форматирования как самих элементов веб-страницы, так и веб-страницы целиком.
 
@@ -297,7 +299,7 @@ block content
               | &lt;/div&gt;
 
           table.page-section__table.table
-            caption.table__caption Таблица 3. Атрибуты тега #[code.page-section__code.language-html= '<style>']
+            caption.table__caption таблица 3. атрибуты тега #[code.page-section__code.language-html= '<style>']
             thead.table__head
               tr.table__row
                 th.table__data-title Атрибут
@@ -314,7 +316,7 @@ block content
                 td.table__data(data-label='Описание, принимаемые значения') Определяет MIME-тип подключаемого файла со стилями, в данном случае #[code.page-section__code.language-html= '<style type="text/css">'].
 
         section.page-section__subsubsection
-          h4.page-section__title.page-section__title--subsub#elem-link 3.2.4 Элемент #[code.page-section__code.language-html= '<link>']
+          h4.page-section__title.page-section__title--subsub#elem-link 3.2.4 Элемент #{'<link>'}
 
           p.page-section__text Задать стили для документа можно также при помощи другого способа — записать их в отдельный файл с расширением .css, например, style.css.
 
@@ -336,7 +338,7 @@ block content
           p.page-section__text Для элемента доступны атрибуты #[code.page-section__code.language-none href], #[code.page-section__code.language-none hreflang], #[code.page-section__code.language-none media], #[code.page-section__code.language-none rel], #[code.page-section__code.language-none type], а также ‎глобальные атрибуты.
 
           table.page-section__table.table
-            caption.table__caption Таблица 4. Атрибуты тега #[code.page-section__code.language-html= '<link>']
+            caption.table__caption таблица 4. атрибуты тега #[code.page-section__code.language-html= '<link>']
             thead.table__head
               tr.table__row
                 th.table__data-title Атрибут
@@ -371,14 +373,14 @@ block content
                 td.table__data(data-label='Описание, принимаемые значения') Определяет MIME-тип документа, на который идет ссылка.
 
         section.page-section__subsubsection
-          h4.page-section__title.page-section__title--subsub#elem-script 3.2.5 Элемент #[code.page-section__code.language-html= '<script>']
+          h4.page-section__title.page-section__title--subsub#elem-script 3.2.5 Элемент #{'<script>'}
 
           p.page-section__text Элемент #[code.page-section__code.language-html= '<script>'] позволяет присоединять к документу различные сценарии. Закрывающий тег обязателен, при этом текст сценария может располагаться либо внутри этого элемента, либо во внешнем файле. Если текст сценария расположен во внешнем файле, то он подключается с помощью атрибутов элемента.
 
           p.page-section__text Для элемента доступны атрибуты #[code.page-section__code.language-none async], #[code.page-section__code.language-none charset], #[code.page-section__code.language-none defer], #[code.page-section__code.language-none src], #[code.page-section__code.language-none type], а также ‎глобальные атрибуты.
 
           table.page-section__table.table
-            caption.table__caption Таблица 5. Атрибуты тега #[code.page-section__code.language-html= '<script>']
+            caption.table__caption таблица 5. атрибуты тега #[code.page-section__code.language-html= '<script>']
             thead.table__head
               tr.table__row
                 th.table__data-title Атрибут
@@ -407,14 +409,14 @@ block content
                 td.table__data(data-label='Описание, принимаемые значения') Используются для объявления языка сценария, использованного при составлении содержимого тега.
 
       section.page-section__subsection
-        h3.page-section__title.page-section__title--sub#elem-body 3.3 Элемент #[code.page-section__code.language-html= '<body>']
+        h3.page-section__title.page-section__title--sub#elem-body 3.3 Элемент #{'<body>'}
 
         p.page-section__text Внутри этого элемента содержится весь контент, который вы хотите показывать пользователям, когда они посещают вашу страницу, будь то текст, изображения, видео, игры, проигрываемые аудиодорожки или что-то еще.
 
         p.page-section__text Для элемента доступны глобальные атрибуты.
 
         table.page-section__table.table
-          caption.table__caption Таблица 6. Атрибуты тега #[code.page-section__code.language-html= '<body>']
+          caption.table__caption таблица 6. атрибуты тега #[code.page-section__code.language-html= '<body>']
           thead.table__head
             tr.table__row
               th.table__data-title Атрибут

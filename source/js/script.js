@@ -9,3 +9,5 @@ require('./modules/position-sticky.js');
 require('./modules/smooth-scroll.js');
 
 require('./modules/pages-transitions.js');
+
+require('./modules/math-render.js');
