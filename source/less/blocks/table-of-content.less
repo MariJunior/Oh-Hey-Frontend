@@ -46,6 +46,17 @@
   &__item-link,
   &__anchor {
     color: inherit;
+    transition: all 0.5s ease;
+
+    &:hover,
+    &:focus {
+      color: darken(#126047, 5%);
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
   }
 
   &__anchor {

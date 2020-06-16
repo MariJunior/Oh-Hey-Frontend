@@ -2,6 +2,17 @@
   // display: inline-block;
   color: #126047;
   border-bottom: 1px solid #126047;
+  transition: all 0.5s ease;
+
+  &:hover,
+  &:focus {
+    color: lighten(#126047, 10%);
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
 
   &--index {
     display: inline-block;
