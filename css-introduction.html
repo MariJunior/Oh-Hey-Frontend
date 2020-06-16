@@ -59,19 +59,19 @@
       </button>
       <div class="navigation__wrap">
         <ol class="navigation__list table-of-content">
-          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small">HTML
+          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small"><a class="table-of-content__item-link" href="table-of-content-html.html">HTML</a>
             <ol class="table-of-content table-of-content--sub">
               <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__item-link" href="html-introduction.html">Основы HTML</a>
               </li>
             </ol>
           </li>
-          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small">CSS
+          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small"><a class="table-of-content__item-link" href="table-of-content-css.html">CSS</a>
             <ol class="table-of-content table-of-content--sub">
               <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__item-link table-of-content__item-link--current">Основы CSS</a>
               </li>
             </ol>
           </li>
-          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small">JavaScript
+          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small"><a class="table-of-content__item-link" href="table-of-content-js.html">JavaScript</a>
             <ol class="table-of-content table-of-content--sub">
               <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__item-link" href="js-introduction.html">Основы JavaScript</a>
               </li>
@@ -86,7 +86,7 @@
     </nav>
   </header>
   <main class="page-main">
-    <p class="page-index">2.1 основы css</p>
+    <p class="page-index">основы css</p>
     <a class="button button--top" href="#top" aria-label="кнопка перехода к началу страницы">
       <svg class="button__icon" width="30" height="32" xmlns="http://www.w3.org/2000/svg" role="presentation">
         <path d="M16.4142 0.585785C15.6332 -0.195263 14.3668 -0.195263 13.5858 0.585785L0.857865 13.3137C0.0768164 14.0948 0.0768163 15.3611 0.857865 16.1421C1.63891 16.9232 2.90524 16.9232 3.68629 16.1421L15 4.82842L26.3137 16.1421C27.0948 16.9232 28.3611 16.9232 29.1421 16.1421C29.9232 15.3611 29.9232 14.0948 29.1421 13.3137L16.4142 0.585785ZM17 32L17 2L13 2L13 32L17 32Z"></path>
@@ -111,7 +111,7 @@
           сделать так, чтобы контент появлялся в определенном месте на экране?" "Как украсить мою веб-страницу с помощью фоновых изображений и цветов?" и другие.</p>
       </section>
       <section class="page-section">
-        <h2 class="page-section__title">План раздела</h2>
+        <h2 class="visually-hidden">План раздела</h2>
         <ol class="page-section__content table-of-content">
           <li class="table-of-content__item table-of-content__item--bg table-of-content__item--small"><a class="table-of-content__anchor" href="#css-really">Что же представляет из себя CSS?</a>
           </li>
@@ -125,7 +125,7 @@
               </li>
               <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__anchor" href="#inline-css">Инлайновые стили</a>
               </li>
-              <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__anchor" href="#import-css">Правило <code class="language-css">@import</code></a>
+              <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__anchor" href="#import-css">Правило @import</a>
               </li>
             </ol>
           </li>
@@ -145,7 +145,7 @@
               </li>
               <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__anchor" href="#cascade">Каскад</a>
                 <ol class="table-of-content table-of-content--sub">
-                  <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__anchor" href="#important">Правило <code class="language-css">!important</code></a>
+                  <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__anchor" href="#important">Правило !important</a>
                   </li>
                   <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__anchor" href="#specificity">Специфичность</a>
                   </li>
@@ -177,7 +177,7 @@
         <p class="page-section__text">Рассмотрим подробнее структуру css-правил.</p>
         <figure class="page-section__figure">
           <img class="page-section__img" src="img/css-rule.png" alt="Пример css-правила">
-          <figcaption class="page-section__img-caption">Рисунок 1. Структура объявления</figcaption>
+          <figcaption class="page-section__img-caption">рисунок 1. структура объявления</figcaption>
         </figure>
         <p class="page-section__text">Вся структура называется набором правил (но зачастую для краткости "правило" ) и состоит из двух основных частей: селектора и объявления.</p>
         <dl class="page-section__determinations determinations">
@@ -223,7 +223,7 @@
           <p class="page-section__text">Внешние таблицы стилей используются для большого объёма правил, например, для всей страницы. Также таким образом подключаются стилевые файлы сторонних плагинов и библиотек, необходимых для функционирования сайта.</p>
           <p class="page-section__text">Вынесение стилевых правил в отдельных файл позволяет:</p>
           <ul class="page-section__list list">
-            <li class="list__item">реиспользовать их без необходимости дублирования;</li>
+            <li class="list__item">использовать их повторно без необходимости дублирования кода;</li>
             <li class="list__item">вносить изменения в одном файле, меняя таким образом сразу все страницы, к которым подключена таблица стилей;</li>
             <li class="list__item">ускорить загрузку страниц сайта, т.к. при первой загрузке файл будет помещён в кэш и при загрузке других страниц с данными стилями будет уже "на месте".</li>
           </ul>
@@ -254,9 +254,9 @@
             содержимое и его оформление разделены.</p>
         </section>
         <section class="page-section__subsection">
-          <h3 class="page-section__title page-section__title--sub" id="import-css">3.4 Правило <code class="language-css">@import</code></h3>
-          <p class="page-section__text">Правило <code class="language-css">@import</code> позволяет встраивать внешние таблицы стилей в пользовательские. Чтобы директива `@import` работала, она должна располагаться в таблице стилей (внешней или внутренней, но никак не в инлайновых стилях)
-            перед всеми остальными правилами.</p>
+          <h3 class="page-section__title page-section__title--sub" id="import-css">3.4 Правило @import</h3>
+          <p class="page-section__text">Правило <code class="language-css">@import</code> позволяет встраивать внешние таблицы стилей в пользовательские. Чтобы директива <code class="language-css">@import</code> работала, она должна располагаться в таблице стилей (внешней или внутренней,
+            но никак не в инлайновых стилях) перед всеми остальными правилами.</p>
           <p class="page-section__text">Правило <code class="language-css">@import</code> может использоваться, например, для подключения веб-шрифтов.</p><pre class="line-numbers" data-language="html"><code class="language-html">&lt;style&gt;
   @import url(https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin,cyrillic);
   @import url(mobile.css);
@@ -471,7 +471,7 @@
             аналогичное). В правом столбце будут перечислены все свойства, которые заданы для этого элемента или наследуются от родительского элемента, а также файлы стилей, в которых они указаны, и порядковый номер строки кода.</p>
           <figure class="page-section__figure">
             <img class="page-section__img" src="img/firefox-inspector-inheritance.png" alt="Инспектирование элемента в режиме разработчика в браузере Firefox Developer Edition">
-            <figcaption class="page-section__img-caption">Рисунок 2. С помощью инструментов разработчика в браузерах несложно посмотреть, какие стили наследуются элементом</figcaption>
+            <figcaption class="page-section__img-caption">рисунок 2. с помощью инструментов разработчика в браузерах несложно посмотреть, какие стили наследуются элементом</figcaption>
           </figure>
         </section>
         <section class="page-section__subsection">
@@ -483,7 +483,7 @@
             </div>
           </dl>
           <section class="page-section__subsubsection">
-            <h4 class="page-section__title page-section__title--subsub" id="important">5.2.1 Правило <code class="language-css">!important</code></h4>
+            <h4 class="page-section__title page-section__title--subsub" id="important">5.2.1 Правило !important</h4>
             <p class="page-section__text">Вес правила можно задать с помощью ключевого слова <code class="language-css">!important</code>, которое добавляется сразу после значения свойства, например, <code class="language-css">span {font-weight: bold!important;}</code>. Правило необходимо
               размещать в конец объявления перед закрывающей скобкой, без пробела. Такое объявление будет иметь приоритет над всеми остальными правилами. Это правило позволяет отменить значение свойства и установить новое для элемента из группы элементов
               в случае, когда нет прямого доступа к файлу со стилями.</p>

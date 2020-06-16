@@ -59,19 +59,19 @@
       </button>
       <div class="navigation__wrap">
         <ol class="table-of-content">
-          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small">HTML
+          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small"><a class="table-of-content__item-link" href="table-of-content-html.html">HTML</a>
             <ol class="table-of-content table-of-content--sub">
               <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__item-link" href="html-introduction.html">Основы HTML</a>
               </li>
             </ol>
           </li>
-          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small">CSS
+          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small"><a class="table-of-content__item-link" href="table-of-content-css.html">CSS</a>
             <ol class="table-of-content table-of-content--sub">
               <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__item-link" href="css-introduction.html">Основы CSS</a>
               </li>
             </ol>
           </li>
-          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small">JavaScript
+          <li class="table-of-content__item table-of-content__item--nav table-of-content__item--small"><a class="table-of-content__item-link" href="table-of-content-js.html">JavaScript</a>
             <ol class="table-of-content table-of-content--sub">
               <li class="table-of-content__item table-of-content__item--sub table-of-content__item--small"><a class="table-of-content__item-link" href="js-introduction.html">Основы JavaScript</a>
               </li>
@@ -86,7 +86,7 @@
     </nav>
   </header>
   <main class="page-main">
-    <p class="page-index">6. математика в вебе</p>
+    <p class="page-index">математика в вебе</p>
     <a class="button button--top" href="#top" aria-label="кнопка перехода к началу страницы">
       <svg class="button__icon" width="30" height="32" xmlns="http://www.w3.org/2000/svg" role="presentation">
         <path d="M16.4142 0.585785C15.6332 -0.195263 14.3668 -0.195263 13.5858 0.585785L0.857865 13.3137C0.0768164 14.0948 0.0768163 15.3611 0.857865 16.1421C1.63891 16.9232 2.90524 16.9232 3.68629 16.1421L15 4.82842L26.3137 16.1421C27.0948 16.9232 28.3611 16.9232 29.1421 16.1421C29.9232 15.3611 29.9232 14.0948 29.1421 13.3137L16.4142 0.585785ZM17 32L17 2L13 2L13 32L17 32Z"></path>
@@ -94,7 +94,7 @@
     </a>
     <div class="container">
       <div class="page-title">
-        <h1 class="page-title__name">6. Математика в вебе</h1>
+        <h1 class="page-title__name">4. Математика в вебе</h1>
         <a class="page-title__download button" href="#" aria-label="скачать раздел в PDF">
           <svg class="button__icon" width="35" height="35" xmlns="http://www.w3.org/2000/svg" role="presentation">
             <path d="M26.25 26.25V30.625H8.75V26.25H6.5625V30.625C6.5625 31.2052 6.79297 31.7616 7.2032 32.1718C7.61344 32.582 8.16984 32.8125 8.75 32.8125H26.25C26.8302 32.8125 27.3866 32.582 27.7968 32.1718C28.207 31.7616 28.4375 31.2052 28.4375 30.625V26.25H26.25Z"></path>
@@ -107,12 +107,13 @@
       </div>
       <section class="page-section">
         <h2 class="visually-hidden">Введение</h2>
-        <p class="page-section__text">Когда-то HTML изобрели в стенах ЦЕРНа. Но хотя математика является главным языком общения среди учёных, она до сих пор слабо поддерживается веб-технологиями. Посмотрим, как обстоят дела и какое будущее у математического рендеринга.</p>
+        <p class="page-section__text">Когда-то HTML изобрели в стенах ЦЕРНа (аббревиатура CERN произошла от фр. Conseil Européen pour la Recherche Nucléaire — Европейский совет по ядерным исследованиям). Но хотя математика является главным языком общения среди учёных, она до сих пор
+          слабо поддерживается веб-технологиями. Посмотрим, как обстоят дела и какое будущее у математического рендеринга.</p>
         <p class="page-section__text">Дело в том, что в языке HTML, с помощью которого создаются веб-страницы, нет нативных средств для написания формул. Разработчикам сайтов приходилось как-то выкручиваться: использовать таблицы, индексы и другие обходные пути. Список подобных приемов
-          приведен <a class="page-section__link link" href="http://jkorpela.fi/math/">здесь</a>, и резюмировать его можно так — путь труден, а результат жалок.</p>
+          приведен <a class="page-section__link link" href="http://jkorpela.fi/math/" target="_blank">здесь</a>, и резюмировать его можно так — путь труден, а результат жалок.</p>
       </section>
       <section class="page-section">
-        <h2 class="page-section__title">План раздела</h2>
+        <h2 class="visually-hidden">План раздела</h2>
         <ol class="page-section__content table-of-content">
           <li class="table-of-content__item table-of-content__item--bg table-of-content__item--small"><a class="table-of-content__anchor" href="#overview">Немного истории, текущая ситуация и перспективы</a>
           </li>
@@ -133,8 +134,8 @@
           <li class="list__item">формула из рисунка не может быть скопирована для дальнейшего использования.</li>
         </ul>
         <p class="page-section__text">При добросовестном подходе верстальщика такие формулы-рисунки сопровождаются атрибутом alt с записью формулы в текстовом виде, что отчасти решает последние две названные проблемы. Однако в целом такой способ никак не назовёшь удобным.</p>
-        <p class="page-section__text"><i>Стандартный HTML оказался не в силах справиться со сложными формулами из-за большого количества специальных символов, двумерности таких записей и их нестандартной компоновки. Формулы-рисунки пасуют в доступности для пользователей, использующих нестандартные средства получения информации с веб-страниц, например, скринридеры. Также ни тот, ни другой способы не позволяют копировать полученные формулы. Все эти проблемы разработчики пытаются решить с помощью специального языка.</i>
-        </p>
+        <p class="page-section__text">Стандартный HTML оказался не в силах справиться со сложными формулами из-за большого количества специальных символов, двумерности таких записей и их нестандартной компоновки. Формулы-рисунки пасуют в доступности для пользователей, использующих
+          нестандартные средства получения информации с веб-страниц, например, скринридеры. Также ни тот, ни другой способы не позволяют копировать полученные формулы. Все эти проблемы разработчики пытаются решить с помощью специального языка.</p>
         <p class="page-section__text">В начале 2000-х годов начали набирать обороты два таких языка: MathML и LaTeX. Первый представляет собой разновидность языка XML и предназначается для построения математических выражений, описания их структуры. Второй является популярным набором
           макрорасширений системы компьютерной вёрстки TeX и служит для визуального представления формул.</p><pre class="page-section__pre line-numbers" data-language="mathml"><code class="page-section__code language-mathml">&lt;math xmlns='http://www.w3.org/1998/Math/MathML'&gt;
   &lt;msup&gt;
@@ -157,39 +158,53 @@
           </picture>
         </p>
         <p class="page-section__text">Система TeX изначально предназначалась для книжной вёрстки, в особенности книг, содержащих большое количество математических формул. Для тех, кто знаком с HTML и CSS, освоение TeX не составит никакого труда, система является интуитивно понятной
-          и имеет несложный синтаксис. LaTeX не расширяет возможности TeX, он лишь упрощает некоторые операции и автоматизирует некоторые задачи по набору текста и подготовки стилей. Таким образом, <i>LaTeX уже много лет используется для подготовки математических текстов, так что вполне логично было в какой-то момент начать использовать его и для сетевой математики</i>.</p>
-        <p
-        class="page-section__text">Одной из первых попыток совмещения LaTeX и веба стала программа LaTeXML, написанная на Perl. Работа LaTeXML сводилась к преобразованию LaTeX в XML и последующей конвертации в рисунки, HTML или XHTML, а с некоторых пор — и в MathML. Этот способ
+          и имеет несложный синтаксис. LaTeX не расширяет возможности TeX, он лишь упрощает некоторые операции и автоматизирует некоторые задачи по набору текста и подготовки стилей. Таким образом, LaTeX уже много лет используется для подготовки математических
+          текстов, так что вполне логично было в какой-то момент начать использовать его и для сетевой математики.</p>
+        <p class="page-section__text">Одной из первых попыток совмещения LaTeX и веба стала программа LaTeXML, написанная на Perl. Работа LaTeXML сводилась к преобразованию LaTeX в XML и последующей конвертации в рисунки, HTML или XHTML, а с некоторых пор — и в MathML. Этот способ
           представления был хорош, но для полноценной интерактивности программа-обработчик должна выполняться непосредственно в браузере.</p>
-          <p class="page-section__text">Первым браузерным решением был <a class="page-section__link link" href="http://www.math.union.edu/~dpvc/jsMath/">jsMath</a> (math.js), который преобразовывал пользовательские формулы из LaTeX в рисунки, выполненные средствами HTML и CSS. Это был
-            прорыв с позиции интерактивности, однако были проблемы с кроссбраузерностью, экспортом в различные форматы, начиная с MathML. О доступности и возможности дальнейшего копирования и использования полученной формулы говорить в случае jsMath не
-            приходится.</p>
-          <figure class="page-section__figure">
-            <img class="page-section__img" src="img/jsmath-inspector.png" alt="Просмотр сгенерированной с помощью jsMath формулы в инспекторе браузера">
-            <figcaption class="page-section__img-caption">Рисунок 1. Стуктура элемента, сгенерированного в jsMath</figcaption>
-          </figure>
-          <p class="page-section__text">Библиотека <a class="page-section__link link" href="https://www.mathjax.org/">MathJax</a>, первые версии которой разработаны в 2009 году под руководством Американского математического общества при поддержке Американского института физики и портала
-            Stack Exchange, был призван решить проблемы кроссбраузерности и экспорта в другие форматы. MathJax работает во всех современных браузерах и поддерживает сохранение формул в HTML+CSS, SVG, MathML и TeX. Для работы библиотеки пользователь не
-            должен устанавливать какие-то специальные плагины или шрифты для браузера.</p>
-          <figure class="page-section__figure">
-            <img class="page-section__img" src="img/mathjax-copy-options.png" alt="Для формул, составленных MathJax, можно скопировать MathML-код или TeX-команды">
-            <figcaption class="page-section__img-caption">Рисунок 2. Возможные варинты отображения формул MathJax</figcaption>
-          </figure>
-          <figure class="page-section__figure">
-            <img class="page-section__img" src="img/mathjax-write-options.png" alt="MathJax может считывать формулы, написанные на TeX">
-            <figcaption class="page-section__img-caption">Рисунок 3. TeX поддержка MathJax</figcaption>
-          </figure>
-          <p class="page-section__text">jsMath оживил математику в Интернете, сделав возможным динамическое генерирование формул, адекватно отображаемых браузером. MathJax реализовал возможность написания формул для веба на TeX, реализуя при этом возможность копирования, кроссбраузерность
-            и кроссформатность. MathJax используется на таких крупных сайтах, как Википедия и Хабр, в блогах. На данный момент MathJax — стандарт де-факто для отображения формул на веб-страницах.</p>
-          <p class="page-section__text">Однако даже такое мощное средство как MathJax не решает всех проблем сложных формул и выражений в вебе. Широкий функционал, делающий MathJax настоящим "швейцарским ножом", отрицательно сказывается на размере библиотеки и скорости её работы.
-            Говоря о размере библиотеки, отдельно следует отметить набор специальных шрифтов, идущих в комплекте с библиотекой. Эти проблемы в меньшей степени присутствуют в разрабатываемой в Khan Academy библиотеке <a class="page-section__link link" href="https://katex.org/">KaTeX</a>.
-            Текущая версия библиотеки 0.11.1, что говорит о её незавершенности и несовершенности, однако проект стремительно развивается. Текущий список поддерживаемых функций доступен в вики проекта. По сравнению с MathJax в KaTeX пока доступно меньше
-            выходных форматов: реализован вывод в HTML, вывод в MathML планируется в будущем. Если говорить о браузерной поддержки, то разработчики KaTeX отказались от версий IE старше 8.0, но это разумное решение, т.к. поддержка таких динозавров очень
-            трудна, а пользователей старых версий всё меньше и меньше. Помимо конвертирования математических формул и уравнений из MathML и LaTeX библиотека поддерживает вёрстку химических формул и уравнений. KaTeX является более лёгкой, быстрой и, в
-            перспективе, более функциональной, чем MathJax js-библиотекой.</p>
-          <p class="page-section__text">Несмотря на удобство LaTeX, нельзя забывать о MathML. Он нужен для организации автоматической обработки формул, например, для дальнейшего поиска.</p>
-          <p class="page-section__text">Написание формул непосредственно на MathML — дело крайне трудное, поэтому существуют специальные визуальные редакторы типа <a class="page-section__link link" href="http://www.firemath.info/">Firemath</a>, являющегося расширением для Mozilla Firefox,
-            или конвертёр из TeX в MathML — <a class="page-section__link link" href="http://fred-wang.github.io/TeXZilla/">TeXZilla</a>. Ну и, конечно, нужно помнить о MathJax.</p>
+        <p class="page-section__text">Первым браузерным решением был <a class="page-section__link link" href="http://www.math.union.edu/~dpvc/jsMath/" target="_blank">jsMath</a> (math.js), который преобразовывал пользовательские формулы из LaTeX в рисунки, выполненные средствами HTML
+          и CSS. Это был прорыв с позиции интерактивности, однако были проблемы с кроссбраузерностью, экспортом в различные форматы, начиная с MathML. О доступности и возможности дальнейшего копирования и использования полученной формулы говорить в случае
+          jsMath не приходится.</p>
+        <figure class="page-section__figure">
+          <img class="page-section__img" src="img/jsmath-inspector.png" alt="Просмотр сгенерированной с помощью jsMath формулы в инспекторе браузера">
+          <figcaption class="page-section__img-caption">рисунок 1. стуктура элемента, сгенерированного в jsMath</figcaption>
+        </figure>
+        <p class="page-section__text">Библиотека <a class="page-section__link link" href="https://www.mathjax.org/" target="_blank">MathJax</a>, первые версии которой разработаны в 2009 году под руководством Американского математического общества при поддержке Американского института
+          физики и портала Stack Exchange, был призван решить проблемы кроссбраузерности и экспорта в другие форматы. MathJax работает во всех современных браузерах и поддерживает сохранение формул в HTML+CSS, SVG, MathML и TeX. Для работы библиотеки
+          пользователь не должен устанавливать какие-то специальные плагины или шрифты для браузера.</p>
+        <figure class="page-section__figure">
+          <img class="page-section__img" src="img/mathjax-copy-options.png" alt="Для формул, составленных MathJax, можно скопировать MathML-код или TeX-команды">
+          <figcaption class="page-section__img-caption">рисунок 2. возможные варинты отображения формул MathJax</figcaption>
+        </figure>
+        <figure class="page-section__figure">
+          <img class="page-section__img" src="img/mathjax-write-options.png" alt="MathJax может считывать формулы, написанные на TeX">
+          <figcaption class="page-section__img-caption">рисунок 3. TeX поддержка MathJax</figcaption>
+        </figure>
+        <p class="page-section__text">jsMath оживил математику в Интернете, сделав возможным динамическое генерирование формул, адекватно отображаемых браузером. MathJax реализовал возможность написания формул для веба на TeX, реализуя при этом возможность копирования, кроссбраузерность
+          и кроссформатность. MathJax используется на таких крупных сайтах, как Википедия и Хабр, в блогах. На данный момент MathJax — стандарт де-факто для отображения формул на веб-страницах.</p>
+        <p class="page-section__text">Ниже приведены примеры использования библиотеки MathJax.</p>
+        <p class="page-section__text">Для того, чтобы представить офрмулу в отдельном блоке, нужно оформить её код слудующим образом: <code class="page-section__code language-none">$$ код формулы $$</code>. Для примера так выглядит формула интеграла типа Коши в отдельном блоке: $$
+          f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz, $$ которая представляется следующим кодом LaTeX:<code class="page-section__code language-latex"> f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz</code>.</p>
+        <p class="page-section__text">Аналогичным образом в отдельный код формулу можно вынести с помощью конструкции
+          <br><code class="page-section__code language-none">\[ код формулы \]</code>. Например, ниже формула Гаусса-Бонне: \[ \int_{M}{KdA} + \int_{\partial M}{k_g ds} = 2 \pi \chi(M), \] которая записывается с помощью LaTeX следующим образом:
+          <br><code class="page-section__code language-latex">\int_{M}{KdA} + \int_{\partial M}{k_g ds} = 2 \pi \chi(M)</code>.</p>
+        <p class="page-section__text">Также можно записывать формулы в тексте, внутри строки. Делается это с помощью заключения нужного выражения в конструкцию типа<code class="page-section__code language-none"> \( код формулы \)</code>. Например, вот основное тригонометрическое тождество:
+          \( \cos^2\theta + \sin^2\theta=1 \). LaTeX запись выглядит так:<code class="page-section__code language-latex"> \cos^2\theta + \sin^2\theta=1</code>.</p>
+        <p class="page-section__text">Однако даже такое мощное средство как MathJax не решает всех проблем сложных формул и выражений в вебе. Широкий функционал, делающий MathJax настоящим "швейцарским ножом", отрицательно сказывается на размере библиотеки и скорости её работы. Говоря
+          о размере библиотеки, отдельно следует отметить набор специальных шрифтов, идущих в комплекте с библиотекой. Эти проблемы в меньшей степени присутствуют в разрабатываемой в Khan Academy библиотеке <a class="page-section__link link" href="https://katex.org/"
+          target="_blank">KaTeX</a>. Текущая версия библиотеки 0.11.1, что говорит о её незавершенности и несовершенности, однако проект стремительно развивается. Текущий список поддерживаемых функций доступен в вики проекта. По сравнению с MathJax в
+          KaTeX пока доступно меньше выходных форматов: реализован вывод в HTML, вывод в MathML планируется в будущем. Если говорить о браузерной поддержки, то разработчики KaTeX отказались от версий IE старше 8.0, но это разумное решение, т.к. поддержка
+          таких динозавров очень трудна, а пользователей старых версий всё меньше и меньше. Помимо конвертирования математических формул и уравнений из MathML и LaTeX библиотека поддерживает вёрстку химических формул и уравнений. KaTeX является более
+          лёгкой, быстрой и, в перспективе, более функциональной, чем MathJax js-библиотекой.</p>
+        <p class="page-section__text">Ниже приведены примеры использования библиотеки KaTeX.</p>
+        <p class="page-section__text">Формула Гауссова интеграла:</p>
+        <div id="katex-gaussian"></div>
+        <p class="page-section__text">А вот формула шуточного рецепта Мартини от компании Паркер, котрую следует читать как "берём 3.5 части джина и 0.5 вермута, добавляем 4 кубика льда и взбалтываем тремя движениями":</p>
+        <div id="katex-martini"></div>
+        <p class="page-section__text">Как видно из примеров выше, библиотека MathJax на данный момент несколько приятнее в плане отображаемых результатов. Однако, у KaTeX есть будущее.</p>
+        <p class="page-section__text">Несмотря на удобство LaTeX, нельзя забывать о MathML. Он нужен для организации автоматической обработки формул, например, для дальнейшего поиска.</p>
+        <p class="page-section__text">Написание формул непосредственно на MathML — дело крайне трудное, поэтому существуют специальные визуальные редакторы типа <a class="page-section__link link" href="http://www.firemath.info/" target="_blank">Firemath</a>, являющегося расширением
+          для Mozilla Firefox, или конвертёр из TeX в MathML — <a class="page-section__link link" href="http://fred-wang.github.io/TeXZilla/" target="_blank">TeXZilla</a>. Ну и, конечно, нужно помнить о MathJax.</p>
       </section>
       <section class="page-section">
         <h2 class="page-section__title" id="mathjax">2. Что нужно для начала работы с MathJax</h2>
@@ -198,23 +213,22 @@
         <p class="page-section__text">Также можно установить библиотеку как npm-пакет:</p><pre class="page-section__pre line-numbers"><code class="page-section__code language-none">npm i mathjax@3</code></pre>
         <p class="page-section__text">Также создатели MathJax говорят, что если Вы хотите разместить библиотеку на собственном сервере, то можно установить npm-пакет и переместить каталог es5 в соответсвующее место на сервере:</p><pre class="page-section__pre line-numbers"><code class="page-section__code language-none">npm install mathjax@3
 mv node_modules/mathjax/es5 <path-to-server-location>/mathjax</code></pre>
-        <p class="page-section__text"><a class="page-section__link link" href="https://github.com/mathjax/MathJax">Официальный репозиторий библиотеки на GitHub</a>
+        <p class="page-section__text"><a class="page-section__link link" href="https://github.com/mathjax/MathJax" target="_blank">Официальный репозиторий библиотеки на GitHub</a>
         </p>
-        <p class="page-section__text">Все принципы работы с библиотекой подробно описаны в <a class="page-section__link link" href="http://docs.mathjax.org/en/latest/">документации</a>. Разработчиками также собрана <a class="page-section__link link" href="https://mathjax.github.io/MathJax-demos-web/">страница примеров для работы с веб-страницами</a> и
-          <a
-          class="page-section__link link" href="https://github.com/mathjax/MathJax-demos-node">аналогичный репозиторий для приложений на node.js</a>.</p>
-        <p class="page-section__text"><a class="page-section__link link link--button" href="https://radioprog.ru/post/74">Краткий справочник на русском по использованию LaTeX в работе с MathJax</a>
+        <p class="page-section__text">Все принципы работы с библиотекой подробно описаны в <a class="page-section__link link" href="http://docs.mathjax.org/en/latest/" target="_blank">документации</a>. Разработчиками также собрана <a class="page-section__link link" href="https://mathjax.github.io/MathJax-demos-web/"
+          target="_blank">страница примеров для работы с веб-страницами</a> и <a class="page-section__link link" href="https://github.com/mathjax/MathJax-demos-node" target="_blank">аналогичный репозиторий для приложений на node.js</a>.</p>
+        <p class="page-section__text"><a class="page-section__link link link--button" href="https://radioprog.ru/post/74" target="_blank">Краткий справочник на русском по использованию LaTeX в работе с MathJax</a>
         </p>
       </section>
       <section class="page-section">
         <h2 class="page-setion__title" id="katex">3. Что нужно для начала работы с KaTeX</h2>
-        <p class="page-section__text">Все инструкции по установке приведены в соответствующем <a class="page-section__link link" href="https://katex.org/docs/node.html">разделе документации</a>.</p>
-        <p class="page-section__text">Использование и возможности описаны в основном разделе <a class="page-section__link link" href="https://katex.org/docs/api.html">документации</a>.</p>
-        <p class="page-section__text"><a class="page-section__link link link--button" href="https://github.com/KaTeX/KaTeX">Официальный репозиторий библиотеки на GitHub.</a>
+        <p class="page-section__text">Все инструкции по установке приведены в соответствующем <a class="page-section__link link" href="https://katex.org/docs/node.html" target="_blank">разделе документации</a>.</p>
+        <p class="page-section__text">Использование и возможности описаны в основном разделе <a class="page-section__link link" href="https://katex.org/docs/api.html" target="_blank">документации</a>.</p>
+        <p class="page-section__text"><a class="page-section__link link link--button" href="https://github.com/KaTeX/KaTeX" target="_blank">Официальный репозиторий библиотеки на GitHub.</a>
         </p>
       </section>
       <div class="page-final">
-        <p class="page-final__sign"><i>Впервые опубликовано в <a class="link" href="https://www.kv.by/content/334516-matematika-i-internet-kakie-programmy-stoit-ispolzovat">KV.by</a>. Приводится в авторской редакции.</i>
+        <p class="page-final__sign"><i>Впервые опубликовано в <a class="link" href="https://www.kv.by/content/334516-matematika-i-internet-kakie-programmy-stoit-ispolzovat" target="_blank">KV.by</a>. Приводится в авторской редакции.</i>
         </p>
         <div class="page-final__links page-final__links--duo-left"><a class="page-final__left-link link link--index link--index-backward" href="js-introduction.html">Предыдущий раздел</a><a class="page-final__central-link link link--index link--index-main" href="index.html">Главная</a>
         </div>
@@ -224,6 +238,7 @@ mv node_modules/mathjax/es5 <path-to-server-location>/mathjax</code></pre>
   <footer class="page-footer">
     <p class="page-footer__author">© Марина Калюжная, 2020</p>
   </footer>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
   <script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js"></script>
   <script src="js/script.min.js"></script>
 </body>
