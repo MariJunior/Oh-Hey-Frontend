@@ -771,6 +771,17 @@ input[type="radio"].visually-hidden {
 .table-of-content__anchor {
   border-bottom: 1px solid #126047;
 }
+.table-of-content__item-link--current {
+  color: #202020;
+}
+.table-of-content__item-link--current:hover,
+.table-of-content__item-link--current:focus {
+  color: #202020;
+  opacity: 1;
+}
+.table-of-content__item-link--current:active {
+  opacity: 1;
+}
 @media (min-width: 660px) {
   .table-of-content__item {
     font-size: 36px;
