@@ -12,7 +12,7 @@
     margin-left: 0;
     padding-top: 20px;
     border-left: 2px solid #202020;
-    font-family: "Alegreya Sana", Helvetica, Arial, sans-serif;
+    font-family: "Alegreya Sans", Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-weight: 500;
     font-variant: small-caps;
@@ -20,15 +20,15 @@
     writing-mode: vertical-rl;
     transform: rotate(180deg);
   }
-  //
-  // @supports (writing-mode: sideways-lr) {
-  //   .page-index {
-  //     padding-top: 0;
-  //     padding-bottom: 20px;
-  //     border-left: none;
-  //     border-right: 2px solid #202020;
-  //     writing-mode: sideways-lr;
-  //     transform: none;
-  //   }
-  // }
+
+  @supports (writing-mode: sideways-lr) {
+    .page-index {
+      padding-top: 0;
+      padding-bottom: 20px;
+      border-left: none;
+      border-right: 2px solid #202020;
+      writing-mode: sideways-lr;
+      transform: none;
+    }
+  }
 }

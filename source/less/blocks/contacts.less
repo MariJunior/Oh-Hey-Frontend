@@ -32,12 +32,20 @@
     &__name {
       margin-top: 25px;
       margin-right: 0;
-      writing-mode: sideways-lr;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
     }
 
     &__link:not(:last-child) {
       margin-top: 15px;
       margin-right: 0;
+    }
+  }
+
+  @supports (writing-mode: sideways-lr) {
+    .contacts__name {
+      writing-mode: sideways-lr;
+      transform: none;
     }
   }
 }
