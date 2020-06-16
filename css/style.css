@@ -506,13 +506,24 @@ input[type="radio"].visually-hidden {
   .contacts__name {
     margin-top: 25px;
     margin-right: 0;
-    -webkit-writing-mode: sideways-lr;
-        -ms-writing-mode: sideways-lr;
-            writing-mode: sideways-lr;
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
   .contacts__link:not(:last-child) {
     margin-top: 15px;
     margin-right: 0;
+  }
+  @supports (writing-mode: sideways-lr) {
+    .contacts__name {
+      -webkit-writing-mode: sideways-lr;
+          -ms-writing-mode: sideways-lr;
+              writing-mode: sideways-lr;
+      -webkit-transform: none;
+              transform: none;
+    }
   }
 }
 .button--top {
@@ -627,7 +638,7 @@ input[type="radio"].visually-hidden {
     margin-left: 0;
     padding-top: 20px;
     border-left: 2px solid #202020;
-    font-family: "Alegreya Sana", Helvetica, Arial, sans-serif;
+    font-family: "Alegreya Sans", Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-weight: 500;
     font-variant: small-caps;
@@ -638,6 +649,19 @@ input[type="radio"].visually-hidden {
             writing-mode: vertical-rl;
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
+  }
+  @supports (writing-mode: sideways-lr) {
+    .page-index {
+      padding-top: 0;
+      padding-bottom: 20px;
+      border-left: none;
+      border-right: 2px solid #202020;
+      -webkit-writing-mode: sideways-lr;
+          -ms-writing-mode: sideways-lr;
+              writing-mode: sideways-lr;
+      -webkit-transform: none;
+              transform: none;
+    }
   }
 }
 .page-footer {
