@@ -50,14 +50,16 @@ block content
         li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
           a.table-of-content__anchor(href='#overview') Немного истории, текущая ситуация и перспективы
         li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
-          a.table-of-content__anchor(href='#examples') Примеры использования MathJax и KaTeX
+          a.table-of-content__anchor(href='#examples-mathjax') Примеры использования MathJax
+        li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
+          a.table-of-content__anchor(href='#examples-katex') Примеры использования KaTeX
         li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
           a.table-of-content__anchor(href='#mathjax') Что нужно для начала работы с MathJax
         li.table-of-content__item.table-of-content__item--bg.table-of-content__item--small
           a.table-of-content__anchor(href='#katex') Что нужно для начала работы с KaTeX
 
     section.page-section
-      h2.page-section__title#overview 1. Немного истрии, текущая ситуация и перспективы
+      h2.page-section__title#overview 1. Немного истории, текущая ситуация и перспективы
 
       p.page-section__text Очередной и наиболее приемлемой на долгое-долгое время попыткой решить проблему формул стала вставка изображений. Для получения таких рисунков существует большое количество инструментов, в том числе и онлайновых визуальных редакторов, что максимально упрощает процесс. Этот способ неплох, но имеет серьёзные недостатки:
 
@@ -130,45 +132,94 @@ block content
       p.page-section__text Написание формул непосредственно на MathML — дело крайне трудное, поэтому существуют специальные визуальные редакторы типа #[a.page-section__link.link(href='http://www.firemath.info/', target='_blank') Firemath], являющегося расширением для Mozilla Firefox, или конвертёр из TeX в MathML — #[a.page-section__link.link(href='http://fred-wang.github.io/TeXZilla/', target='_blank') TeXZilla]. Ну и, конечно, нужно помнить о MathJax.
 
     section.page-section
-      h2.page-section__title#examples 2. Примеры использования MathJax и KaTeX
+      h2.page-section__title#examples-mathjax 2. Примеры использования MathJax
       p.page-section__text Ниже приведены примеры использования библиотеки MathJax.
 
-      p.page-section__text
-        | Для того, чтобы представить офрмулу в отдельном блоке, нужно оформить её код слудующим образом:  #[code.page-section__code.language-none $$ код формулы $$]. Для примера так выглядит формула интеграла типа Коши в отдельном блоке: $$ f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz, $$ которая представляется следующим кодом LaTeX:
+      p.page-section__text Для того, чтобы представить офрмулу в отдельном блоке, нужно оформить её код слудующим образом:
 
-      pre.page-section__pre.line-numbers(data-language='latex')
+      pre.page-section__pre(data-language='none')
+        code.page-section__code.language-none $$ код формулы $$
+
+      p.page-section__text
+        | Для примера так выглядит формула интеграла типа Коши в отдельном блоке:
+        | $$ f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz, $$
+        | которая представляется следующим кодом LaTeX:
+
+      pre.page-section__pre(data-language='latex')
         code.page-section__code.language-latex  f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz
 
       p.page-section__text
-        | Аналогичным образом в отдельный код формулу можно вынести с помощью конструкции #[br]
-        code.page-section__code.language-none \[ код формулы \]
-        | . Например, ниже формула Гаусса-Бонне: \[ \int_{M}{KdA} + \int_{\partial M}{k_g ds} = 2 \pi \chi(M), \] которая записывается с помощью LaTeX следующим образом:
+        | Аналогичным образом в отдельный код формулу можно вынести с помощью конструкции
 
-        pre.page-section__pre.line-numbers(data-language='latex')
+      pre.page-section__pre(data-language='none')
+        code.page-section__code.language-none \[ код формулы \]
+
+      p.page-section__text
+        | Например, ниже формула Гаусса-Бонне:
+        | \[ \int_{M}{KdA} + \int_{\partial M}{k_g ds} = 2 \pi \chi(M), \]
+        | которая записывается с помощью LaTeX следующим образом:
+
+        pre.page-section__pre(data-language='latex')
           code.page-section__code.language-latex \int_{M}{KdA} + \int_{\partial M}{k_g ds} = 2 \pi \chi(M)
 
       p.page-section__text
         | Также можно записывать формулы в тексте, внутри строки. Делается это с помощью заключения нужного выражения в конструкцию типа
-        code.page-section__code.language-none  \( код формулы \)
-        | . Например, вот основное тригонометрическое тождество: \( \cos^2\theta + \sin^2\theta=1 \). LaTeX запись выглядит так:
 
-        pre.page-section__pre.line-numbers(data-language='latex')
-          code.page-section__code.language-latex  \cos^2\theta + \sin^2\theta=1
+      pre.page-section__pre(data-language='none')
+        code.page-section__code.language-none  \( код формулы \)
+
+      p.page-section__text Например, ниже записано основное тригонометрическое тождество.
+
+      p.page-section__text Основное тригонометрическое тождество: \( \cos^2\theta + \sin^2\theta=1 \).
+
+      p.page-section__text LaTeX запись выглядит так:
+
+      pre.page-section__pre(data-language='latex')
+        code.page-section__code.language-latex  \cos^2\theta + \sin^2\theta=1
+
+      p.page-section__text Как видно из примеров выше, формулы, оформленные с помощью MathJax, выглядят довольно аккуратно. Формулы, выносимые в отдельные блоки, автоматически выравниваются по центру.
+
+      p.page-section__text Больше информации о возможностях оформления формул с помощью MathJax можно найти в #[a.page-section__link.link.link--button(href='https://radioprog.ru/post/74', target='_blank') кратком справочнике на русском языке по использованию LaTeX в работе с MathJax]
+
+    section.page-section
+      h2.page-section__title#examples-katex 3. Примеры использования KaTeX
 
       p.page-section__text Ниже приведены примеры использования библиотеки KaTeX.
 
-      p.page-section__text Формула Гауссова интеграла:
+      p.page-section__text Для вставки формулы на сайт с помощью KaTeX необходимо написать небольшой JavaScript-код:
+
+      pre.page-section__pre(data-language='js')
+        code.page-section__code.language-js
+          | katex.render('[формула на TeX]', elementToPaste, { [параметры] });
+
+      p.page-section__text Например, формула Гауссова интеграла:
 
       .page-section__text#katex-gaussian
 
-      p.page-section__text А вот формула шуточного рецепта Мартини от компании Паркер, котрую следует читать как "берём 3.5 части джина и 0.5 вермута, добавляем 4 кубика льда и взбалтываем тремя движениями":
+      p.page-section__text Для её написания использован следующий JavaScript-код:
+
+      pre.page-section__pre.line-numbers(data-language='js')
+        code.page-section__code.language-js
+          | let katexGaussian = document.querySelector('#katex-gaussian');
+          | katex.render('\\int_{-\\infty}^\\infty{e^{-x^2}dx} = \\sqrt{\\pi}', katexGaussian);
+
+      p.page-section__text А вот формула шуточного рецепта Мартини от компании Паркер, которую следует читать как "берём 3.5 части джина и 0.5 вермута, добавляем 4 кубика льда и взбалтываем тремя движениями":
 
       .page-section__text#katex-martini
 
-      p.page-section__text Как видно из примеров выше, библиотека MathJax на данный момент несколько приятнее в плане отображаемых результатов. Однако, у KaTeX есть будущее.
+      p.page-section__text Для её написания использован следующий код JavaScript:
+
+      pre.page-section__pre.line-numbers(data-language='js')
+        code.page-section__code.language-js
+          | let katexMartini = document.querySelector('#katex-martini');
+          | katex.render('\\frac{3.5G+\\frac{V}{2}}{4(H_2O)^3} + 3(360^{\\circ}) = M', katexMartini);
+
+      p.page-section__text Как видно из примеров выше, в оформлении результатов вывода KaTeX несколько уступает MathJax. По умолчанию KaTeX выравнивает формулы по левому краю и пишет символы довольно скученно и мелко. Библиотека MathJax на данный момент несколько приятнее в плане отображаемых результатов. Однако, у KaTeX есть будущее.
+
+      p.page-section__text Больше примеров и более подробное описание возможных настроек можно найти в #[a.page-section__link.link(href='https://katex.org/docs/api.html', target='_blank') документации проекта].
 
     section.page-section
-      h2.page-section__title#mathjax 3. Что нужно для начала работы с MathJax
+      h2.page-section__title#mathjax 4. Что нужно для начала работы с MathJax
 
       p.page-section__text MathJax позволяет использовать версию данной библиотеки из CDN:
 
@@ -199,7 +250,7 @@ block content
         a.page-section__link.link.link--button(href='https://radioprog.ru/post/74', target='_blank') Краткий справочник на русском по использованию LaTeX в работе с MathJax
 
     section.page-section
-      h2.page-setion__title#katex 4. Что нужно для начала работы с KaTeX
+      h2.page-section__title#katex 5. Что нужно для начала работы с KaTeX
 
       p.page-section__text Все инструкции по установке приведены в соответствующем #[a.page-section__link.link(href='https://katex.org/docs/node.html', target='_blank') разделе документации].
 
