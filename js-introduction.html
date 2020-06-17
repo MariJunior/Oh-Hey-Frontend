@@ -133,7 +133,7 @@
         <h2 class="page-section__title" id="js-really">1. Что такое JavaScript на самом деле?</h2>
         <dl class="page-section__determinations determinations">
           <div class="determinations__item"><dt class="determinations__item-name">JavaScript ("JS" для краткости)</dt>
-            <dd class="determinations__item-data">это полноценный динамический язык программирования, который применяется к HTML-документу, и может обеспечить динамическую интерактивность на веб-сайтах. Его разработал Brendan Eich, сооснователь проекта Mozilla, Mozilla Foundation и Mozilla
+            <dd class="determinations__item-data">это полноценный динамический язык программирования, который применяется к HTML-документу, и может обеспечить динамическую интерактивность на веб-сайтах. Его разработал Brendan Eich, сооснователь проектов Mozilla, Mozilla Foundation и Mozilla
               Corporation.</dd>
           </div>
         </dl>
@@ -176,7 +176,7 @@
 
 &lt;button onclick="changeColor();"&gt;Change background&lt;/button&gt;</code></pre>
         <p class="page-section__text"><b>Внутрь элемента <code class="language-html">&lt;script&gt;</code></b>. Элемент <code class="language-html">&lt;script&gt;</code> может вставляться в любое место документа. Внутри тега располагается код, который выполняется сразу после прочтения
-          браузером, или содержит описание функции, которая выполняется в момент ее вызова. Описание функции можно располагать в любом месте, главное, чтобы к моменту ее вызова код функции уже был загружен.</p>
+          браузером, или содержит описание функции, которая выполняется в момент ее вызова. Описание функции можно располагать в любом месте, главное, чтобы к моменту её вызова код функции уже был загружен.</p>
         <p class="page-section__text">Обычно код JavaScript размещается в заголовке документа (элемент <code class="language-html">&lt;head&gt;</code>) или после открывающего тега <code class="language-html">&lt;body&gt;</code>. Если скрипт используется после загрузки страницы, например,
           код счетчика, то его лучше разместить в конце документа.</p><pre class="line-numbers" data-language="html"><code class="language-html">  &lt;footer&gt;
     ...
@@ -197,12 +197,12 @@
           <p class="page-section__text">Переменные представляют собой именованные контейнеры, хранящие данные (значения) в памяти компьютера, которые могут изменяться в процессе выполнения программы. Переменные имеют имя, тип и значение.</p>
           <p class="page-section__text">Вы можете назвать переменную практически как угодно, но есть некоторые ограничения для её имени. Имя переменной, или идентификатор, может включать только буквы a-z, A-Z, цифры 0-9 (цифра не может быть первой в имени переменной), символ $ (может
             быть только первым символом в имени переменной или функции) и символ подчеркивания _, наличие пробелов не допускается. Длина имени переменной не ограничена. Можно, но не рекомендуется записывать имена переменных буквами русского алфавита,
-            для этого они должны быть записаны в Unicode. В качестве имени переменной нельзя использовать ключевые слова JavaScript. Если вы не уверены, вы можете <a class="page-section__link link" href="https://mothereff.in/js-variables">проверить имя вашей переменной</a>,
+            для этого они должны быть записаны в Unicode. В качестве имени переменной нельзя использовать ключевые слова JavaScript. Если вы не уверены, вы можете <a class="page-section__link link" href="https://mothereff.in/js-variables" target="_blank">проверить имя вашей переменной</a>,
             чтобы увидеть корректно ли оно.</p>
           <p class="page-section__text">Имена переменных в JavaScript чувствительные к регистру, что означает, что переменная <code class="language-js">var message;</code> и <code class="language-js">var Message;</code> — разные переменные.</p>
           <p class="page-section__text">Переменная создается (объявляется) с помощью ключевых слов <code class="language-js">var</code>, <code class="language-js">let</code> или <code class="language-js">const</code> (о разнице между ними позже), за которыми следует имя переменной, например,
             <code
-            class="language-js">var message;</code>. Объявлять переменную необходимо перед ее использованием. Переменная инициализируется значением с помощью операции присваивания =, например, <code class="language-js">var message="Hellow";</code>, т.е. создается переменная
+            class="language-js">var message;</code>. Объявлять переменную необходимо перед её использованием. Переменная инициализируется значением с помощью операции присваивания =, например, <code class="language-js">var message="Hellow";</code>, т.е. создается переменная
               message и в ней сохраняется ее первоначальное значение "Hellow". Переменную можно объявлять без значения, в этом случае ей присваивается значение по умолчанию undefined. Значение переменной может изменяться во время исполнения скрипта. Разные
               переменные можно объявлять в одной строке, разделив их запятой.</p><pre class="line-numbers" data-language="js"><code class="language-js">var message="Hellow", number_msg = 6, time_msg = 50;</code></pre>
           <p class="page-section__text">Так для чего нам нужны переменные? Что ж, переменные должны были сделать что-нибудь интересное в программировании. Если значения не могли бы изменяться, то вы не могли бы ничего сделать динамическим, например, персонализировать приветственное
@@ -210,7 +210,7 @@
         </section>
         <section class="page-section__subsection">
           <h3 class="page-section__title page-section__title--sub" id="js-types">3.2 Типы данных</h3>
-          <p class="page-section__text">JavaScript является нетипизированным языком, тип данных для конкретной переменной при ее объявлении указывать не нужно. Тип данных переменной зависит от значений, которые она принимает. Тип переменной может изменяться в процессе совершения операций
+          <p class="page-section__text">JavaScript является нетипизированным языком, тип данных для конкретной переменной при её объявлении указывать не нужно. Тип данных переменной зависит от значений, которые она принимает. Тип переменной может изменяться в процессе совершения операций
             с данными (динамическое приведение типов). Преобразование типов выполняется автоматически в зависимости от того, в каком контексте они используются. Например, в выражениях, включающих числовые и строковые значения с оператором +, JavaScript
             преобразует числовые значения в строковые.</p>
           <p class="page-section__text">Получить тип данных, который имеет переменная, можно с помощью оператора typeof. Этот оператор возвращает строку, которая идентифицирует соответствующий тип.</p>
@@ -275,7 +275,7 @@
         </section>
       </section>
       <div class="page-final">
-        <p class="page-final__sign"><i>Источники инофмации: <a class="link" href="https://html5book.ru/osnovy-javascript/">html5book</a> и <a class="link" href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/JavaScript_basics">MDN</a>. Приводится в авторской редакции.</i>
+        <p class="page-final__sign"><i>Источники инофмации: <a class="link" href="https://html5book.ru/osnovy-javascript/" target="_blank">html5book</a> и <a class="link" href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/JavaScript_basics" target="_blank">MDN</a>. Приводится в авторской редакции.</i>
         </p>
         <div class="page-final__links"><a class="page-final__left-link link link--index link--index-backward" href="css-introduction.html">Предыдущий раздел</a><a class="page-final__central-link link link--index link--index-main" href="index.html">Главная</a><a class="page-final__right-link link link--index link--index-forward"
           href="math-in-web.html">Следующий раздел</a>
