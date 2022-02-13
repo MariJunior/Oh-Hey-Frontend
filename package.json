@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.10.1",
     "@barba/core": "^2.9.7",
     "@htmlacademy/editorconfig-cli": "1.x",
-    "ajv": "^6.12.2",
+    "ajv": "^6.12.3",
     "autoprefixer": "9.8.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
